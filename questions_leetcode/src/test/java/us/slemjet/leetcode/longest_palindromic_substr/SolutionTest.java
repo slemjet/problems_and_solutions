@@ -1,69 +1,34 @@
 package us.slemjet.leetcode.longest_palindromic_substr;
 
 import org.assertj.core.api.Assertions;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.Arguments;
+import org.junit.jupiter.params.provider.MethodSource;
 
-import static org.junit.jupiter.api.Assertions.*;
+import java.util.stream.Stream;
 
 class SolutionTest {
 
-    @Test
-    void longestPalindrome1() {
-        // given
-        Solution solution = new Solution();
-
-        // when
-        String longestPalindrome = solution.longestPalindrome("babad");
-
-        // then
-        Assertions.assertThat(longestPalindrome).isEqualTo("bab");
+    private static Stream<Arguments> parameters() {
+        return Stream.of(
+                Arguments.of("babad", "bab"),
+                Arguments.of("cbbd", "bb"),
+                Arguments.of("ccc", "ccc"),
+                Arguments.of("aaaa", "aaaa"),
+                Arguments.of("tattarrattat", "tattarrattat")
+        );
     }
 
-    @Test
-    void longestPalindrome2() {
+    @ParameterizedTest
+    @MethodSource("parameters")
+    void testSolution(String input, String expected) {
         // given
         Solution solution = new Solution();
 
         // when
-        String longestPalindrome = solution.longestPalindrome("cbbd");
+        String longestPalindrome = solution.longestPalindrome(input);
 
         // then
-        Assertions.assertThat(longestPalindrome).isEqualTo("bb");
-    }
-
-    @Test
-    void longestPalindrome3() {
-        // given
-        Solution solution = new Solution();
-
-        // when
-        String longestPalindrome = solution.longestPalindrome("ccc");
-
-        // then
-        Assertions.assertThat(longestPalindrome).isEqualTo("ccc");
-    }
-
-    @Test
-    void longestPalindrome4() {
-        // given
-        Solution solution = new Solution();
-
-        // when
-        String longestPalindrome = solution.longestPalindrome("aaaa");
-
-        // then
-        Assertions.assertThat(longestPalindrome).isEqualTo("aaaa");
-    }
-
-    @Test
-    void longestPalindrome5() {
-        // given
-        Solution solution = new Solution();
-
-        // when
-        String longestPalindrome = solution.longestPalindrome("tattarrattat");
-
-        // then
-        Assertions.assertThat(longestPalindrome).isEqualTo("tattarrattat");
+        Assertions.assertThat(longestPalindrome).isEqualTo(expected);
     }
 }

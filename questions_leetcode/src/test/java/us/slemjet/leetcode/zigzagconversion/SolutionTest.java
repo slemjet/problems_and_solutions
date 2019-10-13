@@ -1,4 +1,4 @@
-package us.slemjet.leetcode.longest_substr_without_repeating_chars;
+package us.slemjet.leetcode.zigzagconversion;
 
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -10,28 +10,26 @@ import java.util.stream.Stream;
 import static org.junit.jupiter.params.provider.Arguments.*;
 
 class SolutionTest {
+
     private static Stream<Arguments> parameters() {
         return Stream.of(
-                of("abcabcbb", 3),
-                of("bbbbb", 1),
-                of("pwwkew", 3),
-                of(" ", 1),
-                of("", 0),
-                of("dvdf", 3),
-                of("au", 2)
+                of("PAYPALISHIRING", 3, "PAHNAPLSIIGYIR"),
+                of("PAYPALISHIRING", 4, "PINALSIGYAHRPI"),
+                of("PAYPALISHIRING", 5, "PHASIYIRPLIGAN"),
+                of("AB", 1, "AB")
         );
     }
 
     @ParameterizedTest
     @MethodSource("parameters")
-    void testSolution(String input, int expected) {
+    void testSolution(String input, int rowNums, String expected) {
         // given
         Solution solution = new Solution();
 
         // when
-        var length1 = solution.lengthOfLongestSubstring(input);
+        String result = solution.convert1(input, rowNums);
 
         // then
-        Assertions.assertThat(length1).isEqualTo(expected);
+        Assertions.assertThat(result).isEqualTo(expected);
     }
 }

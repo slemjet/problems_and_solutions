@@ -10,7 +10,7 @@ public class Solution {
             // check every palindrome center
             StringBuilder palindrome = new StringBuilder(split[i]);
             int shift = 0, k = 1;
-            // check if need to shift for same chars
+            // check if need to shift for same chars "daaaad" case
             while (i + shift >= 0 && i + shift < split.length - 1 && split[i].equals(split[i + shift + 1])) {
                 shift++;
                 palindrome.append(split[i + shift]);
