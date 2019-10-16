@@ -11,9 +11,5 @@
 
     <artifactId>easy</artifactId>
     <packaging>pom</packaging>
-    <modules>
-        <module>arrays</module>
-    </modules>
-
 
 </project>
