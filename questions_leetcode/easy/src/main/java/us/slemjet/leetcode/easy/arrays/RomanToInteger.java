@@ -1,4 +1,4 @@
-package us.slemjet.leetcode.medium.arrays;
+package us.slemjet.leetcode.easy.arrays;
 
 import java.util.HashMap;
 import java.util.Map;
