@@ -3,7 +3,7 @@ package us.slemjet.leetcode.medium.trees;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Solution {
+public class ValidateBinarySearchTree {
     public boolean isValidBST(TreeNode root) {
         return traverseInorder(root, new ArrayList<>());
     }
@@ -21,5 +21,18 @@ public class Solution {
             list.add(node.val);
 
         return node.right == null || traverseInorder(node.right, list);
+    }
+
+    static class TreeNode {
+        int val;
+        TreeNode left;
+        TreeNode right;
+
+        public TreeNode() {
+        }
+
+        public TreeNode(int x) {
+            val = x;
+        }
     }
 }
