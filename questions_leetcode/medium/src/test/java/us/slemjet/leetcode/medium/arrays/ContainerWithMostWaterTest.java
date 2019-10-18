@@ -1,9 +1,8 @@
-package us.slemjet.leetcode.medium.arrays.container_with_most_water;
+package us.slemjet.leetcode.medium.arrays;
 
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
-
-import static org.junit.jupiter.api.Assertions.*;
+import us.slemjet.leetcode.medium.arrays.ContainerWithMostWater;
 
 class ContainerWithMostWaterTest {
 

@@ -1,6 +1,6 @@
-package us.slemjet.leetcode.medium.arrays.string_to_integer;
+package us.slemjet.leetcode.medium.arrays;
 
-public class Solution {
+public class StringToInteger {
 
     public int atoi(String str) {
 

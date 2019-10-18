@@ -1,15 +1,16 @@
-package us.slemjet.leetcode.medium.arrays.longest_substr_without_repeating_chars;
+package us.slemjet.leetcode.medium.arrays;
 
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
+import us.slemjet.leetcode.medium.arrays.LongestSubstringWithoutRepeatingCharacters;
 
 import java.util.stream.Stream;
 
 import static org.junit.jupiter.params.provider.Arguments.*;
 
-class SolutionTest {
+class LongestSubstringWithoutRepeatingCharactersTest {
     private static Stream<Arguments> parameters() {
         return Stream.of(
                 of("abcabcbb", 3),
@@ -26,7 +27,7 @@ class SolutionTest {
     @MethodSource("parameters")
     void testSolution(String input, int expected) {
         // given
-        Solution solution = new Solution();
+        LongestSubstringWithoutRepeatingCharacters solution = new LongestSubstringWithoutRepeatingCharacters();
 
         // when
         var length1 = solution.lengthOfLongestSubstring(input);

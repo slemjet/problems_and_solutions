@@ -1,9 +1,9 @@
-package us.slemjet.leetcode.medium.arrays.longest_substr_without_repeating_chars;
+package us.slemjet.leetcode.medium.arrays;
 
 import java.util.HashMap;
 import java.util.Map;
 
-class Solution {
+class LongestSubstringWithoutRepeatingCharacters {
 
     public int lengthOfLongestSubstring(String s) {
         if (s == null || s.isEmpty())

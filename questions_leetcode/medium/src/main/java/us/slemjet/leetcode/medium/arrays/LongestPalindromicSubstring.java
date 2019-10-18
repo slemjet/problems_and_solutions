@@ -1,6 +1,6 @@
-package us.slemjet.leetcode.medium.arrays.longest_palindromic_substr;
+package us.slemjet.leetcode.medium.arrays;
 
-public class Solution {
+public class LongestPalindromicSubstring {
 
     public String longestPalindrome(String s) {
 

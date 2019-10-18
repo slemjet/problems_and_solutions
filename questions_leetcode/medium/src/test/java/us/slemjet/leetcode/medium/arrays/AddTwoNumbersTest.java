@@ -1,10 +1,10 @@
-package us.slemjet.leetcode.medium.arrays.add_two_numbers;
-
+package us.slemjet.leetcode.medium.arrays;
 
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
+import us.slemjet.leetcode.medium.arrays.AddTwoNumbers.ListNode;
 
-class SolutionTest {
+class AddTwoNumbersTest {
 
     @Test
     void addTwoNumbers() {
@@ -18,7 +18,7 @@ class SolutionTest {
         operand2.next.next = new ListNode(4);
 
         // when
-        ListNode result = new Solution().addTwoNumbers(operand1, operand2);
+        ListNode result = new AddTwoNumbers().addTwoNumbers(operand1, operand2);
         System.out.println(operand1);
         System.out.println(operand2);
         System.out.println(result);

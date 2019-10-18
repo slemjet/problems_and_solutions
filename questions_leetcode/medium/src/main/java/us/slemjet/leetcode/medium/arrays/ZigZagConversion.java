@@ -1,6 +1,6 @@
-package us.slemjet.leetcode.medium.arrays.zigzagconversion;
+package us.slemjet.leetcode.medium.arrays;
 
-public class Solution {
+public class ZigZagConversion {
     public String convert1(String s, int numRows) {
 
             if (numRows < 2 || s.length() < numRows)

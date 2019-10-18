@@ -1,13 +1,14 @@
-package us.slemjet.leetcode.medium.arrays.zigzagconversion;
+package us.slemjet.leetcode.medium.arrays;
 
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
+import us.slemjet.leetcode.medium.arrays.ZigZagConversion;
 
 import java.util.stream.Stream;
 
-class SolutionTest {
+class ZigZagConversionTest {
 
     private static Stream<Arguments> parameters() {
         return Stream.of(
@@ -22,7 +23,7 @@ class SolutionTest {
     @MethodSource("parameters")
     void testSolution1(String input, int rowNums, String expected) {
         // given
-        Solution solution = new Solution();
+        ZigZagConversion solution = new ZigZagConversion();
 
         // when
         String result = solution.convert1(input, rowNums);
@@ -35,7 +36,7 @@ class SolutionTest {
     @MethodSource("parameters")
     void testSolution2(String input, int rowNums, String expected) {
         // given
-        Solution solution = new Solution();
+        ZigZagConversion solution = new ZigZagConversion();
 
         // when
         String result = solution.convert2(input, rowNums);

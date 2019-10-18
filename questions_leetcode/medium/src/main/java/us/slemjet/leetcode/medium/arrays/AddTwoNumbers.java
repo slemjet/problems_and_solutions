@@ -1,4 +1,4 @@
-package us.slemjet.leetcode.medium.arrays.add_two_numbers;
+package us.slemjet.leetcode.medium.arrays;
 
 /**
  * Definition for singly-linked list.
@@ -8,7 +8,7 @@ package us.slemjet.leetcode.medium.arrays.add_two_numbers;
  * ListNode(int x) { val = x; }
  * }
  */
-class Solution {
+class AddTwoNumbers {
 
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
         ListNode result = new ListNode(0);
@@ -36,4 +36,17 @@ class Solution {
         return result;
     }
 
+    static class ListNode {
+        int val;
+        ListNode next;
+
+        public ListNode(int x) {
+            val = x;
+        }
+
+        @Override
+        public String toString() {
+            return " " + val + (next != null ? next : "");
+        }
+    }
 }

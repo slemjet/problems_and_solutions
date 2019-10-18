@@ -1,4 +1,4 @@
-package us.slemjet.leetcode.medium.arrays.container_with_most_water;
+package us.slemjet.leetcode.medium.arrays;
 
 public class ContainerWithMostWater {
 
