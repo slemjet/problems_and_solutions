@@ -5,18 +5,21 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 import java.util.stream.Stream;
+
+import static java.util.Arrays.asList;
 
 class ThreeSumTest {
 
     private static Stream<Arguments> parameters() {
         return Stream.of(
-                Arguments.of(new int[]{-1, 0, 1, 2, -1, -4}, Arrays.asList(Arrays.asList(-1, 0, 1), Arrays.asList(-1, -1, 2))),
-                Arguments.of(new int[]{0, 0, 0, 0}, Arrays.asList(Arrays.asList(0, 0, 0))),
-                Arguments.of(new int[]{-1, 0, 1, 0},Arrays.asList(Arrays.asList(-1, 0, 1)))
+                Arguments.of(new int[]{-1, 0, 1, 2, -1, -4}, asList(asList(-1, 0, 1), asList(-1, -1, 2))),
+                Arguments.of(new int[]{0, 0, 0, 0}, asList(asList(0, 0, 0))),
+                Arguments.of(new int[]{-1, 0, 1, 0}, asList(asList(-1, 0, 1))),
+                Arguments.of(new int[]{-4, -3, -3, -3, -3, 1, 1, 1, 2, 2, 3, 3, 3, 6},
+                        asList(asList(-4, 1, 3), asList(-4, 2, 2), asList(-3, -3, 6), asList(-3, 1, 2)))
         );
     }
 
