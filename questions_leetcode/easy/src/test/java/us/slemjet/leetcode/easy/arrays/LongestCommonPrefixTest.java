@@ -10,10 +10,6 @@ import java.util.stream.Stream;
 
 class LongestCommonPrefixTest {
 
-    @Test
-    void longestCommonPrefix() {
-    }
-
     private static Stream<Arguments> parameters() {
         return Stream.of(
                 Arguments.of(new String[]{"flower", "flow", "flight"}, "fl"),
