@@ -1,5 +1,7 @@
 package us.slemjet.leetcode.easy.lists;
 
+import us.slemjet.leetcode.hard.lists.ListNode;
+
 public class MergeTwoSortedLists {
     public ListNode mergeTwoLists(ListNode l1, ListNode l2) {
         if (l1 == null || l2 == null)
@@ -26,14 +28,5 @@ public class MergeTwoSortedLists {
         }
         current.next = null;
         return merged;
-    }
-
-    public static class ListNode {
-        int val;
-        ListNode next;
-
-        ListNode(int x) {
-            val = x;
-        }
     }
 }

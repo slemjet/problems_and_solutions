@@ -4,7 +4,7 @@ import org.assertj.core.api.Assertions;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
-import us.slemjet.leetcode.easy.lists.MergeTwoSortedLists.ListNode;
+import us.slemjet.leetcode.hard.lists.ListNode;
 
 import java.util.stream.Stream;
 
@@ -12,28 +12,12 @@ class MergeTwoSortedListsTest {
 
     private static Stream<Arguments> parameters() {
         return Stream.of(
-                Arguments.of(
-                        new ListNode(1) {{
-                            this.next = new ListNode(2);
-                            this.next.next = new ListNode(4);
-                        }},
-                        new ListNode(1) {{
-                            this.next = new ListNode(3);
-                            this.next.next = new ListNode(4);
-                        }},
-                        new ListNode(1) {{
-                            this.next = new ListNode(1);
-                            this.next.next = new ListNode(2);
-                            this.next.next.next = new ListNode(3);
-                            this.next.next.next.next = new ListNode(4);
-                            this.next.next.next.next.next = new ListNode(4);
-                        }}),
-                Arguments.of(
-                        new ListNode(1),
-                        new ListNode(2),
-                        new ListNode(1) {{
-                            this.next = new ListNode(2);
-                        }})
+                Arguments.of(ListNode.of(1, 2, 4),
+                        ListNode.of(1, 3, 4),
+                        ListNode.of(1, 1, 2, 3, 4, 4)),
+                Arguments.of(ListNode.of(1),
+                        ListNode.of(2),
+                        ListNode.of(1, 2))
         );
     }
 

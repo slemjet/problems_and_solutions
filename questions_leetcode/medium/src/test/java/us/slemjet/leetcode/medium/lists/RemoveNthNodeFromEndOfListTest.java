@@ -2,16 +2,14 @@ package us.slemjet.leetcode.medium.lists;
 
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
-import us.slemjet.leetcode.medium.lists.RemoveNthNodeFromEnOofList.ListNode;
+import us.slemjet.leetcode.medium.lists.RemoveNthNodeFromEndOfList.ListNode;
 
-import static org.junit.jupiter.api.Assertions.*;
-
-class RemoveNthNodeFromEnOofListTest {
+class RemoveNthNodeFromEndOfListTest {
 
     @Test
     void removeNthFromEnd1() {
         // given
-        RemoveNthNodeFromEnOofList solution = new RemoveNthNodeFromEnOofList();
+        RemoveNthNodeFromEndOfList solution = new RemoveNthNodeFromEndOfList();
         ListNode node = new ListNode(1);
 
         // when
@@ -24,7 +22,7 @@ class RemoveNthNodeFromEnOofListTest {
     @Test
     void removeNthFromEnd2() {
         // given
-        RemoveNthNodeFromEnOofList solution = new RemoveNthNodeFromEnOofList();
+        RemoveNthNodeFromEndOfList solution = new RemoveNthNodeFromEndOfList();
         // 1->2->3->4->5
         ListNode node = new ListNode(1);
         node.next = new ListNode(2);
@@ -45,7 +43,7 @@ class RemoveNthNodeFromEnOofListTest {
     @Test
     void removeNthFromEnd3() {
         // given
-        RemoveNthNodeFromEnOofList solution = new RemoveNthNodeFromEnOofList();
+        RemoveNthNodeFromEndOfList solution = new RemoveNthNodeFromEndOfList();
         // 1->2
         ListNode node = new ListNode(1);
         node.next = new ListNode(2);

@@ -1,6 +1,6 @@
 package us.slemjet.leetcode.medium.lists;
 
-public class RemoveNthNodeFromEnOofList {
+public class RemoveNthNodeFromEndOfList {
 
     public ListNode removeNthFromEnd(ListNode head, int n) {
 
