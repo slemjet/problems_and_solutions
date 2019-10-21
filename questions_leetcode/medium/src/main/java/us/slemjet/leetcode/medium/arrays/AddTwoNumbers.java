@@ -1,5 +1,7 @@
 package us.slemjet.leetcode.medium.arrays;
 
+import us.slemjet.leetcode.hard.lists.ListNode;
+
 /**
  * Definition for singly-linked list.
  * public class ListNode {
@@ -34,19 +36,5 @@ class AddTwoNumbers {
             }
         }
         return result;
-    }
-
-    static class ListNode {
-        int val;
-        ListNode next;
-
-        public ListNode(int x) {
-            val = x;
-        }
-
-        @Override
-        public String toString() {
-            return " " + val + (next != null ? next : "");
-        }
     }
 }

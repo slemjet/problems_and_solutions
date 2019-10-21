@@ -1,6 +1,6 @@
-package us.slemjet.leetcode.easy.arrays.reverese_integer;
+package us.slemjet.leetcode.easy.arrays;
 
-public class Solution {
+public class ReverseInteger {
 
     public int reverse(int x) {
 

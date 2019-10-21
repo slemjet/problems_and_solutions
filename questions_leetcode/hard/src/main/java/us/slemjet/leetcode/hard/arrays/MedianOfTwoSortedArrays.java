@@ -1,6 +1,6 @@
-package us.slemjet.leetcode.hard.arrays.median_of_two_sorted_arr;
+package us.slemjet.leetcode.hard.arrays;
 
-public class Solution {
+public class MedianOfTwoSortedArrays {
 
     public double findMedianSortedArrays(int[] nums1, int[] nums2) {
         int[] B = nums1.length > nums2.length ? nums1 : nums2;

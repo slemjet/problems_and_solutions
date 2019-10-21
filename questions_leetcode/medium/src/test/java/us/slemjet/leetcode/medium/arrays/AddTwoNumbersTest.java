@@ -2,7 +2,7 @@ package us.slemjet.leetcode.medium.arrays;
 
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
-import us.slemjet.leetcode.medium.arrays.AddTwoNumbers.ListNode;
+import us.slemjet.leetcode.hard.lists.ListNode;
 
 class AddTwoNumbersTest {
 

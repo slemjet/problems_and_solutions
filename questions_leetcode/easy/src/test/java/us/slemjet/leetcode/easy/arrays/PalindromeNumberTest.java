@@ -1,14 +1,14 @@
-package us.slemjet.leetcode.easy.arrays.is_palindrome_number;
+package us.slemjet.leetcode.easy.arrays;
 
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
-import us.slemjet.leetcode.easy.arrays.is_palindrome_number.Solution;
+import us.slemjet.leetcode.easy.arrays.PalindromeNumber;
 
 import java.util.stream.Stream;
 
-class SolutionTest {
+class PalindromeNumberTest {
     private static Stream<Arguments> parameters() {
         return Stream.of(
                 Arguments.of(121, true),
@@ -23,7 +23,7 @@ class SolutionTest {
     @MethodSource("parameters")
     void isPalindrome(int input, boolean expected) {
         // given
-        Solution solution = new Solution();
+        PalindromeNumber solution = new PalindromeNumber();
 
         // when
         Boolean palindrome = solution.isPalindrome(input);
@@ -36,7 +36,7 @@ class SolutionTest {
     @MethodSource("parameters")
     void isPalindrome2(int input, boolean expected) {
         // given
-        Solution solution = new Solution();
+        PalindromeNumber solution = new PalindromeNumber();
 
         // when
         Boolean palindrome = solution.isPalindrome2(input);
@@ -49,7 +49,7 @@ class SolutionTest {
     @MethodSource("parameters")
     void isPalindrome3(int input, boolean expected) {
         // given
-        Solution solution = new Solution();
+        PalindromeNumber solution = new PalindromeNumber();
 
         // when
         Boolean palindrome = solution.isPalindrome3(input);

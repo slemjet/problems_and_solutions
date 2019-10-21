@@ -1,5 +1,7 @@
 package us.slemjet.leetcode.medium.lists;
 
+import us.slemjet.leetcode.hard.lists.ListNode;
+
 public class RemoveNthNodeFromEndOfList {
 
     public ListNode removeNthFromEnd(ListNode head, int n) {
@@ -24,14 +26,5 @@ public class RemoveNthNodeFromEndOfList {
 
         prev.next = prev.next.next; // remove n-th from end
         return head;
-    }
-
-    public static class ListNode {
-        int val;
-        ListNode next;
-
-        ListNode(int x) {
-            val = x;
-        }
     }
 }

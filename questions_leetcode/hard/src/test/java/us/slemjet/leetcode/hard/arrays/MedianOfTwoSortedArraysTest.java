@@ -1,15 +1,16 @@
-package us.slemjet.leetcode.hard.arrays.median_of_two_sorted_arr;
+package us.slemjet.leetcode.hard.arrays;
 
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
+import us.slemjet.leetcode.hard.arrays.MedianOfTwoSortedArrays;
 
 import java.util.stream.Stream;
 
 import static org.junit.jupiter.params.provider.Arguments.*;
 
-class SolutionTest {
+class MedianOfTwoSortedArraysTest {
     private static Stream<Arguments> parameters() {
         return Stream.of(
                 of(new int[]{1, 3}, new int[]{2}, 2.0d),
@@ -23,7 +24,7 @@ class SolutionTest {
     @MethodSource("parameters")
     void testSolution(int[] nums1, int[] nums2, double expected) {
         // given
-        Solution solution = new Solution();
+        MedianOfTwoSortedArrays solution = new MedianOfTwoSortedArrays();
 
         // when
         double medianSortedArrays = solution.findMedianSortedArrays(nums1, nums2);

@@ -1,13 +1,14 @@
-package us.slemjet.leetcode.easy.arrays.reverese_integer;
+package us.slemjet.leetcode.easy.arrays;
 
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
+import us.slemjet.leetcode.easy.arrays.ReverseInteger;
 
 import java.util.stream.Stream;
 
-class SolutionTest {
+class ReverseIntegerTest {
 
     private static Stream<Arguments> parameters() {
         return Stream.of(
@@ -22,7 +23,7 @@ class SolutionTest {
     @MethodSource("parameters")
     void reverseTest(int input, int expected) {
         // given
-        Solution solution = new Solution();
+        ReverseInteger solution = new ReverseInteger();
 
         // when
         int result = solution.reverse(input);
