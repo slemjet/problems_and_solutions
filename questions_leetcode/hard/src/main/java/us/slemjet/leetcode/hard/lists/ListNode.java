@@ -1,7 +1,7 @@
 package us.slemjet.leetcode.hard.lists;
 
 public class ListNode {
-    public  int val;
+    public int val;
     public ListNode next;
 
     public ListNode(int x) {
@@ -19,5 +19,10 @@ public class ListNode {
             return result;
         }
         return null;
+    }
+
+    @Override
+    public String toString() {
+        return val + " -> " + (next == null ? "null" : next.toString());
     }
 }

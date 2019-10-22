@@ -14,7 +14,8 @@ class SwapNodesInPairsTest {
 
     private static Stream<Arguments> parameters() {
         return Stream.of(
-                Arguments.of(of(1, 2, 3, 4), of(2, 1, 4, 3))
+                Arguments.of(of(1, 2, 3, 4), of(2, 1, 4, 3)),
+                Arguments.of(of(1, 2, 3, 4, 5), of(2, 1, 4, 3, 5))
         );
     }
 
