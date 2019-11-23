@@ -31,3 +31,4 @@ hs_err_pid*
 /.idea/problems_and_solutions.iml
 /.idea/vcs.xml
 /.idea/libraries/
+*.iml
