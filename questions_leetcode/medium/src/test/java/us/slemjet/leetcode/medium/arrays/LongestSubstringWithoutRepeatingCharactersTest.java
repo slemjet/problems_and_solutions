@@ -30,7 +30,7 @@ class LongestSubstringWithoutRepeatingCharactersTest {
         LongestSubstringWithoutRepeatingCharacters solution = new LongestSubstringWithoutRepeatingCharacters();
 
         // when
-        var length1 = solution.lengthOfLongestSubstring(input);
+        int length1 = solution.lengthOfLongestSubstring(input);
 
         // then
         Assertions.assertThat(length1).isEqualTo(expected);
