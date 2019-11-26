@@ -2,31 +2,20 @@ package pl.slemjet.katas.dynamic;
 
 public class NumberSolitaire {
 
-    public static int solution (int[] A){
+    public static int solution(int[] A) {
+        // write your code in Java SE 8
+        // populate maximum possible values up to each index
+        int[] sumTo = new int[A.length];
+        sumTo[0] = A[0];
 
-        int[] maxTo = new int[A.length];
-
-        // set starting point
-        maxTo[0] = A[0];
-
-        for (int currElem = 1; currElem < A.length; currElem++) {
-            // maximum value to be found and set
-
+        for (int i = 1; i < A.length; i++) {
             int max = Integer.MIN_VALUE;
-            
-            // count max within dies 1-6
-            for (int die = 1; die <= 6; die++) {
-
-                if(currElem - die >= 0){ // exclude negative indexes
-
-                    // get max between sum of current position and previous possible die and current max
-                    max = Math.max(maxTo[currElem - die] + A[currElem], max);
-                }
-
+            for (int die = 1; die <= 6 && i - die >= 0; die++) {
+                // go back up to 6 dice values and get maximum possible value for i-th position
+                max = Math.max(sumTo[i - die] + A[i], max);
             }
-            maxTo[currElem] = max;
+            sumTo[i] = max;
         }
-
-        return maxTo[maxTo.length - 1];
+        return sumTo[sumTo.length - 1];
     }
 }
