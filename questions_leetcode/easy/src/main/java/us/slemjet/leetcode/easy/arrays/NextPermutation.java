@@ -1,6 +1,13 @@
 package us.slemjet.leetcode.easy.arrays;
 
+
 public class NextPermutation {
+
+    /**
+     * O(n) time complexity
+     * O(1) space complexity
+     * @param nums
+     */
     public void nextPermutation(int[] nums) {
         if (nums.length == 1)
             return;
