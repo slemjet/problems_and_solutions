@@ -17,12 +17,12 @@ public class SearchInRotatedSortedArray {
         if (start > end)
             return -1;
 
-        if (nums[start] > nums[mid]) { // second half is sorted
+        if (nums[start] > nums[mid]) { // second half is sorted [...pivot...] mid [...sorted...]
             if (target < nums[mid] || target >= nums[start])
                 return find(nums, start, mid - 1, target); // search in left part
             else
                 return find(nums, mid + 1, end, target); // search in right part
-        } else  // first half is sorted
+        } else  // first half is sorted   [...sorted...] mid [...pivot...]
             if (target < nums[mid] && target >= nums[start])
                 return find(nums, start, mid - 1, target); // search in left part
             else
