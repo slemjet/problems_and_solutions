@@ -3,6 +3,9 @@ package us.slemjet.leetcode.medium.arrays;
 import java.util.Arrays;
 
 /**
+ * Time: 100%
+ * Memory: 97.16%
+ *
  * Time complexity: 2 * O(logn)
  * Space complexity: (1)
  */
