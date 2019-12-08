@@ -19,7 +19,7 @@ public class SudokuSolver {
         int nextRow = (col + 1) == board[0].length ? row + 1 : row;
         int nextCol = (col + 1) == board[0].length ? 0 : col + 1;
         if (Character.isDigit(board[row][col]))
-            return solve(board, nextRow, nextCol); // value already set -> find next indices
+            return solve(board, nextRow, nextCol); // value already set -> solve with next indices
         else {
             // search for potential solution
             for (char k = '1'; k <= '9'; k++) {
