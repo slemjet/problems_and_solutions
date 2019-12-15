@@ -1,4 +1,4 @@
-package us.slemjet.leetcode.medium.arrays;
+package us.slemjet.leetcode.medium.numbers;
 
 import java.util.ArrayList;
 import java.util.List;
