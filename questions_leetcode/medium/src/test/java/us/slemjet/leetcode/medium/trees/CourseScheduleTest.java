@@ -11,10 +11,10 @@ class CourseScheduleTest {
 
     private static Stream<Arguments> parameters() {
         return Stream.of(
-//                Arguments.of(2, new int[][]{}, true), // []
-//                Arguments.of(2, new int[][]{{1, 0}}, true), // [1:0]
-//                Arguments.of(2, new int[][]{{1, 0}, {0, 1}}, false), // [[1:0],[0:1]]
-//                Arguments.of(3, new int[][]{{0, 2}, {1, 2}, {2, 0}}, false), // 3 [[0,2],[1,2],[2,0]]
+                Arguments.of(2, new int[][]{}, true), // []
+                Arguments.of(2, new int[][]{{1, 0}}, true), // [1:0]
+                Arguments.of(2, new int[][]{{1, 0}, {0, 1}}, false), // [[1:0],[0:1]]
+                Arguments.of(3, new int[][]{{0, 2}, {1, 2}, {2, 0}}, false), // 3 [[0,2],[1,2],[2,0]]
                 Arguments.of(9, new int[][]{{0, 1}, {1, 3}, {1, 4}, {2, 4}, {4, 6}, {5, 7}, {7, 8}}, true)
         );
     }

@@ -3,8 +3,6 @@ package us.slemjet.leetcode.medium.trees;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
-
 class ImplementTrieTest {
 
     @Test
