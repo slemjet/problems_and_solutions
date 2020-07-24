@@ -32,5 +32,4 @@ class FirstBadVersionTest {
         // then
         Assertions.assertThat(ways).isEqualTo(expected);
     }
-
 }
