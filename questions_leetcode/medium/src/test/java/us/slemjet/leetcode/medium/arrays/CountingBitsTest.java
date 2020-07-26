@@ -18,7 +18,7 @@ class CountingBitsTest {
 
     @ParameterizedTest
     @MethodSource("parameters")
-    void oddEvenList(int num, int[] expected) {
+    void countBitsTest(int num, int[] expected) {
         // given
         CountingBits solution = new CountingBits();
 
