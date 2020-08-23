@@ -1,4 +1,4 @@
-package us.slemjet.leetcode.easy.binary;
+package us.slemjet.leetcode.easy.tree;
 
 public class FirstBadVersion {
 
