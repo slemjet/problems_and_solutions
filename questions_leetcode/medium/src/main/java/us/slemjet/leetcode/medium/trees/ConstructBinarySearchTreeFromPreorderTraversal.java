@@ -48,8 +48,8 @@ public class ConstructBinarySearchTreeFromPreorderTraversal {
         }
         TreeNode root = new TreeNode(preorder[currIdx]);
         currIdx++;
-        root.left = bst(preorder, root.val);
-        root.right = bst(preorder, upperBound);
+        root.left = bst(preorder, root.val); // only less than values can be to the left
+        root.right = bst(preorder, upperBound); // more than values can be to hte right
         return root;
     }
 
