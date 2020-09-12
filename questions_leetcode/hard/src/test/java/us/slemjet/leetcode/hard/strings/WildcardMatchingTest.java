@@ -11,11 +11,11 @@ class WildcardMatchingTest {
 
     private static Stream<Arguments> parameters() {
         return Stream.of(
-//                Arguments.of("aa", "a", false),
-//                Arguments.of("aa", "*", true),
-//                Arguments.of("cb", "?a", false),
-//                Arguments.of("abced", "*a*b", false),
-//                Arguments.of("acdcb", "a*c?b", false),
+                Arguments.of("aa", "a", false),
+                Arguments.of("aa", "*", true),
+                Arguments.of("cb", "?a", false),
+                Arguments.of("abced", "*a*b", false),
+                Arguments.of("acdcb", "a*c?b", false),
                 Arguments.of("acdcb", "a*cd?b", true)
         );
     }
