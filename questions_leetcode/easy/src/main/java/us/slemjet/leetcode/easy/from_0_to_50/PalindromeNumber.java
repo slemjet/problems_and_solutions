@@ -1,4 +1,4 @@
-package us.slemjet.leetcode.easy.arrays;
+package us.slemjet.leetcode.easy.from_0_to_50;
 
 import java.util.*;
 

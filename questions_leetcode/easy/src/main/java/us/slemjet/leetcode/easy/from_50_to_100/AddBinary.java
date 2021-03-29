@@ -1,4 +1,4 @@
-package us.slemjet.leetcode.easy.from_0_to_50;
+package us.slemjet.leetcode.easy.from_50_to_100;
 
 /**
  * Runtime: 100.00%

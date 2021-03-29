@@ -1,4 +1,4 @@
-package us.slemjet.leetcode.easy.dynamic;
+package us.slemjet.leetcode.easy.from_50_to_100;
 
 import java.util.HashMap;
 import java.util.Map;

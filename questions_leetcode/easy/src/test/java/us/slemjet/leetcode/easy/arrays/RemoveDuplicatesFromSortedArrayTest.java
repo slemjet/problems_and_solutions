@@ -1,10 +1,10 @@
 package us.slemjet.leetcode.easy.arrays;
 
 import org.assertj.core.api.Assertions;
-import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
+import us.slemjet.leetcode.easy.from_0_to_50.RemoveDuplicatesFromSortedArray;
 
 import java.util.stream.Stream;
 

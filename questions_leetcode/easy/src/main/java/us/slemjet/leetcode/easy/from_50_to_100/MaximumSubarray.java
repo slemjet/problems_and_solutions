@@ -1,4 +1,4 @@
-package us.slemjet.leetcode.easy.arrays;
+package us.slemjet.leetcode.easy.from_50_to_100;
 
 
 public class MaximumSubarray {

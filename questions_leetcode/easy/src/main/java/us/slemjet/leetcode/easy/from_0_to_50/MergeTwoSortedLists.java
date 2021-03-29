@@ -1,4 +1,4 @@
-package us.slemjet.leetcode.easy.lists;
+package us.slemjet.leetcode.easy.from_0_to_50;
 
 import us.slemjet.leetcode.hard.lists.ListNode;
 

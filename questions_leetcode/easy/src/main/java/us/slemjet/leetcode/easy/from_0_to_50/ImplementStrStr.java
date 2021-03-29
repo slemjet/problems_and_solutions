@@ -1,4 +1,4 @@
-package us.slemjet.leetcode.easy.strings;
+package us.slemjet.leetcode.easy.from_0_to_50;
 
 public class ImplementStrStr {
 

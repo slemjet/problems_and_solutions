@@ -1,4 +1,4 @@
-package us.slemjet.leetcode.easy.strings;
+package us.slemjet.leetcode.easy.from_0_to_50;
 
 import java.util.Collections;
 import java.util.HashMap;

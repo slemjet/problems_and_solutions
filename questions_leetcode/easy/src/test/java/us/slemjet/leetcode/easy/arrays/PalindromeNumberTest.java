@@ -4,7 +4,7 @@ import org.assertj.core.api.Assertions;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
-import us.slemjet.leetcode.easy.arrays.PalindromeNumber;
+import us.slemjet.leetcode.easy.from_0_to_50.PalindromeNumber;
 
 import java.util.stream.Stream;
 
