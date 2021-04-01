@@ -1,4 +1,4 @@
-package us.slemjet.leetcode.easy.dynamic;
+package us.slemjet.leetcode.easy.from_100_to_150;
 
 public class BestTimeToByAndSellStock {
     public int maxProfit(int[] prices) {
