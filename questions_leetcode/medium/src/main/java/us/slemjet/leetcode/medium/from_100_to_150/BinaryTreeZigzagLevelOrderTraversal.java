@@ -10,7 +10,7 @@ public class BinaryTreeZigzagLevelOrderTraversal {
     /**
      * Recursive
      * Runtime: 100.00%
-     * Memory Usage: 40.06%
+     * Memory Usage: 95.51%
      */
     public List<List<Integer>> zigzagLevelOrder(TreeNode root) {
 
