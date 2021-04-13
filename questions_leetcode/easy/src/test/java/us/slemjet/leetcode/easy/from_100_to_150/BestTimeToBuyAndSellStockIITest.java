@@ -7,7 +7,7 @@ import org.junit.jupiter.params.provider.MethodSource;
 
 import java.util.stream.Stream;
 
-class BestTimeToByAndSellStockTest {
+class BestTimeToBuyAndSellStockIITest {
 
     private static Stream<Arguments> parameters() {
         return Stream.of(
@@ -20,7 +20,7 @@ class BestTimeToByAndSellStockTest {
     @MethodSource("parameters")
     void climbStairs(int[] prices, int expected) {
         // given
-        BestTimeToByAndSellStock solution = new BestTimeToByAndSellStock();
+        BestTimeToBuyAndSellStock solution = new BestTimeToBuyAndSellStock();
 
         // when
         int maxProfit = solution.maxProfit(prices);
