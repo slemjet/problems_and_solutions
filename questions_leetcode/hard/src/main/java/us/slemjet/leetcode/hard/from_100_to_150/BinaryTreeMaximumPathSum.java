@@ -29,7 +29,7 @@ public class BinaryTreeMaximumPathSum {
         int sum = leftMax + rightMax + node.val;
         // Check if sum is maximum
         max = Math.max(max, sum);
-        // can take either left ot right
+        // can take either left ot right as it is a subtree path
         return node.val + Math.max(leftMax, rightMax);
     }
 
