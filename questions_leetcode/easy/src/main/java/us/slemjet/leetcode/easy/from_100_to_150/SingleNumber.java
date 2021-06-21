@@ -13,6 +13,7 @@ public class SingleNumber {
 
         int sum = 0;
         for (int num : nums) {
+            // XOR twice gives 0 so only element appearing once remains
             sum = sum ^ num;
         }
         return sum;
