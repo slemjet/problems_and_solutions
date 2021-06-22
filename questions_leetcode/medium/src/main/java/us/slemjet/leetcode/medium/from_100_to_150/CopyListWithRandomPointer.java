@@ -1,5 +1,7 @@
 package us.slemjet.leetcode.medium.from_100_to_150;
 
+import java.util.Objects;
+
 /**
  * 138. Copy List with Random Pointer
  */
@@ -52,6 +54,19 @@ public class CopyListWithRandomPointer {
         int val;
         Node next;
         Node random;
+
+        @Override
+        public boolean equals(Object o) {
+            if (this == o) return true;
+            if (o == null || getClass() != o.getClass()) return false;
+            Node node = (Node) o;
+            return val == node.val && Objects.equals(next, node.next);
+        }
+
+        @Override
+        public int hashCode() {
+            return Objects.hash(val, next);
+        }
 
         public Node(int val) {
             this.val = val;
