@@ -1,12 +1,13 @@
 package pl.slemjet.kata.cyclicrotation;
 
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 
 class CyclicRotationTest {
 
-    @Test
+    @Test @Disabled
     void cycleArrayWithNewTest() {
         int[] array = new int[]{3, 8, 9, 7, 6};
         assertArrayEquals(new int[]{9, 7, 6, 3, 8}, CyclicRotation.solution(array, 3));

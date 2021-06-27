@@ -2,10 +2,12 @@ package us.slemjet.leetcode.medium.from_1_to_50;
 
 import org.assertj.core.api.Assertions;
 import org.assertj.core.util.Lists;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 
+import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Stream;
 
@@ -15,15 +17,15 @@ class GroupAnagramsTest {
         return Stream.of(
                 Arguments.of(new String[]{"eat", "tea", "tan", "ate", "nat", "bat"}, Lists.newArrayList(
                         Lists.newArrayList("bat"),
-                        Lists.newArrayList("nat", "tan"),
-                        Lists.newArrayList("ate", "eat", "tea")
+                        Lists.newArrayList("tan", "nat"),
+                        Lists.newArrayList("eat", "tea", "ate")
                 )),
                 Arguments.of(new String[]{"eat", "tea", "tan", "ate", "nat", "bat", "ac", "bd", "aac", "bbd", "aacc", "bbdd", "acc", "bdd"}, Lists.newArrayList(
                         Lists.newArrayList("bdd"),
                         Lists.newArrayList("bbdd"),
-                        Lists.newArrayList("ate", "eat", "tea"),
+                        Lists.newArrayList("eat", "tea", "ate"),
                         Lists.newArrayList("acc"),
-                        Lists.newArrayList("nat", "tan"),
+                        Lists.newArrayList("tan", "nat"),
                         Lists.newArrayList("aacc"),
                         Lists.newArrayList("bat"),
                         Lists.newArrayList("ac"),
@@ -31,10 +33,8 @@ class GroupAnagramsTest {
                         Lists.newArrayList("aac"),
                         Lists.newArrayList("bbd")
                 )),
-                Arguments.of(new String[]{""}, Lists.newArrayList(
-                        Lists.newArrayList(""))),
-                Arguments.of(new String[]{"a"}, Lists.newArrayList(
-                        Lists.newArrayList("a")))
+                Arguments.of(new String[]{""}, Arrays.asList(Arrays.asList(""))),
+                Arguments.of(new String[]{"a"}, Arrays.asList(Arrays.asList("a")))
         );
     }
 

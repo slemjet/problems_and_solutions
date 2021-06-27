@@ -40,7 +40,7 @@ class SubsetsTest {
         List<List<Integer>> result = solution.subsets(nums);
 
         // then
-        Assertions.assertThat(result).isEqualTo(expected);
+        Assertions.assertThat(result).containsExactlyInAnyOrderElementsOf(expected);
     }
 
     @ParameterizedTest
@@ -53,7 +53,7 @@ class SubsetsTest {
         List<List<Integer>> result = solution.subsetsBit(nums);
 
         // then
-        Assertions.assertThat(result).isEqualTo(expected);
+        Assertions.assertThat(result).containsExactlyInAnyOrderElementsOf(expected);
     }
 
 }

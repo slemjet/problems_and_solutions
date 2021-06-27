@@ -1,6 +1,7 @@
 package pl.slemjet.katas.maxproductofthree;
 
 import org.assertj.core.api.Assertions;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
@@ -19,6 +20,7 @@ class NumberOfDiscIntersectionsTest {
         );
     }
 
+    @Disabled
     @ParameterizedTest
     @MethodSource("parameters")
     void solutionTest(int[] array, int expected) {

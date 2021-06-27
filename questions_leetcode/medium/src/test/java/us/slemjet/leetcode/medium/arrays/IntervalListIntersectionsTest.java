@@ -44,7 +44,7 @@ class IntervalListIntersectionsTest {
         int[][] result = solution.intervalIntersection(A, B);
 
         // then
-        Assertions.assertThat(result).containsExactlyInAnyOrder(expected);
+        Assertions.assertThat(result).isEqualTo(expected);
     }
 
 }

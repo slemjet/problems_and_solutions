@@ -24,8 +24,9 @@ class KClosestPointsToOriginTest {
                                 new int[]{5, -1},
                                 new int[]{-2, 4}}, 2,
                         new int[][]{
-                                new int[]{3, 3},
-                                new int[]{-2, 4}}
+                                new int[]{-2, 4},
+                                new int[]{3, 3}
+                        }
                 )
         );
     }
@@ -40,7 +41,7 @@ class KClosestPointsToOriginTest {
         int[][] result = solution.kClosest(points, K);
 
         // then
-        Assertions.assertThat(result).containsExactlyInAnyOrder(expected);
+        Assertions.assertThat(result).isEqualTo(expected);
     }
 
 }

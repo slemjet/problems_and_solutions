@@ -1,6 +1,7 @@
 package us.slemjet.leetcode.easy.binary;
 
 import org.assertj.core.api.Assertions;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
@@ -18,6 +19,7 @@ class FirstBadVersionTest {
         );
     }
 
+    @Disabled
     @ParameterizedTest
     @MethodSource("parameters")
     void climbStairs(int n, int expected) {
