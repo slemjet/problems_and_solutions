@@ -9,22 +9,16 @@ import java.util.stream.IntStream;
 public class LargestNumber {
 
     /**
-     * Runtime: 30.57%
+     * Runtime: 47.64%
      * Memory Usage: 77.43%
      */
     public String largestNumber(int[] nums) {
 
-        for (int i = 0; i < nums.length; i++) {
-            if (nums[i] != 0) {
-                break;
-            }
-            if (i == nums.length - 1) {
-                return "0";
-            }
-        }
-
-        return IntStream.of(nums).mapToObj(String::valueOf)
-                .sorted((o1, o2) -> -Long.compare(Long.parseLong(o1 + o2), Long.parseLong(o2 + o1)))
+        // Compare combinations of values = 9 and 91 -> 991 > 919
+        String result = IntStream.of(nums).mapToObj(String::valueOf)
+                .sorted((o1, o2) -> (o2 + o1).compareTo(o1 + o2))
                 .collect(Collectors.joining());
+        // Handle edge case with 0 only
+        return result.charAt(0) == '0' ? "0" : result;
     }
 }
