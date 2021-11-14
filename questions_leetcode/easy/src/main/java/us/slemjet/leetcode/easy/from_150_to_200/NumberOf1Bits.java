@@ -14,8 +14,8 @@ public class NumberOf1Bits {
         int result = 0;
 
         for (int i = 0; i < 32; i++) {
-            result += n & 1;
-            n = n >> 1;
+            result += n & 1; // Check if current rank is "1"
+            n = n >> 1; // Shift to next rank
         }
 
         return result;
