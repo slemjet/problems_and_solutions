@@ -1,4 +1,4 @@
-package us.slemjet.leetcode.easy.arrays;
+package us.slemjet.leetcode.easy.from_201_to_250;
 
 import java.util.Arrays;
 
@@ -7,8 +7,6 @@ public class CountPrimes {
     /**
      * Runtime: 13 ms, 57.20%
      * Memory Usage: 9.43%
-     * @param n
-     * @return
      */
     public int countPrimes(int n) {
         int result = 0;

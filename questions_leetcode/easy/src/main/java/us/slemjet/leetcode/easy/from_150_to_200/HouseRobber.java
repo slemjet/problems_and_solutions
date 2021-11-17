@@ -1,4 +1,4 @@
-package us.slemjet.leetcode.easy.dynamic;
+package us.slemjet.leetcode.easy.from_150_to_200;
 
 public class HouseRobber {
 
