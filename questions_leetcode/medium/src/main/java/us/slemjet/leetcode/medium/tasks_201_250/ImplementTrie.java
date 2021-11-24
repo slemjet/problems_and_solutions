@@ -1,13 +1,16 @@
-package us.slemjet.leetcode.medium.trees;
+package us.slemjet.leetcode.medium.tasks_201_250;
 
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
+/**
+ * 208. Implement Trie (Prefix Tree)
+ */
 public class ImplementTrie {
 
-    static class Trie {
+    public static class Trie {
 
         private Node root;
 
@@ -141,7 +144,7 @@ public class ImplementTrie {
      * Runtime: 15.55%
      * Memory: 5.02%
      */
-    static class TrieRed {
+    public static class TrieRed {
 
         private NodeRed root;
 

@@ -1,8 +1,11 @@
-package us.slemjet.leetcode.medium.arrays;
+package us.slemjet.leetcode.medium.tasks_151_200;
 
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * 169. Majority Element
+ */
 public class MajorityElement {
 
     /**

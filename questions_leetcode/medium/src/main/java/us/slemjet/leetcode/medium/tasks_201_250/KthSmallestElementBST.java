@@ -1,8 +1,11 @@
-package us.slemjet.leetcode.medium.trees;
+package us.slemjet.leetcode.medium.tasks_201_250;
 
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * 230. Kth Smallest Element in a BST
+ */
 public class KthSmallestElementBST {
 
     int result = 0;

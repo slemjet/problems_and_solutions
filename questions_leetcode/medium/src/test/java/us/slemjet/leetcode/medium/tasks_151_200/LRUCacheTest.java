@@ -1,7 +1,8 @@
-package us.slemjet.leetcode.medium.design;
+package us.slemjet.leetcode.medium.tasks_151_200;
 
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
+import us.slemjet.leetcode.medium.tasks_101_150.LRUCache;
 
 class LRUCacheTest {
 

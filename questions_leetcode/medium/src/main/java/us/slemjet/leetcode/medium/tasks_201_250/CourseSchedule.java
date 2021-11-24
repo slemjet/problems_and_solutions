@@ -1,4 +1,4 @@
-package us.slemjet.leetcode.medium.trees;
+package us.slemjet.leetcode.medium.tasks_201_250;
 
 import java.util.*;
 

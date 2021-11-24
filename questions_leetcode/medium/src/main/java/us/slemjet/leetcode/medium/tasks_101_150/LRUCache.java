@@ -1,4 +1,4 @@
-package us.slemjet.leetcode.medium.design;
+package us.slemjet.leetcode.medium.tasks_101_150;
 
 import java.util.LinkedHashMap;
 import java.util.Map;
@@ -11,10 +11,12 @@ import java.util.Map;
  */
 
 /**
+ * 146. LRU Cache
+ *
  * Runtime: 99.87%
  * Memory: 65.03%
  */
-class LRUCache {
+public class LRUCache {
 
     private LinkedHashMap<Integer, Integer> storage;
     public LRUCache(final int capacity) {
