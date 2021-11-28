@@ -30,4 +30,17 @@ class KthLargestElementInAnArrayTest {
         // then
         Assertions.assertThat(value).isEqualTo(expected);
     }
+
+    @ParameterizedTest
+    @MethodSource("parameters")
+    void testFindKthLargestQueue(int[] nums, int k, int expected) {
+        // given
+        KthLargestElementInAnArray solution = new KthLargestElementInAnArray();
+
+        // when
+        int value = solution.findKthLargestQueue(nums, k);
+
+        // then
+        Assertions.assertThat(value).isEqualTo(expected);
+    }
 }
