@@ -15,6 +15,7 @@ public class WordSearchII {
     public List<String> findWords(char[][] board, String[] words) {
 
         List<String> result = new ArrayList<>();
+        // Use a Trie to check for words match
         TrieNode trie = createTrie(words);
 
         for (int i = 0; i < board.length; i++) {
