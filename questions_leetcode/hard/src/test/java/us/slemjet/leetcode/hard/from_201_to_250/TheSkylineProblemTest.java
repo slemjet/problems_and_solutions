@@ -48,7 +48,7 @@ class TheSkylineProblemTest {
 
     @ParameterizedTest
     @MethodSource("parameters")
-    void testFindWords(int[][] buildings, List<List<Integer>> expected) {
+    void testGetSkyline(int[][] buildings, List<List<Integer>> expected) {
         // given
         TheSkylineProblem solution = new TheSkylineProblem();
 
