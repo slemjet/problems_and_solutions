@@ -22,7 +22,7 @@ class DeleteNodeInALinkedListTest {
 
     @ParameterizedTest
     @MethodSource("parameters")
-    void testLowestCommonAncestor(ListNode node, ListNode expected) {
+    void testDeleteNode(ListNode node, ListNode expected) {
         // given
         DeleteNodeInALinkedList solution = new DeleteNodeInALinkedList();
 
