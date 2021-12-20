@@ -34,7 +34,7 @@ class GameOfLifeTest {
 
     @ParameterizedTest
     @MethodSource("parameters")
-    void testFindDuplicate(int[][] board, int[][] expected) {
+    void testGameOfLife(int[][] board, int[][] expected) {
         // given
         GameOfLife solution = new GameOfLife();
 
