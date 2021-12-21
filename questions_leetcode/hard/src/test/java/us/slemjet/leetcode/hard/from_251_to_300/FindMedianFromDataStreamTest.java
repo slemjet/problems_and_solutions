@@ -28,12 +28,27 @@ class FindMedianFromDataStreamTest {
 
     @ParameterizedTest
     @MethodSource("parameters")
-    void testFindDuplicate(String[] commands, Integer[] params, Double[] expected) {
+    void testFindMedian(String[] commands, Integer[] params, Double[] expected) {
 
         FindMedianFromDataStream.MedianFinder medianFinder = null;
         for (int i = 0; i < commands.length; i++) {
             if ("MedianFinder".equals(commands[i]))
                 medianFinder = new FindMedianFromDataStream.MedianFinder();
+            else if ("addNum".equals(commands[i]))
+                medianFinder.addNum(params[i]);
+            else if ("findMedian".equals(commands[i]))
+                Assertions.assertThat(medianFinder.findMedian()).isEqualTo(expected[i]);
+        }
+    }
+
+    @ParameterizedTest
+    @MethodSource("parameters")
+    void testFindMedianBst(String[] commands, Integer[] params, Double[] expected) {
+
+        FindMedianFromDataStream.MedianFinderBst medianFinder = null;
+        for (int i = 0; i < commands.length; i++) {
+            if ("MedianFinder".equals(commands[i]))
+                medianFinder = new FindMedianFromDataStream.MedianFinderBst();
             else if ("addNum".equals(commands[i]))
                 medianFinder.addNum(params[i]);
             else if ("findMedian".equals(commands[i]))
