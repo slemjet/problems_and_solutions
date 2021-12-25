@@ -1,6 +1,8 @@
 package us.slemjet.leetcode.medium.tasks_301_350;
 
 import java.util.Arrays;
+import java.util.LinkedList;
+import java.util.Queue;
 
 /**
  * 322. Coin Change
@@ -11,8 +13,8 @@ public class CoinChange {
      * Top - bottom approach - use memoization
      * Recursive approach
      * <p>
-     * Runtime: 39.94% of Java online submissions for Coin Change.
-     * Memory Usage: 36.54% of Java online submissions for Coin Change.
+     * Runtime: 39.94%
+     * Memory Usage: 36.54%
      */
     public int coinChangeMemo(int[] coins, int amount) {
         // Use memo to cache results
@@ -41,9 +43,9 @@ public class CoinChange {
     /**
      * Bottom up approach
      * Iterative approach - store all results up to amount as dp[] array
-     *
-     * Runtime: 94.51% of Java online submissions for Coin Change.
-     * Memory Usage: 95.22% of Java online submissions for Coin Change.
+     * <p>
+     * Runtime: 94.51%
+     * Memory Usage: 95.22%
      */
     public int coinChange(int[] coins, int amount) {
         // Use dp array to store all results up to current value
@@ -64,5 +66,37 @@ public class CoinChange {
         }
         // Consider corner cases when artificial initial amount + 1 is increased (no result)
         return dp[amount] > amount ? -1 : dp[amount];
+    }
+
+    /**
+     * Use BFS
+     *
+     * Runtime: 11.01%
+     * Memory Usage: 29.11%
+     */
+    public int coinChangeBFS(int[] coins, int amount) {
+        Queue<Integer> combinations = new LinkedList<>();
+        combinations.add(0);
+        int count = 0;
+        boolean[] visited = new boolean[amount + 1]; // Store amounts already processed
+        while (!combinations.isEmpty()) {
+            // Check for each of current combinations
+            int combLength = combinations.size();
+            for (int i = 0; i < combLength; i++) {
+                int currAmount = combinations.poll();
+                if (currAmount == amount) {
+                    return count; // Found solution
+                }
+                if (currAmount > amount || visited[currAmount]) {
+                    continue; // Skip combination
+                }
+                visited[currAmount] = true;
+                for (int coin : coins) {
+                    combinations.add(currAmount + coin); // Add more combinations with current sum and all other coins
+                }
+            }
+            count++;
+        }
+        return -1;
     }
 }

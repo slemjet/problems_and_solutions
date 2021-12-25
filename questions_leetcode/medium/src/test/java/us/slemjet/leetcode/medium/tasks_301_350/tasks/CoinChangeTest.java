@@ -48,4 +48,17 @@ class CoinChangeTest {
         // then
         Assertions.assertThat(result).isEqualTo(expected);
     }
+
+    @ParameterizedTest
+    @MethodSource("parameters")
+    void testCoinChangeBFS(int[] coins, int amount, int expected) {
+        // given
+        CoinChange solution = new CoinChange();
+
+        // when
+        int result = solution.coinChangeBFS(coins, amount);
+
+        // then
+        Assertions.assertThat(result).isEqualTo(expected);
+    }
 }
