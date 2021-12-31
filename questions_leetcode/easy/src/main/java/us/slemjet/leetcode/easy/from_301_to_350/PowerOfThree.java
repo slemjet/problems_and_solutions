@@ -1,4 +1,4 @@
-package us.slemjet.leetcode.easy.from_301_to_350.tasks;
+package us.slemjet.leetcode.easy.from_301_to_350;
 
 /**
  * 326. Power of Three
