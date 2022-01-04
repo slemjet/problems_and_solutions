@@ -1,4 +1,4 @@
-package us.slemjet.leetcode.medium.arrays;
+package us.slemjet.leetcode.medium.tasks_301_350;
 
 public class CountingBits {
 

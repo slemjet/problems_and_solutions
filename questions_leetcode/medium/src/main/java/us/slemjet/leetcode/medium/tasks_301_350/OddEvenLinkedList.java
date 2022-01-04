@@ -1,4 +1,4 @@
-package us.slemjet.leetcode.medium.lists;
+package us.slemjet.leetcode.medium.tasks_301_350;
 
 public class OddEvenLinkedList {
 
