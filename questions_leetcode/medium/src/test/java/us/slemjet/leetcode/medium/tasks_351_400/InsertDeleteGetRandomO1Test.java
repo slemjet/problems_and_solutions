@@ -22,7 +22,7 @@ class InsertDeleteGetRandomO1Test {
 
     @ParameterizedTest
     @MethodSource("parameters")
-    void testKthSmallest(String[] commands, Integer[] params, Object[] expected) {
+    void testRandomizedSet(String[] commands, Integer[] params, Object[] expected) {
         InsertDeleteGetRandomO1.RandomizedSet randomizedSet = null;
 
         for (int i = 0; i < commands.length; i++) {
