@@ -15,7 +15,10 @@ class ShuffleAnArrayTest {
         return Stream.of(
                 Arguments.of(new String[]{"Solution", "shuffle", "reset", "shuffle"},
                         new int[][]{new int[]{1, 2, 3}, null, null, null},
-                        new Object[]{null, Arrays.asList(new int[]{3, 1, 2}, new int[]{2, 3, 1}, new int[]{2, 1, 3}, new int[]{1, 3, 2}), new int[]{1, 2, 3}, Arrays.asList(new int[]{3, 1, 2}, new int[]{2, 3, 1}, new int[]{2, 1, 3}, new int[]{1, 3, 2})})
+                        new Object[]{null,
+                                Arrays.asList(new int[]{1, 2, 3}, new int[]{3, 1, 2}, new int[]{2, 3, 1}, new int[]{2, 1, 3}, new int[]{1, 3, 2}),
+                                new int[]{1, 2, 3},
+                                Arrays.asList(new int[]{1, 2, 3}, new int[]{3, 1, 2}, new int[]{2, 3, 1}, new int[]{2, 1, 3}, new int[]{1, 3, 2})})
         );
     }
 

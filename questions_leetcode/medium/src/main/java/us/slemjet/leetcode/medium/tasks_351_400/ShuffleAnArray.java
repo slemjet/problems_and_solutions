@@ -8,44 +8,15 @@ import java.util.Random;
 public class ShuffleAnArray {
 
     /**
-     * Runtime: 5.15%
-     * Memory Usage: 24.01%
+     * Runtime: 12.61%
+     * Memory Usage: 24.84%
      */
     static class Solution {
 
         final private int[] nums;
-        final private Random random;
 
+        final private Random random;
         public Solution(int[] nums) {
-            this.nums = nums;
-            this.random = new Random();
-        }
-
-        public int[] reset() {
-            return nums;
-        }
-
-        public int[] shuffle() {
-            int[] shuffled = new int[nums.length];
-            for (int currIdx = 0; currIdx < shuffled.length; currIdx++) {
-                int nextIdx = random.nextInt(currIdx + 1);
-                shuffled[currIdx] = shuffled[nextIdx];
-                shuffled[nextIdx] = nums[currIdx];
-            }
-            return shuffled;
-        }
-    }
-
-    /**
-     * Runtime: 12.61%
-     * Memory Usage: 24.84%
-     */
-    static class Solution2 {
-
-        final private int[] nums;
-        final private Random random;
-
-        public Solution2(int[] nums) {
             this.nums = nums;
             this.random = new Random();
         }
@@ -68,6 +39,35 @@ public class ShuffleAnArray {
             int tmp = shuffled[currIdx];
             shuffled[currIdx] = shuffled[nextIdx];
             shuffled[nextIdx] = tmp;
+        }
+
+    }
+    /**
+     * Runtime: 5.15%
+     * Memory Usage: 24.01%
+     */
+    static class Solution2 {
+
+        final private int[] nums;
+        final private Random random;
+
+        public Solution2(int[] nums) {
+            this.nums = nums;
+            this.random = new Random();
+        }
+
+        public int[] reset() {
+            return nums;
+        }
+
+        public int[] shuffle() {
+            int[] shuffled = new int[nums.length];
+            for (int currIdx = 0; currIdx < shuffled.length; currIdx++) {
+                int nextIdx = random.nextInt(currIdx + 1);
+                shuffled[currIdx] = shuffled[nextIdx];
+                shuffled[nextIdx] = nums[currIdx];
+            }
+            return shuffled;
         }
     }
 }
