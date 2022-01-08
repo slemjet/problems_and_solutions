@@ -22,12 +22,25 @@ class LongestSubstringWithAtLeastKRepeatingCharactersTest {
 
     @ParameterizedTest
     @MethodSource("parameters")
-    void testSum(String s, int k, int expected) {
+    void testLongestSubstring(String s, int k, int expected) {
         // given
         LongestSubstringWithAtLeastKRepeatingCharacters solution = new LongestSubstringWithAtLeastKRepeatingCharacters();
 
         // when
         int result = solution.longestSubstring(s, k);
+
+        // then
+        Assertions.assertThat(result).isEqualTo(expected);
+    }
+
+    @ParameterizedTest
+    @MethodSource("parameters")
+    void testLongestSubstring2(String s, int k, int expected) {
+        // given
+        LongestSubstringWithAtLeastKRepeatingCharacters solution = new LongestSubstringWithAtLeastKRepeatingCharacters();
+
+        // when
+        int result = solution.longestSubstring2(s, k);
 
         // then
         Assertions.assertThat(result).isEqualTo(expected);
