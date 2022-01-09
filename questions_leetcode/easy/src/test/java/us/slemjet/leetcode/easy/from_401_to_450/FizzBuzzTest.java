@@ -21,7 +21,7 @@ class FizzBuzzTest {
 
     @ParameterizedTest
     @MethodSource("parameters")
-    void testLongestSubstring(int n, List<String> expected) {
+    void testFizzBuzz(int n, List<String> expected) {
         // given
         FizzBuzz solution = new FizzBuzz();
 
