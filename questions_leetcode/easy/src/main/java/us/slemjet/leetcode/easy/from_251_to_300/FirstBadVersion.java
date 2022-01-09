@@ -1,4 +1,4 @@
-package us.slemjet.leetcode.easy.tree;
+package us.slemjet.leetcode.easy.from_251_to_300;
 
 public class FirstBadVersion {
 

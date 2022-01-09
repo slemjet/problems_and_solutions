@@ -1,11 +1,11 @@
-package us.slemjet.leetcode.easy.binary;
+package us.slemjet.leetcode.easy.from_251_to_300;
 
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
-import us.slemjet.leetcode.easy.tree.FirstBadVersion;
+import us.slemjet.leetcode.easy.from_251_to_300.FirstBadVersion;
 
 import java.util.stream.Stream;
 

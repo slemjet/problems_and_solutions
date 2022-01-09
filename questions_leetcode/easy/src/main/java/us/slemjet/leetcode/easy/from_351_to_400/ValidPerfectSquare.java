@@ -1,4 +1,4 @@
-package us.slemjet.leetcode.easy.numbers;
+package us.slemjet.leetcode.easy.from_351_to_400;
 
 public class ValidPerfectSquare {
 
