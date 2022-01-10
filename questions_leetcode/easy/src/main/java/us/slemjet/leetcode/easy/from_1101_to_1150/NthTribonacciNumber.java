@@ -1,4 +1,4 @@
-package us.slemjet.leetcode.easy.from_1101_to_1150.tasks;
+package us.slemjet.leetcode.easy.from_1101_to_1150;
 
 /**
  * 1137. N-th Tribonacci Number
