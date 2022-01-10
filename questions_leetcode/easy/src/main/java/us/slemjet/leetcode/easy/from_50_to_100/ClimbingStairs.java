@@ -1,31 +1,47 @@
 package us.slemjet.leetcode.easy.from_50_to_100;
 
-import java.util.HashMap;
-import java.util.Map;
-
+/**
+ * 70. Climbing Stairs
+ */
 public class ClimbingStairs {
 
-    private Map<Integer, Integer> memo = new HashMap<>();
-
-    public int climbStairs(int n) {
-
-        int result = climbStairsRec(0, n);
-        return result;
+    /**
+     * Top to Bottom
+     *
+     * Runtime: 100.00%
+     * Memory Usage: 35.25%
+     */
+    public int climbStairsTopToBottom(int n) {
+        return climbStairsMemo(n, new int[n + 1]);
     }
 
-    private int climbStairsRec(int start, int end) {
-        // reached end
-        if (start > end)
-            return 0;
+    private int climbStairsMemo(int n, int[] memo) {
+        if (n <= 2) return n;
 
-        // on last stair
-        if (start == end)
-            return 1;
+        // Combinations can be 1 for 1 and 2 for 2 (2 and 1+1), the rest is a sum of 2 previous combinations
+        if (memo[n] == 0) {
+            memo[n] = climbStairsMemo(n - 2, memo) + climbStairsMemo(n - 1, memo);
+        }
+        return memo[n];
+    }
 
-        if (!memo.containsKey(start)) {
-            memo.put(start, climbStairsRec(start + 1, end) + climbStairsRec(start + 2, end));
+    /**
+     * Bottom Up
+     *
+     * Runtime: 100.00%
+     * Memory Usage: 27.30%
+     */
+    public int climbStairsBottomUp(int n) {
+        if(n <= 2) return n;
+
+        int[] combinations = new int[n + 1];
+        combinations[1] = 1;
+        combinations[2] = 2;
+
+        for (int i = 3; i <= n; i++) {
+            combinations[i] = combinations[i - 2] + combinations[i - 1];
         }
 
-        return memo.get(start);
+        return combinations[n];
     }
 }

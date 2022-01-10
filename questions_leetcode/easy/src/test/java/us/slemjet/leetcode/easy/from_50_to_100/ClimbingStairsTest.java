@@ -19,12 +19,25 @@ class ClimbingStairsTest {
 
     @ParameterizedTest
     @MethodSource("parameters")
-    void climbStairs(int steps, int expected) {
+    void testClimbStairsTopToBottom(int steps, int expected) {
         // given
         ClimbingStairs solution = new ClimbingStairs();
 
         // when
-        int ways = solution.climbStairs(steps);
+        int ways = solution.climbStairsTopToBottom(steps);
+
+        // then
+        Assertions.assertThat(ways).isEqualTo(expected);
+    }
+
+    @ParameterizedTest
+    @MethodSource("parameters")
+    void testClimbStairsBottomUp(int steps, int expected) {
+        // given
+        ClimbingStairs solution = new ClimbingStairs();
+
+        // when
+        int ways = solution.climbStairsBottomUp(steps);
 
         // then
         Assertions.assertThat(ways).isEqualTo(expected);
