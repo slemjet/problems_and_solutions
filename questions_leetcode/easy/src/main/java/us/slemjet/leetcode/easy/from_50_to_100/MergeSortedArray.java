@@ -2,12 +2,13 @@ package us.slemjet.leetcode.easy.from_50_to_100;
 
 /**
  * 88. Merge Sorted Array
- *
- * Runtime: 100.00%
- * Memory Usage: 20.26%
  */
 public class MergeSortedArray {
 
+    /**
+     * Runtime: 100.00%
+     * Memory Usage: 8.80%
+     */
     public void merge(int[] nums1, int m, int[] nums2, int n) {
 
         // merge from the end
