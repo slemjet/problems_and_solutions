@@ -1,9 +1,9 @@
 package us.slemjet.leetcode.medium.tasks_701_750;
 
-import java.util.Arrays;
 import java.util.Comparator;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.function.Function;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 /**
  * 740. Delete and Earn
@@ -39,17 +39,12 @@ public class DeleteAndEarn {
      */
     public int deleteAndEarnBottomUp(int[] nums) {
 
-        Map<Integer, Integer> counts = new HashMap<>();
-
-        for (int num : nums) {
-            counts.put(num, counts.getOrDefault(num, 0) + num);
-        }
-
-        // Convert ot array [number][sum value]
-        int[][] countByNum = counts.entrySet().stream().map(entry -> new int[]{entry.getKey(), entry.getValue()}).toArray(int[][]::new);
-        Arrays.sort(countByNum, Comparator.comparingInt(o -> o[0]));
-
-        if (countByNum.length == 1) return countByNum[0][1];
+        // Group sum of values by number and return array [num][sumValue]
+        int[][] countByNum = IntStream.of(nums).boxed()
+                .collect(Collectors.groupingBy(Function.identity(), Collectors.summingInt(value -> value)))
+                .entrySet().stream().map(entry -> new int[]{entry.getKey(), entry.getValue()})
+                .sorted(Comparator.comparingInt(o -> o[0]))
+                .toArray(int[][]::new);
 
         int result = countByNum[0][1];
         for (int i = 1; i < countByNum.length; i++) {
@@ -76,19 +71,14 @@ public class DeleteAndEarn {
      */
     public int deleteAndEarnTopToBottom(int[] nums) {
 
-        Map<Integer, Integer> counts = new HashMap<>();
+        int[][] countByNum = IntStream.of(nums).boxed()
+                .collect(Collectors.groupingBy(Function.identity(), Collectors.summingInt(value -> value)))
+                .entrySet().stream().map(entry -> new int[]{entry.getKey(), entry.getValue()})
+                .sorted(Comparator.comparingInt(o -> o[0]))
+                .toArray(int[][]::new);
 
-        for (int num : nums) {
-            counts.put(num, counts.getOrDefault(num, 0) + num);
-        }
-
-        // Convert ot array [number][sum value]
-        int[][] countByNum = counts.entrySet().stream().map(entry -> new int[]{entry.getKey(), entry.getValue()}).toArray(int[][]::new);
-        Arrays.sort(countByNum, Comparator.comparingInt(o -> o[0]));
-
-        Integer[] memo = new Integer[countByNum[countByNum.length - 1][0]];
-
-        return countMax(countByNum, memo, countByNum.length - 1);
+        int maxValue = countByNum[countByNum.length - 1][0];
+        return countMax(countByNum, new Integer[maxValue], countByNum.length - 1);
     }
 
     private int countMax(int[][] countByNum, Integer[] memo, int i) {
