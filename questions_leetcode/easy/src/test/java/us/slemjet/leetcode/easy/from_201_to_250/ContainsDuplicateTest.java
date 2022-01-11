@@ -29,4 +29,17 @@ class ContainsDuplicateTest {
         // then
         Assertions.assertThat(result).isEqualTo(expected);
     }
+
+    @ParameterizedTest
+    @MethodSource("parameters")
+    void testContainsDuplicateSort(int[] nums, boolean expected) {
+        // given
+        ContainsDuplicate solution = new ContainsDuplicate();
+
+        // when
+        boolean result = solution.containsDuplicateSort(nums);
+
+        // then
+        Assertions.assertThat(result).isEqualTo(expected);
+    }
 }
