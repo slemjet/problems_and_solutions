@@ -1,4 +1,4 @@
-package us.slemjet.leetcode.easy.from_150_to_200;
+package us.slemjet.leetcode.medium.tasks_151_200;
 
 /**
  * 198. House Robber

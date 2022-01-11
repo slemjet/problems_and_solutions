@@ -1,4 +1,4 @@
-package us.slemjet.leetcode.medium.tasks_151_200.tasks;
+package us.slemjet.leetcode.medium.tasks_151_200;
 
 /**
  * 162. Find Peak Element
