@@ -1,6 +1,8 @@
 package us.slemjet.leetcode.easy.from_50_to_100;
 
-
+/**
+ * 53. Maximum Subarray
+ */
 public class MaximumSubarray {
 
     /**
@@ -21,6 +23,7 @@ public class MaximumSubarray {
     }
 
     /**
+     * Bottom Up approach
      * Runtime: 74.15%
      * Memory Usage: 24.01%
      */
