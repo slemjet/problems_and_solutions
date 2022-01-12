@@ -18,12 +18,25 @@ class JumpGameTest {
 
     @ParameterizedTest
     @MethodSource("parameters")
-    void canJump(int[] nums, boolean expected) {
+    void testCanJump(int[] nums, boolean expected) {
         // given
         JumpGame solution = new JumpGame();
 
         // when
         boolean result = solution.canJump(nums);
+
+        // then
+        Assertions.assertThat(result).isEqualTo(expected);
+    }
+
+    @ParameterizedTest
+    @MethodSource("parameters")
+    void testCanJumpBottomUp(int[] nums, boolean expected) {
+        // given
+        JumpGame solution = new JumpGame();
+
+        // when
+        boolean result = solution.canJumpBottomUp(nums);
 
         // then
         Assertions.assertThat(result).isEqualTo(expected);
