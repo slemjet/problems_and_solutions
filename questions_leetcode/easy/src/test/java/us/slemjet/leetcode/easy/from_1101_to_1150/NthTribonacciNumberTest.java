@@ -1,4 +1,4 @@
-package us.slemjet.leetcode.easy.from_1101_to_1150.tasks;
+package us.slemjet.leetcode.easy.from_1101_to_1150;
 
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.params.ParameterizedTest;
