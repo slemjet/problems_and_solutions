@@ -11,19 +11,46 @@ class BestTimeToBuyAndSellStockIITest {
 
     private static Stream<Arguments> parameters() {
         return Stream.of(
-                Arguments.of(new int[]{7, 1, 5, 3, 6, 4}, 5),
+                Arguments.of(new int[]{7, 1, 5, 3, 6, 4}, 7),
+                Arguments.of(new int[]{1, 2, 3, 4, 5}, 4),
                 Arguments.of(new int[]{7, 6, 4, 3, 1}, 0)
         );
     }
 
     @ParameterizedTest
     @MethodSource("parameters")
-    void climbStairs(int[] prices, int expected) {
+    void maxProfitTest(int[] prices, int expected) {
         // given
-        BestTimeToBuyAndSellStock solution = new BestTimeToBuyAndSellStock();
+        BestTimeToBuyAndSellStockII solution = new BestTimeToBuyAndSellStockII();
 
         // when
         int maxProfit = solution.maxProfit(prices);
+
+        // then
+        Assertions.assertThat(maxProfit).isEqualTo(expected);
+    }
+
+    @ParameterizedTest
+    @MethodSource("parameters")
+    void maxProfitBruteTest(int[] prices, int expected) {
+        // given
+        BestTimeToBuyAndSellStockII solution = new BestTimeToBuyAndSellStockII();
+
+        // when
+        int maxProfit = solution.maxProfitBrute(prices);
+
+        // then
+        Assertions.assertThat(maxProfit).isEqualTo(expected);
+    }
+
+    @ParameterizedTest
+    @MethodSource("parameters")
+    void maxProfitSumsTest(int[] prices, int expected) {
+        // given
+        BestTimeToBuyAndSellStockII solution = new BestTimeToBuyAndSellStockII();
+
+        // when
+        int maxProfit = solution.maxProfitSums(prices);
 
         // then
         Assertions.assertThat(maxProfit).isEqualTo(expected);

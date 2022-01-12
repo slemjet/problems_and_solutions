@@ -11,17 +11,16 @@ class BestTimeToBuyAndSellStockTest {
 
     private static Stream<Arguments> parameters() {
         return Stream.of(
-                Arguments.of(new int[]{7, 1, 5, 3, 6, 4}, 7),
-                Arguments.of(new int[]{1, 2, 3, 4, 5}, 4),
+                Arguments.of(new int[]{7, 1, 5, 3, 6, 4}, 5),
                 Arguments.of(new int[]{7, 6, 4, 3, 1}, 0)
         );
     }
 
     @ParameterizedTest
     @MethodSource("parameters")
-    void maxProfitTest(int[] prices, int expected) {
+    void testMaxProfit(int[] prices, int expected) {
         // given
-        BestTimeToBuyAndSellStockII solution = new BestTimeToBuyAndSellStockII();
+        BestTimeToBuyAndSellStock solution = new BestTimeToBuyAndSellStock();
 
         // when
         int maxProfit = solution.maxProfit(prices);
@@ -32,12 +31,12 @@ class BestTimeToBuyAndSellStockTest {
 
     @ParameterizedTest
     @MethodSource("parameters")
-    void maxProfitBruteTest(int[] prices, int expected) {
+    void testMaxProfitBottomUp(int[] prices, int expected) {
         // given
-        BestTimeToBuyAndSellStockII solution = new BestTimeToBuyAndSellStockII();
+        BestTimeToBuyAndSellStock solution = new BestTimeToBuyAndSellStock();
 
         // when
-        int maxProfit = solution.maxProfitBrute(prices);
+        int maxProfit = solution.maxProfitBottomUp(prices);
 
         // then
         Assertions.assertThat(maxProfit).isEqualTo(expected);
@@ -45,12 +44,12 @@ class BestTimeToBuyAndSellStockTest {
 
     @ParameterizedTest
     @MethodSource("parameters")
-    void maxProfitSumsTest(int[] prices, int expected) {
+    void testMaxProfitKadane(int[] prices, int expected) {
         // given
-        BestTimeToBuyAndSellStockII solution = new BestTimeToBuyAndSellStockII();
+        BestTimeToBuyAndSellStock solution = new BestTimeToBuyAndSellStock();
 
         // when
-        int maxProfit = solution.maxProfitSums(prices);
+        int maxProfit = solution.maxProfitKadane(prices);
 
         // then
         Assertions.assertThat(maxProfit).isEqualTo(expected);
