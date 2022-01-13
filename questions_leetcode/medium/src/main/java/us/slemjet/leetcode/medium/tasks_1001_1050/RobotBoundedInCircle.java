@@ -1,4 +1,4 @@
-package us.slemjet.leetcode.medium.tasks_1001_1050.tasks;
+package us.slemjet.leetcode.medium.tasks_1001_1050;
 
 /**
  * 1041. Robot Bounded In Circle
