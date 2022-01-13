@@ -34,12 +34,39 @@ class MaximumSubarrayTest {
 
     @ParameterizedTest
     @MethodSource("parameters")
-    void maxSubArray2(int[] nums, int expected) {
+    void testMaxSubArrayBottomUp(int[] nums, int expected) {
         // given
         MaximumSubarray solution = new MaximumSubarray();
 
         // when
-        double result = solution.maxSubArray2(nums);
+        double result = solution.maxSubArrayBottomUp(nums);
+
+        // then
+        Assertions.assertThat(result).isEqualTo(expected);
+    }
+
+    @ParameterizedTest
+    @MethodSource("parameters")
+    void testMaxSubArrayTopToBottom(int[] nums, int expected) {
+        // given
+        MaximumSubarray solution = new MaximumSubarray();
+
+        // when
+        double result = solution.maxSubArrayTopToBottom(nums);
+
+        // then
+        Assertions.assertThat(result).isEqualTo(expected);
+    }
+
+    @ParameterizedTest
+
+    @MethodSource("parameters")
+    void testMaxSubArrayDivideAndConquer(int[] nums, int expected) {
+        // given
+        MaximumSubarray solution = new MaximumSubarray();
+
+        // when
+        double result = solution.maxSubArrayDivideAndConquer(nums);
 
         // then
         Assertions.assertThat(result).isEqualTo(expected);
