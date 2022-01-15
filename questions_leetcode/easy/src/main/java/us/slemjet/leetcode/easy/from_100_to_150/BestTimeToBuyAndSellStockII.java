@@ -47,7 +47,8 @@ public class BestTimeToBuyAndSellStockII {
         return result + Math.max(0, currMax - currMin);
     }
 
-    /**
+    /** DP Bottom Up approach
+     *
      * Runtime: 65.84%
      * Memory Usage: 52.46%
      */
