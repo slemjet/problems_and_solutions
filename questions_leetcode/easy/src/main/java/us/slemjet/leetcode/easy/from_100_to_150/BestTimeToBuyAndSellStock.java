@@ -1,7 +1,7 @@
 package us.slemjet.leetcode.easy.from_100_to_150;
 
 /**
- * 122. Best Time to Buy and Sell Stock II
+ * 121. Best Time to Buy and Sell Stock
  */
 public class BestTimeToBuyAndSellStock {
 
@@ -12,15 +12,15 @@ public class BestTimeToBuyAndSellStock {
      */
     public int maxProfit(int[] prices) {
 
-        int maxProfit = 0;
-        int minPrice = Integer.MAX_VALUE;
+            int maxProfit = 0;
+            int minPrice = Integer.MAX_VALUE;
 
-        for (int i = 0; i < prices.length; i++) {
-            minPrice = Math.min(minPrice, prices[i]);
-            maxProfit = Math.max(maxProfit, prices[i] - minPrice);
-        }
+            for (int price : prices) {
+                minPrice = Math.min(minPrice, price);
+                maxProfit = Math.max(maxProfit, price - minPrice);
+            }
 
-        return maxProfit;
+            return maxProfit;
     }
 
     /**
