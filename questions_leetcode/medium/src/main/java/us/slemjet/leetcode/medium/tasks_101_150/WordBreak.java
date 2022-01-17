@@ -10,7 +10,8 @@ import java.util.Set;
 public class WordBreak {
 
     /**
-     * Dynamic Programming
+     * DP - Bottom Up
+     *
      * Runtime: 93.17%
      * Memory Usage: 84.76%
      */
@@ -34,6 +35,8 @@ public class WordBreak {
     }
 
     /**
+     * DP - Bottom Up - second variant
+     *
      * Runtime: 63.26%
      * Memory Usage: 21.87%
      */
@@ -55,12 +58,14 @@ public class WordBreak {
     }
 
     /**
+     * DP - Top to Bottom
+     *
      * Runtime: 81.55%
      * Memory Usage: 21.87%
      */
     public boolean wordBreakDFS(String s, List<String> wordDict) {
         Boolean[] mem = new Boolean[s.length()];
-        return helper(0, s, new HashSet<String>(wordDict), mem);
+        return helper(0, s, new HashSet<>(wordDict), mem);
     }
 
     private boolean helper(int idx, String s, HashSet<String> wordDict, Boolean[] mem) {
