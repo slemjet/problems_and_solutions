@@ -13,10 +13,10 @@ class InsertDeleteGetRandomO1Test {
         return Stream.of(
                 Arguments.of(new String[]{"RandomizedSet", "insert", "remove", "insert", "getRandom", "remove", "insert", "getRandom"},
                         new Integer[]{null, 1, 2, 2, null, 1, 2, null},
-                        new Object[]{null, true, false, true, 2, true, false, 2}),
+                        new Object[]{null, true, false, true, new int[]{1, 2}, true, false, new int[]{2}}),
                 Arguments.of(new String[]{"RandomizedSet", "insert", "insert", "remove", "insert", "remove", "getRandom"},
                         new Integer[]{null, 0, 1, 0, 2, 1, 1, null},
-                        new Object[]{null, true, true, true, true, true, 2})
+                        new Object[]{null, true, true, true, true, true, new int[]{2}})
         );
     }
 
@@ -32,8 +32,10 @@ class InsertDeleteGetRandomO1Test {
                 Assertions.assertThat(randomizedSet.insert(params[i])).isEqualTo(expected[i]);
             else if ("remove".equals(commands[i]))
                 Assertions.assertThat(randomizedSet.remove(params[i])).isEqualTo(expected[i]);
-            else if ("getRandom".equals(commands[i]))
-                Assertions.assertThat(randomizedSet.getRandom()).isEqualTo(expected[i]);
+            else if ("getRandom".equals(commands[i])) {
+                int[] exp = (int[]) expected[i];
+                Assertions.assertThat(exp).contains(randomizedSet.getRandom());
+            }
         }
     }
 }
