@@ -1,4 +1,4 @@
-package us.slemjet.leetcode.hard.numbers;
+package us.slemjet.leetcode.hard.from_1_to_50;
 
 import java.util.Arrays;
 
@@ -8,8 +8,6 @@ public class FirstMissingPositive {
      * Runtime: 37.76%
      * Memory Usage: 100.00%
      *
-     * @param nums
-     * @return
      */
     public int firstMissingPositive(int[] nums) {
 
@@ -40,8 +38,6 @@ public class FirstMissingPositive {
      * We store elements to their index by value [3, 4, -1, 1] - > [1, 0, 3, 4, 0]
      * then traverse and check missing value
      *
-     * @param nums
-     * @return
      */
     public int firstMissingPositiveIndexByValueAndSwap(int[] nums) {
 

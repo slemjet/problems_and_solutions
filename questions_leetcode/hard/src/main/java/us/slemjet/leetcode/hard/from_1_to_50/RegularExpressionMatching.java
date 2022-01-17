@@ -1,4 +1,4 @@
-package us.slemjet.leetcode.hard.dynamic;
+package us.slemjet.leetcode.hard.from_1_to_50;
 
 /**
  * memo matrix for string = 'x a a b y c' and pattern = 'x a * b . c'

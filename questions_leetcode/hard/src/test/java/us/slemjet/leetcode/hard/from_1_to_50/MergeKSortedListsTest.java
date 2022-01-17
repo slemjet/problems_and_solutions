@@ -1,9 +1,11 @@
-package us.slemjet.leetcode.hard.lists;
+package us.slemjet.leetcode.hard.from_1_to_50;
 
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
+import us.slemjet.leetcode.hard.from_1_to_50.MergeKSortedLists;
+import us.slemjet.leetcode.hard.lists.ListNode;
 
 import java.util.stream.Stream;
 

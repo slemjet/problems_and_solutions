@@ -1,5 +1,8 @@
-package us.slemjet.leetcode.hard.strings;
+package us.slemjet.leetcode.hard.from_1_to_50;
 
+/**
+ * 44. Wildcard Matching
+ */
 public class WildcardMatching {
 
     /**

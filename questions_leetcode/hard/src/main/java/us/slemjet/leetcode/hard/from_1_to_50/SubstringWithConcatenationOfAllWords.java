@@ -1,4 +1,4 @@
-package us.slemjet.leetcode.hard.strings;
+package us.slemjet.leetcode.hard.from_1_to_50;
 
 import java.util.*;
 

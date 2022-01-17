@@ -1,15 +1,16 @@
-package us.slemjet.leetcode.hard.arrays;
+package us.slemjet.leetcode.hard.from_1_to_50;
 
 import java.util.Stack;
 
+/**
+ * 42. Trapping Rain Water
+ */
 public class TrappingRainWater {
 
     /**
      * 2 pointers based solution
      * Runtime: 100.00%
      * Memory Usage: 92.47%
-     * @param height
-     * @return
      */
     public int trap(int[] height) {
         int result = 0;
@@ -46,14 +47,38 @@ public class TrappingRainWater {
     }
 
     /**
+     * DP Bottom Up
+     * Store max to the left and to the right of i
+     * water = height[i]  - min(leftMax, rightMax)
+     *
+     * Runtime: 91.61%
+     * Memory Usage: 49.97%
+     */
+    public int trapDpBottomUp(int[] height) {
+        int result = 0;
+        int length = height.length;
+        int[] leftMax = new int[length];
+        leftMax[0] = height[0];
+        int[] rightMax = new int[length];
+        rightMax[length - 1] = height[length - 1];
+        for (int i = 1; i < length; i++) {
+            leftMax[i] = Math.max(height[i], leftMax[i - 1]);
+            rightMax[length - i - 1] = Math.max(height[length - i - 1], rightMax[length - i]);
+        }
+
+        for (int i = 1; i < height.length - 1; i++) {
+            result += Math.max(0, Math.min(leftMax[i], rightMax[i]) - height[i]);
+        }
+
+        return result;
+    }
+
+    /**
      * Stack based solution
      * Runtime: 17.78%
      * Memory Usage: 92.47%
-     *
-     * @param height
-     * @return
      */
-    public int trap2(int[] height) {
+    public int trapStack(int[] height) {
         int result = 0;
         if (height.length < 1) return result;
 

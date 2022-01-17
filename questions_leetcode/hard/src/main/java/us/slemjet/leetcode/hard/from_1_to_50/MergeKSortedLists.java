@@ -1,4 +1,6 @@
-package us.slemjet.leetcode.hard.lists;
+package us.slemjet.leetcode.hard.from_1_to_50;
+
+import us.slemjet.leetcode.hard.lists.ListNode;
 
 import java.util.PriorityQueue;
 

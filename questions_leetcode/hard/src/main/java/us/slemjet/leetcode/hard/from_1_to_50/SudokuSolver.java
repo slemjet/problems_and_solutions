@@ -1,13 +1,12 @@
-package us.slemjet.leetcode.hard.arrays;
+package us.slemjet.leetcode.hard.from_1_to_50;
 
 public class SudokuSolver {
 
     /**
      * Uses Backtrack to find solution
+     *
      * Runtime: 27.37%
      * Memory 75.44%
-     *
-     * @param board
      */
     public void solveSudokuBacktrack(char[][] board) {
         solve(board, 0, 0);
