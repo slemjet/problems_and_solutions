@@ -7,7 +7,7 @@ import java.util.List;
  * 118. Pascal's Triangle
  */
 public class PascalsTriangle {
-    
+
     /**
      * Go over row adding new numbers as a sum with before. once row is completed - add its copy
      *
