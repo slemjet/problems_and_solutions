@@ -19,7 +19,9 @@ class DecodeWaysTest {
                 Arguments.of("0", 0),
                 Arguments.of("06", 0),
                 Arguments.of("27", 1),
-                Arguments.of("111111111111111111111111111111111111111111111", 1836311903)
+                Arguments.of("111111111111111111111111111111111111111111111", 1836311903),
+                Arguments.of("2256", 3),
+                Arguments.of("2286", 2)
         );
     }
 

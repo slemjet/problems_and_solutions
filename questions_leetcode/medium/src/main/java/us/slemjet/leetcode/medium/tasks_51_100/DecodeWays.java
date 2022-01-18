@@ -6,7 +6,38 @@ package us.slemjet.leetcode.medium.tasks_51_100;
 public class DecodeWays {
 
     /**
-     * Recursion + memo
+     * DP Bottom Up
+     * <p>
+     * Runtime: 94.87%
+     * Memory Usage: 92.03%
+     */
+    public int numDecodingsDynamic(String s) {
+        if (s.isEmpty() || s.charAt(0) == '0') return 0;
+        if (s.length() == 1) return 1;
+
+        char[] chars = s.toCharArray();
+        int[] dp = new int[chars.length + 1]; // Store combinations as we progress start from -1 for consistency
+        // Set initial conditions
+        dp[0] = 1;
+        dp[1] = 1;
+
+        // Iterate over array incrementing for each possible combination
+        for (int i = 2; i <= chars.length; i++) { // easier to iterate from the end
+            int char1 = chars[i - 1] - '0';
+            if (char1 != 0) {
+                dp[i] += dp[i - 1]; // add single combination
+            }
+            int char2 = (chars[i - 2] - '0') * 10 + (chars[i - 1] - '0');
+            if (char2 >= 10 && char2 <= 26) {
+                dp[i] += dp[i - 2]; // add double combination
+            }
+        }
+        // Total combinations sum stored at the first element
+        return dp[chars.length];
+    }
+
+    /**
+     * DP Top to bottom
      * <p>
      * Runtime: 94.87%
      * Memory Usage: 99.63%
@@ -42,37 +73,6 @@ public class DecodeWays {
 
         memo[idx] = result;
         return result;
-    }
-
-    /**
-     * Dynamic
-     *
-     * Runtime: 94.87%
-     * Memory Usage: 92.03%
-     */
-    public int numDecodingsDynamic(String s) {
-        if (s.isEmpty() || s.charAt(0) == '0') return 0;
-        if (s.length() == 1) return 1;
-
-        char[] chars = s.toCharArray();
-        int[] dp = new int[chars.length + 1]; // Store combinations as we progress
-        // Set initial conditions
-        dp[0] = 1;
-        dp[1] = 1;
-
-        // Iterate over array incrementing for each possible combination
-        for (int i = 2; i <= chars.length; i++) { // easier to iterate from the end
-            int char1 = chars[i - 1] - '0';
-            if (char1 != 0) {
-                dp[i] += dp[i - 1]; // add single combination
-            }
-            int char2 = (chars[i - 2] - '0') * 10 + (chars[i - 1] - '0');
-            if (char2 >= 10 && char2 <= 26) {
-                dp[i] += dp[i - 2]; // add double combination
-            }
-        }
-        // Total combinations sum stored at the first element
-        return dp[chars.length];
     }
 
     /**
