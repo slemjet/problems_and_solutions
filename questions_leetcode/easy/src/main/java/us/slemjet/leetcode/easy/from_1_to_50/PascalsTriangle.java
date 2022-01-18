@@ -7,12 +7,35 @@ import java.util.List;
  * 118. Pascal's Triangle
  */
 public class PascalsTriangle {
+    
+    /**
+     * Go over row adding new numbers as a sum with before. once row is completed - add its copy
+     *
+     * Runtime: 41.03%
+     * Memory Usage: 22.30%
+     */
+    public List<List<Integer>> generate(int numRows) {
+
+        List<List<Integer>> result = new ArrayList<>();
+        List<Integer> current = new ArrayList<>();
+
+        for (int i = 0; i < numRows; i++) {
+            for (int j = current.size() - 1; j >= 1; j--) {
+                int newValue = current.get(j) + current.get(j - 1); // Current value is a sum of current and a next
+                current.set(j, newValue);
+            }
+            current.add(1);
+            result.add(new ArrayList<>(current)); // Save a copy since we will be modifying it again
+        }
+
+        return result;
+    }
 
     /**
      * Runtime: 100.00%
      * Memory Usage: 35.77%
      */
-    public List<List<Integer>> generate(int numRows) {
+    public List<List<Integer>> generate2(int numRows) {
 
         List<List<Integer>> result = new ArrayList<>();
 

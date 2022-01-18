@@ -36,4 +36,17 @@ class PascalsTriangleTest {
         // then
         Assertions.assertThat(result).isEqualTo(expected);
     }
+
+    @ParameterizedTest
+    @MethodSource("parameters")
+    void removeGenerate2(int input, List<List<Integer>> expected) {
+        // given
+        PascalsTriangle solution = new PascalsTriangle();
+
+        // when
+        List<List<Integer>> result = solution.generate2(input);
+
+        // then
+        Assertions.assertThat(result).isEqualTo(expected);
+    }
 }
