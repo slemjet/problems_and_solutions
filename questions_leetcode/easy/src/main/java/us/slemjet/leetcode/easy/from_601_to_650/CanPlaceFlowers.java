@@ -1,4 +1,4 @@
-package us.slemjet.leetcode.easy.from_601_to_650.tasks;
+package us.slemjet.leetcode.easy.from_601_to_650;
 
 /**
  * 605. Can Place Flowers
