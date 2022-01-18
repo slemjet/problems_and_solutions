@@ -1,9 +1,18 @@
 package us.slemjet.leetcode.medium.tasks_1_50;
 
+/**
+ * 36. Valid Sudoku
+ */
 public class ValidSudoku {
 
+    /**
+     * For each structure, where unique numbers are expected - track a bit mask, setting bits for each value (1-9)
+     * Runtime: 52.42%
+     * Memory Usage: 39.93%
+     */
     public boolean isValidSudoku(char[][] board) {
 
+        // Bit map, set for each number if it is present
         int[] rows = new int[9];
         int[] cols = new int[9];
         int[] cubes = new int[9];
@@ -32,8 +41,6 @@ public class ValidSudoku {
      * Runtime: 70%
      * Memory: 97%
      *
-     * @param board
-     * @return
      */
     public boolean isValidSudoku2(char[][] board) {
 
