@@ -2,6 +2,9 @@ package us.slemjet.leetcode.easy.from_351_to_400;
 
 import java.util.Arrays;
 
+/**
+ * 387. First Unique Character in a String
+ */
 public class FirstUniqueCharacterInAString {
 
     /**
@@ -22,12 +25,13 @@ public class FirstUniqueCharacterInAString {
 
             // -1 -> firs occurrence
             if (positions[index] == -1) {
-                positions[index] = i;
+                positions[index] = i; // First occurrence index
             } else if (positions[index] > -1) { // >=0 -> second occurrence
-                positions[index] = -2;
+                positions[index] = -2; // Mark second occurrence as - 2
             }
         }
 
+        // Go through the indices to find first unique
         int result = Integer.MAX_VALUE;
         boolean hasValue = false;
         for (int aChar : positions) {
@@ -43,40 +47,34 @@ public class FirstUniqueCharacterInAString {
     /**
      * 2 pointers solution one - for unique and one for traversing
      * Runtime: 13 ms, faster than 68.76%
-     * Memory Usage: 46.8 MB, less than 5.06%
+     * Memory Usage: 46.8 MB, less than 29.23%
      */
     public int firstUniqChar2Pointers(String s) {
 
-        if (s == null || s.length() == 0)
-            return -1;
+        if (s == null || s.length() == 0) return -1;
 
         char[] charArray = s.toCharArray();
-
         int[] count = new int[26];
 
         // use 2 pointers to check duplicates
-        int slowIdx = 0; // slow pointer for first unique char
-        int fastIdx = 1; // fast pointer for the next checked char
+        int uniqueIdx = 0; // slow pointer for current unique char
+        int checkedIdx = 0; // fast pointer for the next checked char
 
-        count[charArray[slowIdx] - 'a']++; // firs occurrence of slowIdx element
+        while (checkedIdx < charArray.length) {
 
-        while (fastIdx < charArray.length) {
+            count[charArray[checkedIdx] - 'a']++; // first occurrence of checkedIdx element
 
-            count[charArray[fastIdx] - 'a']++; // first occurrence of fastIdx element
+            while (uniqueIdx < charArray.length && count[charArray[uniqueIdx] - 'a'] > 1)
+                uniqueIdx++; // skip duplicates with count > 1
 
-            while (slowIdx < charArray.length && count[charArray[slowIdx] - 'a'] > 1)
-                slowIdx++; // skip duplicates with count > 1
+            if (uniqueIdx == charArray.length) return -1; // reached end of string - all duplicates
 
-            if (slowIdx == charArray.length)
-                return -1; // reached end of string - all duplicates
-
-            if (count[charArray[slowIdx] - 'a'] == 0) { // first occurrence
-                fastIdx = slowIdx + 1; // shift fast right
-                count[charArray[slowIdx] - 'a']++; // increment occurred item
-            } else {
-                fastIdx++; // next fast
+            if (count[charArray[uniqueIdx] - 'a'] == 0) { // first occurrence
+                count[charArray[uniqueIdx] - 'a']++; // increment occurred item
+                checkedIdx = uniqueIdx; // shift fast right
             }
+            checkedIdx++; // next fast
         }
-        return slowIdx;
+        return uniqueIdx;
     }
 }
