@@ -2,27 +2,35 @@ package us.slemjet.leetcode.easy.from_1_to_50;
 
 import us.slemjet.leetcode.hard.lists.ListNode;
 
+/**
+ * 21. Merge Two Sorted Lists
+ */
 public class MergeTwoSortedLists {
-    public ListNode mergeTwoLists(ListNode l1, ListNode l2) {
-        if (l1 == null || l2 == null)
-            return l2 == null ? l1 : l2;
+
+    /**
+     * Runtime: 100.00%
+     * Memory Usage: 78.26%
+     */
+    public ListNode mergeTwoLists(ListNode list1, ListNode list2) {
+        if (list1 == null || list2 == null)
+            return list2 == null ? list1 : list2;
 
         ListNode merged, current; // assign head node
-        if (l2.val < l1.val) {
-            current = merged = l2;
-            l2 = l2.next;
+        if (list2.val < list1.val) {
+            current = merged = list2;
+            list2 = list2.next;
         } else {
-            current = merged = l1;
-            l1 = l1.next;
+            current = merged = list1;
+            list1 = list1.next;
         }
 
-        while (l1 != null || l2 != null) {
-            if (l2 == null || (l1 != null && l1.val < l2.val)) {
-                current.next = l1;
-                l1 = l1.next;
+        while (list1 != null || list2 != null) {
+            if (list2 == null || (list1 != null && list1.val < list2.val)) {
+                current.next = list1;
+                list1 = list1.next;
             } else {
-                current.next = l2;
-                l2 = l2.next;
+                current.next = list2;
+                list2 = list2.next;
             }
             current = current.next;
         }
