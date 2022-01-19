@@ -1,5 +1,8 @@
 package us.slemjet.leetcode.easy.from_351_to_400;
 
+/**
+ * 383. Ransom Note
+ */
 public class RansomNote {
 
     /**
