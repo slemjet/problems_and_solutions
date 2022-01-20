@@ -5,7 +5,15 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Stack;
 
+/**
+ * 20. Valid Parentheses
+ */
 public class ValidParentheses {
+
+    /**
+     * Runtime: 42.64%
+     * Memory Usage: 31.08%
+     */
     private static final Map<Character, Character> openToClose =
             Collections.unmodifiableMap(new HashMap<Character, Character>() {{
                 put('{', '}');
