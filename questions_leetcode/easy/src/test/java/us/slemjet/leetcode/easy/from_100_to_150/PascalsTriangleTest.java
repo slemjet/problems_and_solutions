@@ -1,9 +1,10 @@
-package us.slemjet.leetcode.easy.from_1_to_50;
+package us.slemjet.leetcode.easy.from_100_to_150;
 
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
+import us.slemjet.leetcode.easy.from_100_to_150.PascalsTriangle;
 
 import java.util.Arrays;
 import java.util.List;

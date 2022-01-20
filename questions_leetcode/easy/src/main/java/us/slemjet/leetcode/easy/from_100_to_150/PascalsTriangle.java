@@ -1,4 +1,4 @@
-package us.slemjet.leetcode.easy.from_1_to_50;
+package us.slemjet.leetcode.easy.from_100_to_150;
 
 import java.util.ArrayList;
 import java.util.List;
