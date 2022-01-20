@@ -11,8 +11,8 @@ public class PascalsTriangle {
     /**
      * Go over row adding new numbers as a sum with before. once row is completed - add its copy
      *
-     * Runtime: 41.03%
-     * Memory Usage: 22.30%
+     * Runtime: 100.00%
+     * Memory Usage: 65.77%
      */
     public List<List<Integer>> generate(int numRows) {
 
