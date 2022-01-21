@@ -11,8 +11,7 @@ public class SymmetricTree {
      */
     public boolean isSymmetric(TreeNode root) {
 
-        if (root == null)
-            return true;
+        if (root == null) return true;
 
         return reversedEquals(root.left, root.right);
 
@@ -20,14 +19,13 @@ public class SymmetricTree {
 
     private boolean reversedEquals(TreeNode left, TreeNode right) {
 
-        if (left == null && right == null)
-            return true;
+        if (left == null && right == null) return true;
 
-        if ((left == null && right != null) || (left != null && right == null)) {
-            return false;
+        if (left != null && right != null) {
+            return left.val == right.val && reversedEquals(left.left, right.right) && reversedEquals(left.right, right.left);
         }
+        return false;
 
-        return left.val == right.val && reversedEquals(left.left, right.right) && reversedEquals(left.right, right.left);
     }
 
     public static class TreeNode {
