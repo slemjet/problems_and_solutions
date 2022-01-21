@@ -38,7 +38,7 @@ class BinaryTreeLevelOrderTraversalTest {
 
     @ParameterizedTest
     @MethodSource("parameters")
-    void testSolution(TreeNode root, List<List<Integer>> expected) {
+    void testLevelOrder(TreeNode root, List<List<Integer>> expected) {
         // given
         BinaryTreeLevelOrderTraversal solution = new BinaryTreeLevelOrderTraversal();
 
@@ -51,7 +51,20 @@ class BinaryTreeLevelOrderTraversalTest {
 
     @ParameterizedTest
     @MethodSource("parameters")
-    void testSolution2Queue(TreeNode root, List<List<Integer>> expected) {
+    void testLevelOrderQueue(TreeNode root, List<List<Integer>> expected) {
+        // given
+        BinaryTreeLevelOrderTraversal solution = new BinaryTreeLevelOrderTraversal();
+
+        // when
+        List<List<Integer>> result = solution.levelOrderQueue(root);
+
+        // then
+        Assertions.assertThat(result).containsExactlyElementsOf(expected);
+    }
+
+    @ParameterizedTest
+    @MethodSource("parameters")
+    void testLevelOrderQueue2(TreeNode root, List<List<Integer>> expected) {
         // given
         BinaryTreeLevelOrderTraversal solution = new BinaryTreeLevelOrderTraversal();
 

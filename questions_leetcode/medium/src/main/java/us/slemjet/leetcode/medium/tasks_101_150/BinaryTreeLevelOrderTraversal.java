@@ -33,6 +33,37 @@ public class BinaryTreeLevelOrderTraversal {
     }
 
     /**
+     * Recursive - single queue
+     *
+     * Runtime: 35.15%
+     * Memory Usage: 7.36%
+     */
+    public List<List<Integer>> levelOrderQueue(TreeNode root) {
+
+        List<List<Integer>> levels = new ArrayList<>();
+        if (root == null) return levels;
+
+        Queue<TreeNode> queue = new LinkedList<>();
+        queue.add(root);
+
+        while (!queue.isEmpty()) {
+            List<Integer> level = new ArrayList<>();
+            int size = queue.size();
+            for (int i = 0; i < size; i++) {
+                TreeNode poll = queue.poll();
+                if (poll != null) {
+                    if (poll.left != null) queue.add(poll.left);
+                    if (poll.right != null) queue.add(poll.right);
+                    level.add(poll.val);
+                }
+            }
+            levels.add(level);
+        }
+
+        return levels;
+    }
+
+    /**
      * 2 Queues solution
      * Runtime: 56.72%
      * Memory Usage: 24.85%
@@ -47,9 +78,9 @@ public class BinaryTreeLevelOrderTraversal {
 
         primary.offer(root);
 
-        while (!primary.isEmpty()){
+        while (!primary.isEmpty()) {
             List<Integer> current = new ArrayList<>();
-            while (!primary.isEmpty()){
+            while (!primary.isEmpty()) {
                 TreeNode pop = primary.poll();
                 current.add(pop.val);
                 if (pop.left != null) {
