@@ -11,51 +11,55 @@ public class BinaryTreeInorderTraversal {
 
     /**
      * Iterative - stack
+     *
      * Runtime: 100.00%
-     * Memory Usage: 19.11%
+     * Memory Usage: 63.77%
      */
     public List<Integer> inorderTraversalIterative(TreeNode root) {
 
         List<Integer> result = new ArrayList<>();
-        if (root == null)
-            return result;
+        if (root == null) return result;
 
         Stack<TreeNode> nodes = new Stack<>();
         nodes.push(root);
+
         while (!nodes.isEmpty()) {
-            TreeNode peek = nodes.peek();
-            if (peek.left != null) {
-                nodes.push(peek.left);
-                peek.left = null;
-            } else {
-                TreeNode pop = nodes.pop();
-                result.add(pop.val);
-                if (pop.right != null) {
-                    nodes.push(pop.right);
+            TreeNode next = nodes.pop();
+            if (next != null) {
+                if (next.right == null && next.left == null) {
+                    result.add(next.val);
+                } else {
+                    nodes.push(next.right);
+                    nodes.push(next);
+                    nodes.push(next.left);
+                    next.left = null;
+                    next.right = null;
                 }
             }
         }
+
         return result;
     }
 
     /**
      * Recursive inorder
+     *
      * Runtime: 100.00%
      * Memory Usage: 93.06%
      */
     public List<Integer> inorderTraversal(TreeNode root) {
+
         List<Integer> result = new ArrayList<>();
-
         inorder(root, result);
-
         return result;
     }
 
     private void inorder(TreeNode root, List<Integer> result) {
         if (root == null) return;
-        if (root.left != null) inorder(root.left, result);
+
+        inorder(root.left, result);
         result.add(root.val);
-        if (root.right != null) inorder(root.right, result);
+        inorder(root.right, result);
     }
 
 
