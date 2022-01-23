@@ -1,13 +1,16 @@
-package us.slemjet.leetcode.medium.arrays;
+package us.slemjet.leetcode.medium.tasks_901_950;
 
 import java.util.Stack;
 
 /**
- * Runtime: 27 ms, faster than 71.81%
- * Memory Usage: 48.1 MB, less than 80.90%
+ * 901. Online Stock Span
  */
 public class OnlineStockSpan {
 
+    /**
+     * Runtime: 27 ms, faster than 71.81%
+     * Memory Usage: 48.1 MB, less than 80.90%
+     */
     public static class StockSpanner {
 
         Stack<int[]> stocks = new Stack<>();

@@ -1,5 +1,8 @@
-package us.slemjet.leetcode.medium.arrays;
+package us.slemjet.leetcode.medium.tasks_1001_1050;
 
+/**
+ * 1035. Uncrossed Lines
+ */
 public class UncrossedLines {
 
     /**

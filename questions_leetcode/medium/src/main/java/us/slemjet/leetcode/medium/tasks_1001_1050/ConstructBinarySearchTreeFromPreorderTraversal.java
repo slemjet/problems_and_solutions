@@ -1,7 +1,10 @@
-package us.slemjet.leetcode.medium.trees;
+package us.slemjet.leetcode.medium.tasks_1001_1050;
 
 import java.util.Stack;
 
+/**
+ * 1008. Construct Binary Search Tree from Preorder Traversal
+ */
 public class ConstructBinarySearchTreeFromPreorderTraversal {
 
     /**

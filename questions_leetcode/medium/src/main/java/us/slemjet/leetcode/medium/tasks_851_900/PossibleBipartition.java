@@ -1,10 +1,13 @@
-package us.slemjet.leetcode.medium.arrays;
+package us.slemjet.leetcode.medium.tasks_851_900;
 
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
+/**
+ * 886. Possible Bipartition
+ */
 public class PossibleBipartition {
 
     public boolean possibleBipartition(int N, int[][] dislikes) {
