@@ -1,10 +1,13 @@
-package us.slemjet.leetcode.medium.strings;
+package us.slemjet.leetcode.medium.tasks_451_500;
 
 import java.util.*;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
+/**
+ * 451. Sort Characters By Frequency
+ */
 public class SortCharactersByFrequency {
 
     /**
