@@ -1,4 +1,4 @@
-package us.slemjet.leetcode.medium.tasks_851_900.tasks;
+package us.slemjet.leetcode.medium.tasks_851_900;
 
 import java.util.stream.IntStream;
 

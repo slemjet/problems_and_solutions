@@ -1,4 +1,4 @@
-package us.slemjet.leetcode.easy.from_651_to_700.tasks;
+package us.slemjet.leetcode.easy.from_651_to_700;
 
 import java.util.Objects;
 

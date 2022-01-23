@@ -1,13 +1,16 @@
-package us.slemjet.leetcode.medium.strings;
+package us.slemjet.leetcode.medium.tasks_401_450;
 
 import java.util.*;
 
 /**
- * Runtime: 31 ms, faster than 33.83%
- * Memory Usage: 41.3 MB, less than 5.18%
+ * 438. Find All Anagrams in a String
  */
 public class FindAllAnagramsInAString {
 
+    /**
+     * Runtime: 31 ms, faster than 33.83%
+     * Memory Usage: 41.3 MB, less than 5.18%
+     */
     public List<Integer> findAnagrams(String s, String p) {
 
         List<Integer> num = new ArrayList<>();

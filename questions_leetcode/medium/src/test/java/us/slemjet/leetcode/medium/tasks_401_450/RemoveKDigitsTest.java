@@ -1,9 +1,10 @@
-package us.slemjet.leetcode.medium.strings;
+package us.slemjet.leetcode.medium.tasks_401_450;
 
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
+import us.slemjet.leetcode.medium.tasks_401_450.RemoveKDigits;
 
 import java.util.stream.Stream;
 

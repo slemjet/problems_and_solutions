@@ -1,9 +1,10 @@
-package us.slemjet.leetcode.medium.tasks_851_900.tasks;
+package us.slemjet.leetcode.medium.tasks_851_900;
 
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
+import us.slemjet.leetcode.medium.tasks_851_900.KokoEatingBananas;
 
 import java.util.stream.Stream;
 

@@ -1,8 +1,11 @@
-package us.slemjet.leetcode.medium.strings;
+package us.slemjet.leetcode.medium.tasks_401_450;
 
 import java.util.ArrayDeque;
 import java.util.Deque;
 
+/**
+ * 402. Remove K Digits
+ */
 public class RemoveKDigits {
 
     /**

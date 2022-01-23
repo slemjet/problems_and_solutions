@@ -1,4 +1,4 @@
-package us.slemjet.leetcode.medium.tasks_401_450.tasks;
+package us.slemjet.leetcode.medium.tasks_401_450;
 
 /**
  * 413. Arithmetic Slices

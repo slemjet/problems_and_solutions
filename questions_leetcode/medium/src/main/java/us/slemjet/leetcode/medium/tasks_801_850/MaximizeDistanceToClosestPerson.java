@@ -1,4 +1,4 @@
-package us.slemjet.leetcode.medium.tasks_801_850.tasks;
+package us.slemjet.leetcode.medium.tasks_801_850;
 
 /**
  * 849. Maximize Distance to Closest Person
