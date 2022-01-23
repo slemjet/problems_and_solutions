@@ -35,4 +35,17 @@ class TwoSumIVInputIsABSTTest {
         // then
         Assertions.assertThat(result).isEqualTo(expected);
     }
+
+    @ParameterizedTest
+    @MethodSource("parameters")
+    void testFindTargetBinary(TreeNode root, int k, boolean expected) {
+        // given
+        TwoSumIVInputIsABST solution = new TwoSumIVInputIsABST();
+
+        // when
+        boolean result = solution.findTargetBinary(root, k);
+
+        // then
+        Assertions.assertThat(result).isEqualTo(expected);
+    }
 }
