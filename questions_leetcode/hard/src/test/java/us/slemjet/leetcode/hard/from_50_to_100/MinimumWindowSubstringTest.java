@@ -1,9 +1,10 @@
-package us.slemjet.leetcode.hard.strings;
+package us.slemjet.leetcode.hard.from_50_to_100;
 
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
+import us.slemjet.leetcode.hard.from_50_to_100.MinimumWindowSubstring;
 
 import java.util.stream.Stream;
 

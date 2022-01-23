@@ -1,7 +1,10 @@
-package us.slemjet.leetcode.hard.strings;
+package us.slemjet.leetcode.hard.from_50_to_100;
 
 import java.util.Arrays;
 
+/**
+ * 72. Edit Distance
+ */
 public class EditDistance {
 
     /**

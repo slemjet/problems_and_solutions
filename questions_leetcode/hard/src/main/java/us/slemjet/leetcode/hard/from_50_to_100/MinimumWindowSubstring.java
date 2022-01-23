@@ -1,5 +1,8 @@
-package us.slemjet.leetcode.hard.strings;
+package us.slemjet.leetcode.hard.from_50_to_100;
 
+/**
+ * 76. Minimum Window Substring
+ */
 public class MinimumWindowSubstring {
 
     /**
