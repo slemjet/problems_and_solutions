@@ -1,5 +1,8 @@
-package us.slemjet.leetcode.medium.arrays;
+package us.slemjet.leetcode.medium.tasks_501_550;
 
+/**
+ * 540. Single Element in a Sorted Array
+ */
 public class SingleElementInASortedArray {
 
     /**

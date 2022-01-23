@@ -1,10 +1,11 @@
-package us.slemjet.leetcode.medium.trees;
+package us.slemjet.leetcode.medium.tasks_51_100;
 
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
-import us.slemjet.leetcode.medium.trees.ValidateBinarySearchTree.TreeNode;
+import us.slemjet.leetcode.medium.tasks_51_100.ValidateBinarySearchTree;
+import us.slemjet.leetcode.medium.tasks_51_100.ValidateBinarySearchTree.TreeNode;
 
 import java.util.stream.Stream;
 

@@ -1,8 +1,11 @@
-package us.slemjet.leetcode.medium.arrays;
+package us.slemjet.leetcode.medium.tasks_951_1000;
 
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * 986. Interval List Intersections
+ */
 public class IntervalListIntersections {
 
     /**

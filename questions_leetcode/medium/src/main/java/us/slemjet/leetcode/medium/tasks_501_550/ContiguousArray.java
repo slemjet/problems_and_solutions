@@ -1,8 +1,11 @@
-package us.slemjet.leetcode.medium.arrays;
+package us.slemjet.leetcode.medium.tasks_501_550;
 
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * 525. Contiguous Array
+ */
 public class ContiguousArray {
 
     /**

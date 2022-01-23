@@ -1,7 +1,10 @@
-package us.slemjet.leetcode.medium.numbers;
+package us.slemjet.leetcode.medium.tasks_951_1000;
 
 import java.util.PriorityQueue;
 
+/**
+ * 973. K Closest Points to Origin
+ */
 public class KClosestPointsToOrigin {
 
     /**

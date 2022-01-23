@@ -1,5 +1,8 @@
-package us.slemjet.leetcode.medium.strings;
+package us.slemjet.leetcode.medium.tasks_551_600;
 
+/**
+ * 567. Permutation in String
+ */
 public class PermutationInString {
 
     /**

@@ -1,9 +1,13 @@
-package us.slemjet.leetcode.medium.trees;
+package us.slemjet.leetcode.medium.tasks_51_100;
 
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * 98. Validate Binary Search Tree
+ */
 public class ValidateBinarySearchTree {
+
     public boolean isValidBST(TreeNode root) {
         return traverseInorder(root, new ArrayList<>());
     }
