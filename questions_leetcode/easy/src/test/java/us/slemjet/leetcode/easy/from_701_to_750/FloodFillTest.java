@@ -1,9 +1,10 @@
-package us.slemjet.leetcode.easy.arrays;
+package us.slemjet.leetcode.easy.from_701_to_750;
 
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
+import us.slemjet.leetcode.easy.from_701_to_750.FloodFill;
 
 import java.util.stream.Stream;
 

@@ -1,5 +1,8 @@
-package us.slemjet.leetcode.easy.arrays;
+package us.slemjet.leetcode.easy.from_701_to_750;
 
+/**
+ * 733. Flood Fill
+ */
 public class FloodFill {
 
     /**
