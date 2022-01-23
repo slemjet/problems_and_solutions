@@ -1,5 +1,8 @@
 package us.slemjet.leetcode.medium.tasks_51_100;
 
+/**
+ * 62. Unique Paths
+ */
 public class UniquePaths {
 
     /**
