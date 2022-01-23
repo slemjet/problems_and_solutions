@@ -12,36 +12,21 @@ class ValidateBinarySearchTreeTest {
 
     private static Stream<Arguments> parameters() {
         return Stream.of(
-                Arguments.of(new Integer[]{2, 1, 3}, true),
-                Arguments.of(new Integer[]{5, 1, 4, null, null, 3, 6}, false),
-                Arguments.of(new Integer[]{1, 1}, false),
-                Arguments.of(new Integer[]{10, 5, 15, null, null, 6, 20}, false),
-                Arguments.of(new Integer[]{0}, true),
-                Arguments.of(new Integer[]{2147483647}, true)
+                Arguments.of(new TreeNode(2, new TreeNode(1), new TreeNode(3)), true),
+                Arguments.of(new TreeNode(5,
+                        new TreeNode(1, null, null),
+                        new TreeNode(4, new TreeNode(3), new TreeNode(6))), false)
         );
     }
 
     @ParameterizedTest
     @MethodSource("parameters")
-    void testIsValidBST(Integer[] input, boolean expected) {
+    void testIsValidBST(TreeNode root, boolean expected) {
         // given
         ValidateBinarySearchTree solution = new ValidateBinarySearchTree();
-        TreeNode tree = new TreeNode(input[0]);
-        if (input.length > 1 && input[1] != null)
-            tree.left = new TreeNode(input[1]);
-        if (input.length > 2 && input[2] != null)
-            tree.right = new TreeNode(input[2]);
-        if (input.length > 3 && input[3] != null)
-            tree.left.left = new TreeNode(input[3]);
-        if (input.length > 4 && input[4] != null)
-            tree.left.right = new TreeNode(input[4]);
-        if (input.length > 5 && input[5] != null)
-            tree.right.left = new TreeNode(input[5]);
-        if (input.length > 6 && input[6] != null)
-            tree.right.right = new TreeNode(input[6]);
 
         // when
-        Boolean isValidBST = solution.isValidBST(tree);
+        boolean isValidBST = solution.isValidBST(root);
 
         // then
         Assertions.assertThat(isValidBST).isEqualTo(expected);
@@ -49,25 +34,12 @@ class ValidateBinarySearchTreeTest {
 
     @ParameterizedTest
     @MethodSource("parameters")
-    void testIsValidBST2(Integer[] input, boolean expected) {
+    void testIsValidBST2(TreeNode root, boolean expected) {
         // given
         ValidateBinarySearchTree solution = new ValidateBinarySearchTree();
-        TreeNode tree = new TreeNode(input[0]);
-        if (input.length > 1 && input[1] != null)
-            tree.left = new TreeNode(input[1]);
-        if (input.length > 2 && input[2] != null)
-            tree.right = new TreeNode(input[2]);
-        if (input.length > 3 && input[3] != null)
-            tree.left.left = new TreeNode(input[3]);
-        if (input.length > 4 && input[4] != null)
-            tree.left.right = new TreeNode(input[4]);
-        if (input.length > 5 && input[5] != null)
-            tree.right.left = new TreeNode(input[5]);
-        if (input.length > 6 && input[6] != null)
-            tree.right.right = new TreeNode(input[6]);
 
         // when
-        Boolean isValidBST = solution.isValidBST2(tree);
+        boolean isValidBST = solution.isValidBST2(root);
 
         // then
         Assertions.assertThat(isValidBST).isEqualTo(expected);
