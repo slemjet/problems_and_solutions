@@ -15,18 +15,32 @@ class LongestPalindromicSubstringTest {
                 Arguments.of("cbbd", "bb"),
                 Arguments.of("ccc", "ccc"),
                 Arguments.of("aaaa", "aaaa"),
-                Arguments.of("tattarrattat", "tattarrattat")
+                Arguments.of("tattarrattat", "tattarrattat"),
+                Arguments.of("babaddtattarrattatddetartrateedredividerb", "ddtattarrattatdd")
         );
     }
 
     @ParameterizedTest
     @MethodSource("parameters")
-    void testSolution(String input, String expected) {
+    void testLongestPalindrome(String input, String expected) {
         // given
         LongestPalindromicSubstring solution = new LongestPalindromicSubstring();
 
         // when
         String longestPalindrome = solution.longestPalindrome(input);
+
+        // then
+        Assertions.assertThat(longestPalindrome).isEqualTo(expected);
+    }
+
+    @ParameterizedTest
+    @MethodSource("parameters")
+    void testLongestPalindrome2(String input, String expected) {
+        // given
+        LongestPalindromicSubstring solution = new LongestPalindromicSubstring();
+
+        // when
+        String longestPalindrome = solution.longestPalindrome2(input);
 
         // then
         Assertions.assertThat(longestPalindrome).isEqualTo(expected);
