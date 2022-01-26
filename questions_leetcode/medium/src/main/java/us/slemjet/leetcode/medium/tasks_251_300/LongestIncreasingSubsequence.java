@@ -25,18 +25,20 @@ public class LongestIncreasingSubsequence {
         int[] tails = new int[nums.length]; // Smallest last value of all the sequences of this size
         int size = 0;
 
+        // Search for sequence ending with > this value - they will be in increasing order so use binary search
+        // Ex: for [10, 9, 2, 5, 3, 7, 101, 18] -> resulting array: [2, 3, 7, 18]
         for (int num : nums) {
             int i = 0, j = size;
-            while (i != j) { // Search for sequence ending with > this value
+            while (i != j) {
                 int mid = (i + j) / 2;
                 if (tails[mid] < num)
                     i = mid + 1;
                 else
                     j = mid;
             }
-            tails[i] = num;
+            tails[i] = num; // Set new largest value of the sequence
             if (i == size)
-                size++; // Added new value to existing sequence
+                size++; // Added new value to existing sequence - we need to extend the range that we check
         }
 
         return size;
