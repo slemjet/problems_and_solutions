@@ -8,6 +8,8 @@ import java.util.Arrays;
 public class EditDistance {
 
     /**
+     * Dp Bottom Up
+     *
      * Runtime: 8 ms, 16.77%
      * Memory Usage: 5.01%
      */
@@ -34,27 +36,21 @@ public class EditDistance {
         if (array2.length == j)
             return array1.length - i; // Reached end of 2 array -> return remaining elements of array 1
 
-        if (cache[i][j] != -1) {
-            return cache[i][j];
-        }
+        if (cache[i][j] != -1) return cache[i][j];
 
-        int dist = -1;
+        int dist;
 
         if (array1[i] == array2[j]) {
             dist = dist(array1, array2, i + 1, j + 1, cache); // just skip for next elements
         } else {
             int insertDist = dist(array1, array2, i, j + 1, cache); // insert from 2 array -> skip to next element of 2 array
-
             int deleteDist = dist(array1, array2, i + 1, j, cache); // delete from 1 array -> skip to next element of 1 array
-
             int replaceDist = dist(array1, array2, i + 1, j + 1, cache); // replace element from 1 with element from 2 -> skip to both
 
             dist = Math.min(Math.min(insertDist, deleteDist), replaceDist) + 1;
         }
 
-        cache[i][j] = dist;
-
-        return dist;
+        return cache[i][j] = dist;
     }
 
     /**
