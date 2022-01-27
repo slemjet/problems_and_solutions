@@ -32,6 +32,19 @@ class EditDistanceTest {
 
     @ParameterizedTest
     @MethodSource("parameters")
+    void testSolution2(String word1, String word2, int expected) {
+        // given
+        EditDistance solution = new EditDistance();
+
+        // when
+        int value = solution.minDistance2(word1, word2);
+
+        // then
+        Assertions.assertThat(value).isEqualTo(expected);
+    }
+
+    @ParameterizedTest
+    @MethodSource("parameters")
     void testSolutionRecursion(String word1, String word2, int expected) {
         // given
         EditDistance solution = new EditDistance();
