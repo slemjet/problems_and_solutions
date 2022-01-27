@@ -43,7 +43,7 @@ public class IsSubsequence {
      * Runtime: 21.13%
      * Memory Usage: 5.14%
      */
-    public boolean isSubsequence2(String s, String t) {
+    public boolean isSubsequenceBinarySearch(String s, String t) {
 
         if (s == null || t == null) return false;
         if (s.isEmpty()) return true;

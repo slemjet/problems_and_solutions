@@ -37,12 +37,12 @@ class IsSubsequenceTest {
 
     @ParameterizedTest
     @MethodSource("parameters")
-    void testIsSubsequence2(String s, String t, boolean expected) {
+    void testIsSubsequenceBinarySearch(String s, String t, boolean expected) {
         // given
         IsSubsequence solution = new IsSubsequence();
 
         // when
-        boolean result = solution.isSubsequence2(s, t);
+        boolean result = solution.isSubsequenceBinarySearch(s, t);
 
         // then
         Assertions.assertThat(result).isEqualTo(expected);
