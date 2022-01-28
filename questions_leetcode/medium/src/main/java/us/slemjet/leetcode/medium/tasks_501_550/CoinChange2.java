@@ -1,7 +1,7 @@
 package us.slemjet.leetcode.medium.tasks_501_550;
 
 /**
- * 518. Coin Change 2
+ *
  */
 public class CoinChange2 {
 
