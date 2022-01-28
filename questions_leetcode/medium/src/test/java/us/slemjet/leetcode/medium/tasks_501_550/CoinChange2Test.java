@@ -19,12 +19,38 @@ class CoinChange2Test {
 
     @ParameterizedTest
     @MethodSource("parameters")
-    void testChange(int amount, int[] coins, int expected) {
+    void testChangeBottomUp(int amount, int[] coins, int expected) {
         // Given
         CoinChange2 solution = new CoinChange2();
 
         // When
-        int result = solution.change(amount, coins);
+        int result = solution.changeBottomUp(amount, coins);
+
+        // Then
+        Assertions.assertThat(result).isEqualTo(expected);
+    }
+
+    @ParameterizedTest
+    @MethodSource("parameters")
+    void testChangeBottomUp2(int amount, int[] coins, int expected) {
+        // Given
+        CoinChange2 solution = new CoinChange2();
+
+        // When
+        int result = solution.changeBottomUp2(amount, coins);
+
+        // Then
+        Assertions.assertThat(result).isEqualTo(expected);
+    }
+
+    @ParameterizedTest
+    @MethodSource("parameters")
+    void testTopToBottom2(int amount, int[] coins, int expected) {
+        // Given
+        CoinChange2 solution = new CoinChange2();
+
+        // When
+        int result = solution.changeTopToBottom(amount, coins);
 
         // Then
         Assertions.assertThat(result).isEqualTo(expected);
