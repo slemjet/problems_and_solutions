@@ -59,8 +59,7 @@ public class CoinChange {
             // Check for each coin
             for (int coin : coins) {
                 if (coin <= i) { // If we can use this coin
-                    int prevCount = dp[i - coin];
-                    dp[i] = Math.min(dp[i], prevCount + 1);
+                    dp[i] = Math.min(dp[i], 1 + dp[i - coin]);
                 }
             }
         }
