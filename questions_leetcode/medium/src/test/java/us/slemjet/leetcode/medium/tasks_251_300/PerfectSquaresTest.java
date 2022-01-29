@@ -7,8 +7,6 @@ import org.junit.jupiter.params.provider.MethodSource;
 
 import java.util.stream.Stream;
 
-import static org.junit.jupiter.api.Assertions.*;
-
 class PerfectSquaresTest {
 
     private static Stream<Arguments> parameters() {
@@ -20,12 +18,12 @@ class PerfectSquaresTest {
 
     @ParameterizedTest
     @MethodSource("parameters")
-    void testNumSquares(int n, int expected) {
+    void testNumSquaresBottomUp(int n, int expected) {
         // given
         PerfectSquares solution = new PerfectSquares();
 
         // when
-        int result = solution.numSquares(n);
+        int result = solution.numSquaresBottomUp(n);
 
         // then
         Assertions.assertThat(result).isEqualTo(expected);
@@ -33,12 +31,25 @@ class PerfectSquaresTest {
 
     @ParameterizedTest
     @MethodSource("parameters")
-    void testNumSquaresLeg(int n, int expected) {
+    void testNumSquaresTopToBottom(int n, int expected) {
         // given
         PerfectSquares solution = new PerfectSquares();
 
         // when
-        int result = solution.numSquaresLeg(n);
+        int result = solution.numSquaresTopToBottom(n);
+
+        // then
+        Assertions.assertThat(result).isEqualTo(expected);
+    }
+
+    @ParameterizedTest
+    @MethodSource("parameters")
+    void testNumSquaresMath(int n, int expected) {
+        // given
+        PerfectSquares solution = new PerfectSquares();
+
+        // when
+        int result = solution.numSquaresMath(n);
 
         // then
         Assertions.assertThat(result).isEqualTo(expected);

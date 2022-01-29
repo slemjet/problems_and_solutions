@@ -8,42 +8,61 @@ import java.util.Arrays;
 public class PerfectSquares {
 
     /**
-     * Dynamic programming
-     * Runtime: 82.08%
-     * Memory Usage: 73.62%
+     * DP Bottom Up
+     * <p>
+     * Runtime: 49.20%
+     * Memory Usage: 27.73%
      */
-    public int numSquares(int n) {
+    public int numSquaresBottomUp(int n) {
 
-        int[] squares = new int[n + 1]; // Contains number of squares needed to calculate this value
+        int[] dp = new int[n + 1]; // Contains number of squares needed to calculate this value
 
-        Arrays.fill(squares, Integer.MAX_VALUE);
-        squares[0] = 0;
+        Arrays.fill(dp, Integer.MAX_VALUE); // Initially max value - than compare with current and decrease to get min
+        dp[0] = 0;
 
         for (int i = 0; i <= n; i++) {
             for (int j = 1; i >= j * j; j++) {
-                int current = squares[i];
-                int potential = squares[i - j * j] + 1; // Previous square value + 1
-                squares[i] = Math.min(current, potential);
+                int potential = dp[i - j * j] + 1; // Previous square value + 1
+                dp[i] = Math.min(dp[i], potential);
             }
         }
 
-        return squares[n];
+        return dp[n];
+    }
+
+    /**
+     * DP Top To Bottom
+     */
+    public int numSquaresTopToBottom(int n) {
+        return numSquaresTopToBottom(n, new Integer[n + 1]);
+    }
+
+    private int numSquaresTopToBottom(int n, Integer[] memo) {
+        if (n == 0) return 0;
+        if (memo[n] != null) return memo[n];
+
+        memo[n] = Integer.MAX_VALUE;
+        for (int i = 1; i * i <= n; i++) {
+            memo[n] = Math.min(memo[n], 1 + numSquaresTopToBottom(n - i * i, memo));
+        }
+        return memo[n];
     }
 
 
     /**
+     * Math
      * Legendre 3 squares theorem
      * Any natural number can be represented as the sum of three squares of integers
      * n = x*x + y*y + z*z
      * Except for case when n = 8b + 7
-     *
+     * <p>
      * Runtime: 99.74%
      * Memory Usage: 99.71%
      */
-    public int numSquaresLeg(int n) {
+    public int numSquaresMath(int n) {
         // Answers can be from 1 to 4 only. ->  Legendre's three-square theorem
         //case 1 when answer will be 1
-        int sqrt = (int)Math.sqrt(n);
+        int sqrt = (int) Math.sqrt(n);
 
         if (sqrt * sqrt == n)
             return 1;
