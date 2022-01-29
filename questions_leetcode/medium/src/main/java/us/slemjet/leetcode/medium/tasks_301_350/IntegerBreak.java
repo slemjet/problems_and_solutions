@@ -33,7 +33,7 @@ public class IntegerBreak {
 
     /**
      * DP Bottom Up
-     *
+     * <p>
      * Runtime: 22.79%
      * Memory Usage: 7.25%
      */
@@ -48,5 +48,42 @@ public class IntegerBreak {
         }
 
         return dp[n];
+    }
+
+    /**
+     * Math
+     * <p>
+     * n = a3 + b2 such that P = (3^a) * (2^b) is maximized.
+     * We need to use as LESS of 2 as possible because 2*2*2 < 3*3
+     */
+    public int integerBreakMath(int n) {
+        if (n == 2) return 1;
+        else if (n == 3) return 2;
+        else if (n % 3 == 0) return (int) Math.pow(3, n / 3);
+        else if (n % 3 == 2) return (int) (2 * Math.pow(3, n / 3)); // Result = 2 * a3
+        else return (int) (2 * 2 * Math.pow(3, (n - 4) / 3)); // Result 2 * 2 * a3
+    }
+
+    /**
+     * Math
+     * <p>
+     * All factors should be 2 or 3 (n > 4)
+     * Generally 3 * 3 > 2 * 2 * 2. so we should not have more than 2 2s
+     * <p>
+     * Runtime: 100.00%
+     * Memory Usage: 7.25%
+     */
+    public int integerBreakMath2(int n) {
+
+        if (n == 2) return 1;
+        if (n == 3) return 2;
+
+        int product = 1; // Calculate product
+        while (n > 4) {
+            product *= 3;
+            n -= 3;
+        }
+        product *= n;
+        return product;
     }
 }

@@ -20,6 +20,32 @@ class IntegerBreakTest {
 
     @ParameterizedTest
     @MethodSource("parameters")
+    void testIntegerBreakMath(int n, int expected) {
+        // given
+        IntegerBreak solution = new IntegerBreak();
+
+        // when
+        int result = solution.integerBreakMath(n);
+
+        // then
+        Assertions.assertThat(result).isEqualTo(expected);
+    }
+
+    @ParameterizedTest
+    @MethodSource("parameters")
+    void testIntegerBreakMath2(int n, int expected) {
+        // given
+        IntegerBreak solution = new IntegerBreak();
+
+        // when
+        int result = solution.integerBreakMath2(n);
+
+        // then
+        Assertions.assertThat(result).isEqualTo(expected);
+    }
+
+    @ParameterizedTest
+    @MethodSource("parameters")
     void testIntegerBreakTopToBottom(int n, int expected) {
         // given
         IntegerBreak solution = new IntegerBreak();
