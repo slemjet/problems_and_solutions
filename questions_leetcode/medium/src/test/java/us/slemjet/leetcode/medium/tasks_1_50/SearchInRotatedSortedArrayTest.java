@@ -8,6 +8,7 @@ import org.junit.jupiter.params.provider.MethodSource;
 import java.util.stream.Stream;
 
 class SearchInRotatedSortedArrayTest {
+
     private static Stream<Arguments> parameters() {
         return Stream.of(
                 Arguments.of(new int[]{}, 5, -1),
