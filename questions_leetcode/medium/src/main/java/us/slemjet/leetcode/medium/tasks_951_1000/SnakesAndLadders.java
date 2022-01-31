@@ -17,7 +17,7 @@ public class SnakesAndLadders {
         int cols = board[0].length;
 
         Queue<Integer> nodes = new LinkedList<>(); // Store currently processed nodes
-        nodes.offer(1);
+        nodes.offer(1); // Start from 1
 
         boolean[] visited = new boolean[rows * cols + 1]; // Store visited nodes
 
