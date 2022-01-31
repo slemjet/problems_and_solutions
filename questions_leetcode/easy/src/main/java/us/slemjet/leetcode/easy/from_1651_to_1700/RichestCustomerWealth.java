@@ -1,4 +1,4 @@
-package us.slemjet.leetcode.easy.from_1651_to_1700.tasks;
+package us.slemjet.leetcode.easy.from_1651_to_1700;
 
 /**
  * 1672. Richest Customer Wealth

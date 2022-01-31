@@ -1,9 +1,10 @@
-package us.slemjet.leetcode.easy.from_1651_to_1700.tasks;
+package us.slemjet.leetcode.easy.from_1651_to_1700;
 
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
+import us.slemjet.leetcode.easy.from_1651_to_1700.RichestCustomerWealth;
 
 import java.util.stream.Stream;
 
