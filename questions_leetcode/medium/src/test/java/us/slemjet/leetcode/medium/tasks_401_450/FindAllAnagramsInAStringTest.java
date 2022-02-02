@@ -25,19 +25,6 @@ class FindAllAnagramsInAStringTest {
 
     @ParameterizedTest
     @MethodSource("parameters")
-    void findAnagrams(String s, String p, List<Integer> expected) {
-        // given
-        FindAllAnagramsInAString solution = new FindAllAnagramsInAString();
-
-        // when
-        List<Integer> result = solution.findAnagrams(s, p);
-
-        // then
-        Assertions.assertThat(result).isEqualTo(expected);
-    }
-
-    @ParameterizedTest
-    @MethodSource("parameters")
     void findAnagramsArray(String s, String p, List<Integer> expected) {
         // given
         FindAllAnagramsInAString solution = new FindAllAnagramsInAString();
