@@ -30,17 +30,4 @@ class NumberOfStudentsDoingHomeworkAtAGivenTimeTest {
         // then
         Assertions.assertThat(result).isEqualTo(expected);
     }
-
-    @ParameterizedTest
-    @MethodSource("parameters")
-    void findBusyStudent2(int[] startTime, int[] endTime, int queryTime, int expected) {
-        // given
-        NumberOfStudentsDoingHomeworkAtAGivenTime solution = new NumberOfStudentsDoingHomeworkAtAGivenTime();
-
-        // when
-        int result = solution.busyStudent2(startTime, endTime, queryTime);
-
-        // then
-        Assertions.assertThat(result).isEqualTo(expected);
-    }
 }
