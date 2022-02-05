@@ -1,8 +1,5 @@
 package us.slemjet.leetcode.medium.tasks_501_550;
 
-import java.util.HashMap;
-import java.util.Map;
-
 /**
  * 525. Contiguous Array
  */
@@ -15,27 +12,17 @@ public class ContiguousArray {
     public int findMaxLength(int[] nums) {
 
         int maxLength = 0;
-        int sum = 0;
+        int startIdx = 0;
+        for (int i = 1; i < nums.length; i++) {
 
-        Map<Integer, Integer> countByIdx = new HashMap<>();
-        // set start conditions
-        countByIdx.put(0, -1);
+            if (nums[i] == nums[i - 1] || i == nums.length - 1) {
+                if ((i - startIdx + 1) % 2 == 0) {
+                    maxLength = Math.max(maxLength, i - startIdx + 1);
+                } else {
+                    maxLength = Math.max(maxLength, i - startIdx);
+                }
 
-        for (int i = 0; i < nums.length; i++) {
-
-            int val = nums[i];
-
-            if (val == 0) {
-                sum--;
-            } else {
-                sum++;
-            }
-
-            if (countByIdx.containsKey(sum)) {
-                // index already visited - relative sum between is 0
-                maxLength = Math.max(maxLength, i - countByIdx.get(sum));
-            } else {
-                countByIdx.put(sum, i);
+                startIdx = i;
             }
         }
 
@@ -52,8 +39,9 @@ public class ContiguousArray {
         int maxLength = 0;
         int sum = nums.length;
 
+        // Contains sums by index - we can use them to check length between same sums (so delta sum is 0 - array is contiguous)
         int[] countByIdx = new int[nums.length * 2 + 2];
-        // set start conditions
+        // Set start conditions
         countByIdx[nums.length] = 1;
 
         for (int i = 0; i < nums.length; i++) {
