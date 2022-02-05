@@ -4,7 +4,6 @@ import org.assertj.core.api.Assertions;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
-import us.slemjet.leetcode.hard.from_1_to_50.MergeKSortedLists;
 import us.slemjet.leetcode.hard.lists.ListNode;
 
 import java.util.stream.Stream;
@@ -24,81 +23,53 @@ class MergeKSortedListsTest {
 
     @ParameterizedTest
     @MethodSource("parameters")
-    void mergeKLists1(ListNode[] lists, ListNode expected) {
+    void mergeKListsDivAndConquer(ListNode[] lists, ListNode expected) {
         // given
         MergeKSortedLists solution = new MergeKSortedLists();
 
         // when
-        ListNode merged = solution.mergeKLists1(lists);
+        ListNode result = solution.mergeKListsDivAndConquer(lists);
 
         // then
-        ListNode node = merged;
-        ListNode expectedNode = expected;
-
-        while (expectedNode != null) {
-            Assertions.assertThat(node.val).isEqualTo(expectedNode.val);
-            node = node.next;
-            expectedNode = expectedNode.next;
-        }
+        Assertions.assertThat(result).isEqualTo(expected);
     }
 
     @ParameterizedTest
     @MethodSource("parameters")
-    void mergeKLists2(ListNode[] lists, ListNode expected) {
+    void mergeKListsPriorityQueue(ListNode[] lists, ListNode expected) {
         // given
         MergeKSortedLists solution = new MergeKSortedLists();
 
         // when
-        ListNode merged = solution.mergeKLists2(lists);
+        ListNode result = solution.mergeKListsPriorityQueue(lists);
 
         // then
-        ListNode node = merged;
-        ListNode expectedNode = expected;
-
-        while (expectedNode != null) {
-            Assertions.assertThat(node.val).isEqualTo(expectedNode.val);
-            node = node.next;
-            expectedNode = expectedNode.next;
-        }
+        Assertions.assertThat(result).isEqualTo(expected);
     }
 
     @ParameterizedTest
     @MethodSource("parameters")
-    void mergeKLists3(ListNode[] lists, ListNode expected) {
+    void mergeKListsSequentialMerge(ListNode[] lists, ListNode expected) {
         // given
         MergeKSortedLists solution = new MergeKSortedLists();
 
         // when
-        ListNode merged = solution.mergeKLists3(lists);
+        ListNode result = solution.mergeKListsSequentialMerge(lists);
 
         // then
-        ListNode node = merged;
-        ListNode expectedNode = expected;
-
-        while (expectedNode != null) {
-            Assertions.assertThat(node.val).isEqualTo(expectedNode.val);
-            node = node.next;
-            expectedNode = expectedNode.next;
-        }
+        Assertions.assertThat(result).isEqualTo(expected);
     }
 
     @ParameterizedTest
     @MethodSource("parameters")
-    void mergeKLists4(ListNode[] lists, ListNode expected) {
+    void mergeKListsPriorityQueue2(ListNode[] lists, ListNode expected) {
         // given
         MergeKSortedLists solution = new MergeKSortedLists();
 
         // when
-        ListNode merged = solution.mergeKLists4(lists);
+        ListNode result = solution.mergeKListsPriorityQueue2(lists);
 
         // then
-        ListNode node = merged;
-        ListNode expectedNode = expected;
-
-        while (expectedNode != null) {
-            Assertions.assertThat(node.val).isEqualTo(expectedNode.val);
-            node = node.next;
-            expectedNode = expectedNode.next;
-        }
+        Assertions.assertThat(result).isEqualTo(expected);
     }
 }
