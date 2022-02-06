@@ -65,19 +65,6 @@ class MaximalRectangleTest {
 
     @ParameterizedTest
     @MethodSource("parameters")
-    void testMaximalRectangleDp3(char[][] matrix, int expected) {
-        // given
-        MaximalRectangle solution = new MaximalRectangle();
-
-        // when
-        int result = solution.maximalRectangleDp3(matrix);
-
-        // then
-        Assertions.assertThat(result).isEqualTo(expected);
-    }
-
-    @ParameterizedTest
-    @MethodSource("parameters")
     void testMaximalRectangle(char[][] matrix, int expected) {
         // given
         MaximalRectangle solution = new MaximalRectangle();
