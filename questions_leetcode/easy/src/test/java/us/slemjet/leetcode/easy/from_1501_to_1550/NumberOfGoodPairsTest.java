@@ -9,7 +9,6 @@ import java.util.stream.Stream;
 
 class NumberOfGoodPairsTest {
 
-
     private static Stream<Arguments> parameters() {
         return Stream.of(
                 Arguments.of(new int[]{1, 2, 3, 1, 1, 3}, 4),
