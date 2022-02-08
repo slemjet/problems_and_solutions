@@ -10,7 +10,6 @@ import java.util.stream.Stream;
 
 class CutOffTreesForGolfEventTest {
 
-
     private static Stream<Arguments> parameters() {
         return Stream.of(
                 Arguments.of(List.of(List.of(1, 2, 3), List.of(0, 0, 4), List.of(7, 6, 5)), 6),
