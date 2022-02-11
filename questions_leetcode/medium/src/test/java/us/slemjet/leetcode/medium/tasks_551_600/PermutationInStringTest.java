@@ -32,4 +32,17 @@ class PermutationInStringTest {
         // then
         Assertions.assertThat(result).isEqualTo(expected);
     }
+
+    @ParameterizedTest
+    @MethodSource("parameters")
+    void checkInclusion2(String s1, String s2, boolean expected) {
+        // given
+        PermutationInString solution = new PermutationInString();
+
+        // when
+        boolean result = solution.checkInclusion2(s1, s2);
+
+        // then
+        Assertions.assertThat(result).isEqualTo(expected);
+    }
 }
