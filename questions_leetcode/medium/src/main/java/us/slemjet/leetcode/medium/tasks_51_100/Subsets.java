@@ -4,6 +4,9 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
+/**
+ * 78. Subsets
+ */
 public class Subsets {
 
     /**
@@ -38,19 +41,19 @@ public class Subsets {
      * Use bit manipulation
      * Runtime: 100.00%
      * Memory Usage: 99.65%
-     *
+     * <p>
      * Number of subsets for {1 , 2 , 3 } = 2^3 . why ?
      * case    possible outcomes for the set of subsets
-     *   1   ->          Take or dont take = 2
-     *   2   ->          Take or dont take = 2
-     *   3   ->          Take or dont take = 2
-     *
+     * 1   ->          Take or dont take = 2
+     * 2   ->          Take or dont take = 2
+     * 3   ->          Take or dont take = 2
+     * <p>
      * therefore , total = 2*2*2 = 2^3 = { { } , {1} , {2} , {3} , {1,2} , {1,3} , {2,3} , {1,2,3} }
-     *
+     * <p>
      * Lets assign bits to each outcome  -> First bit to 1 , Second bit to 2 and third bit to 3
      * Take = 1
      * Dont take = 0
-     *
+     * <p>
      * 0) 0 0 0  -> Dont take 3 ,   Dont take 2 ,   Dont take 1 =   { }
      * 1) 0 0 1  -> Dont take 3 ,   Dont take 2 ,       take 1  =   { 1 }
      * 2) 0 1 0  -> Dont take 3 ,       take 2  ,   Dont take 1 =   { 2 }
@@ -59,17 +62,17 @@ public class Subsets {
      * 5) 1 0 1  ->    take 3   ,   Dont take 2 ,       take 1  =   { 1 , 3 }
      * 6) 1 1 0  ->    take 3   ,       take 2  ,   Dont take 1 =   { 2 , 3 }
      * 7) 1 1 1  ->    take 3   ,       take 2  ,       take 1  =   { 1 , 2 , 3 }
-     *
+     * <p>
      * In the above logic ,Insert S[i] only if (j>>i)&1 ==true   { j E { 0,1,2,3,4,5,6,7 }   i = ith element in the input array }
-     *
+     * <p>
      * element 1 is inserted only into those places where 1st bit of j is 1
-     *    if( j >> 0 &1 )  ==> for above above eg. this is true for sl.no.( j )= 1 , 3 , 5 , 7
-     *
+     * if( j >> 0 &1 )  ==> for above above eg. this is true for sl.no.( j )= 1 , 3 , 5 , 7
+     * <p>
      * element 2 is inserted only into those places where 2nd bit of j is 1
-     *    if( j >> 1 &1 )  == for above above eg. this is true for sl.no.( j ) = 2 , 3 , 6 , 7
-     *
+     * if( j >> 1 &1 )  == for above above eg. this is true for sl.no.( j ) = 2 , 3 , 6 , 7
+     * <p>
      * element 3 is inserted only into those places where 3rd bit of j is 1
-     *    if( j >> 2 & 1 )  == for above above eg. this is true for sl.no.( j ) = 4 , 5 , 6 , 7
+     * if( j >> 2 & 1 )  == for above above eg. this is true for sl.no.( j ) = 4 , 5 , 6 , 7
      */
     public List<List<Integer>> subsetsBit(int[] nums) {
         List<List<Integer>> result = new ArrayList<>();
@@ -86,6 +89,33 @@ public class Subsets {
             }
             result.add(tempResult);
         }
+
+        return result;
+    }
+
+    /**
+     * For each number add combinations with this number with all previously calculated values
+     *
+     * Runtime: 100.00%
+     * Memory Usage: 22.86%
+     */
+    public List<List<Integer>> subsetsQueue(int[] nums) {
+        List<List<Integer>> result = new ArrayList<>();
+        if (nums == null) return result;
+
+        for (int num : nums) {
+            List<List<Integer>> combinationsToAdd = new ArrayList<>();
+            List<Integer> newVal = new ArrayList<>();
+            newVal.add(num);
+            combinationsToAdd.add(newVal); // Add combination with just this number
+            for (List<Integer> existingVal : result) {
+                newVal = new ArrayList<>(existingVal);
+                newVal.add(num);
+                combinationsToAdd.add(newVal); // Add combination with previous number and current
+            }
+            result.addAll(combinationsToAdd);
+        }
+        result.add(new ArrayList<>());
 
         return result;
     }

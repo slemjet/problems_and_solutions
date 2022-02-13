@@ -56,4 +56,17 @@ class SubsetsTest {
         Assertions.assertThat(result).containsExactlyInAnyOrderElementsOf(expected);
     }
 
+    @ParameterizedTest
+    @MethodSource("parameters")
+    void subsetsQueue(int[] nums, List<List<Integer>> expected) {
+        // given
+        Subsets solution = new Subsets();
+
+        // when
+        List<List<Integer>> result = solution.subsetsQueue(nums);
+
+        // then
+        Assertions.assertThat(result).containsExactlyInAnyOrderElementsOf(expected);
+    }
+
 }
