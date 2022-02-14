@@ -60,17 +60,4 @@ class CountSquareSubMatricesWithAllOnesTest {
         // then
         Assertions.assertThat(result).isEqualTo(expected);
     }
-
-    @ParameterizedTest
-    @MethodSource("parameters")
-    void testCountSquaresTopToBottom(int[][] matrix, int expected) {
-        // given
-        CountSquareSubMatricesWithAllOnes solution = new CountSquareSubMatricesWithAllOnes();
-
-        // when
-        int result = solution.countSquaresTopToBottom(matrix);
-
-        // then
-        Assertions.assertThat(result).isEqualTo(expected);
-    }
 }

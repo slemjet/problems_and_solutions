@@ -31,12 +31,25 @@ class MaximumDepthOfBinaryTreeTest {
 
     @ParameterizedTest
     @MethodSource("parameters")
-    void testZigzagLevelOrder(TreeNode root, int expected) {
+    void testMaxDepthDFS(TreeNode root, int expected) {
         // given
         MaximumDepthOfBinaryTree solution = new MaximumDepthOfBinaryTree();
 
         // when
-        int result = solution.maxDepth(root);
+        int result = solution.maxDepthDFS(root);
+
+        // then
+        Assertions.assertThat(result).isEqualTo(expected);
+    }
+
+    @ParameterizedTest
+    @MethodSource("parameters")
+    void testMaxDepthBFS(TreeNode root, int expected) {
+        // given
+        MaximumDepthOfBinaryTree solution = new MaximumDepthOfBinaryTree();
+
+        // when
+        int result = solution.maxDepthBFS(root);
 
         // then
         Assertions.assertThat(result).isEqualTo(expected);
