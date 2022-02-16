@@ -2,8 +2,15 @@ package us.slemjet.leetcode.medium.tasks_1_50;
 
 import us.slemjet.leetcode.hard.lists.ListNode;
 
+/**
+ * 24. Swap Nodes in Pairs
+ */
 public class SwapNodesInPairs {
 
+    /**
+     * Runtime: 100.00%
+     * Memory Usage: 30.86%
+     */
     public ListNode swapPairs(ListNode head) {
 
         if (head == null || head.next == null) {
