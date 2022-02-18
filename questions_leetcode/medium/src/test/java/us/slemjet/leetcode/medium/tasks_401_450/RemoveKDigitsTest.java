@@ -25,7 +25,7 @@ class RemoveKDigitsTest {
 
     @ParameterizedTest
     @MethodSource("parameters")
-    void multiplyTest(String num, int k, String expected) {
+    void testRemoveKdigits(String num, int k, String expected) {
         // given
         RemoveKDigits solution = new RemoveKDigits();
 
