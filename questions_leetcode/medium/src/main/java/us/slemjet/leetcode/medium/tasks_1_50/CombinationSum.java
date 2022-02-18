@@ -4,12 +4,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- *
- * Runtime: 67.15%
- * Memory Usage: 100.00%
+ * 39. Combination Sum
  */
 public class CombinationSum {
 
+    /**
+     * Runtime: 62.29%
+     * Memory Usage: 33.88%
+     */
     public List<List<Integer>> combinationSum(int[] candidates, int target) {
         List<List<Integer>> result = new ArrayList<>();
         backtrack(result, new ArrayList(), candidates, target, 0);
@@ -17,12 +19,11 @@ public class CombinationSum {
     }
 
     /**
-     *
-     * @param result accumulator for solved combinations
-     * @param solution currently processed solution
+     * @param result     accumulator for solved combinations
+     * @param solution   currently processed solution
      * @param candidates list of potential values
-     * @param target target sum
-     * @param index currently processed starting element
+     * @param target     target sum
+     * @param index      currently processed starting element
      */
     private void backtrack(List<List<Integer>> result, List<Integer> solution, int[] candidates, int target, int index) {
         if (target < 0 || index > candidates.length)
