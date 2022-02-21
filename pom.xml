@@ -13,6 +13,7 @@
         <module>questions_leetcode</module>
         <module>questions_codility</module>
         <module>questions_other</module>
+        <module>katas</module>
     </modules>
 
     <properties>
