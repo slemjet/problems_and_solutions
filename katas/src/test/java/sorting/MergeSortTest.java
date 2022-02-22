@@ -9,7 +9,7 @@ import java.util.stream.Stream;
 
 import static org.junit.jupiter.params.provider.Arguments.of;
 
-class QuickSortTest {
+class MergeSortTest {
 
     private static Stream<Arguments> parameters() {
         return Stream.of(
@@ -20,25 +20,12 @@ class QuickSortTest {
 
     @ParameterizedTest
     @MethodSource("parameters")
-    void testQuickSort(int[] array, int[] expected) {
+    void testMergeSort(int[] array, int[] expected) {
         // given
-        QuickSort solution = new QuickSort();
+        MergeSort solution = new MergeSort();
 
         // when
-        solution.quickSort(array);
-
-        // then
-        Assertions.assertThat(array).isEqualTo(expected);
-    }
-
-    @ParameterizedTest
-    @MethodSource("parameters")
-    void testSort(int[] array, int[] expected) {
-        // given
-        QuickSort solution = new QuickSort();
-
-        // when
-        solution.sort(array);
+        solution.mergeSort(array);
 
         // then
         Assertions.assertThat(array).isEqualTo(expected);
