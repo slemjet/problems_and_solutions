@@ -1,5 +1,8 @@
 package us.slemjet.leetcode.medium.tasks_301_350;
 
+/**
+ * 338. Counting Bits
+ */
 public class CountingBits {
 
     /**
