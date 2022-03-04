@@ -71,7 +71,7 @@ public class IsSubsequence {
             prevIdx = tIndices.get(tIdx) + 1; // Location of matched char in t string
         }
 
-        return true; // we havent found any issues
+        return true; // we haven't found any issues
     }
 
 }
