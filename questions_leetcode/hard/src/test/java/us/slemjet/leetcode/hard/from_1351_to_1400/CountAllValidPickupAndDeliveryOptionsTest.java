@@ -30,4 +30,17 @@ class CountAllValidPickupAndDeliveryOptionsTest {
         // then
         Assertions.assertThat(value).isEqualTo(expected);
     }
+
+    @ParameterizedTest
+    @MethodSource("parameters")
+    void testCountOrdersConst(int n, int expected) {
+        // given
+        CountAllValidPickupAndDeliveryOptions solution = new CountAllValidPickupAndDeliveryOptions();
+
+        // when
+        int value = solution.countOrdersConst(n);
+
+        // then
+        Assertions.assertThat(value).isEqualTo(expected);
+    }
 }
