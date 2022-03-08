@@ -19,8 +19,8 @@ public class BinarySearchTreeToGreaterSumTree {
     private int postorder(TreeNode node, int acc) {
         if (node == null) return acc;
 
-        node.val += postorder(node.right, acc);
-        return postorder(node.left, node.val);
+        node.val += postorder(node.right, acc); // Process right subtree and add to current node value
+        return postorder(node.left, node.val); // Process left subtree and return result
     }
 
 
