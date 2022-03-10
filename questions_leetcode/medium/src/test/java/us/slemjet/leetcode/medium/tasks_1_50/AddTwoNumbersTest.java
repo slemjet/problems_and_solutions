@@ -2,34 +2,43 @@ package us.slemjet.leetcode.medium.tasks_1_50;
 
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
-import us.slemjet.leetcode.hard.lists.ListNode;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.Arguments;
+import org.junit.jupiter.params.provider.MethodSource;
+import us.slemjet.leetcode.medium.tasks_1_50.AddTwoNumbers.ListNode;
+
+import java.util.stream.Stream;
 
 class AddTwoNumbersTest {
 
-    @Test
-    void addTwoNumbers() {
-        // given
-        ListNode operand1 = new ListNode(2);
-        operand1.next = new ListNode(4);
-        operand1.next.next = new ListNode(3);
+    public static Stream<Arguments> parameters() {
+        return Stream.of(
+                Arguments.of(
+                        new ListNode(2, new ListNode(4, new ListNode(3))),
+                        new ListNode(5, new ListNode(6, new ListNode(4))),
+                        new ListNode(7, new ListNode(0, new ListNode(8)))
+                ),
+                Arguments.of(
+                        new ListNode(0), new ListNode(0), new ListNode(0)
+                ),
+                Arguments.of(
+                        new ListNode(9, new ListNode(9, new ListNode(9, new ListNode(9, new ListNode(9, new ListNode(9, new ListNode(9))))))),
+                        new ListNode(9, new ListNode(9, new ListNode(9, new ListNode(9)))),
+                        new ListNode(8, new ListNode(9, new ListNode(9, new ListNode(9, new ListNode(0, new ListNode(0, new ListNode(0, new ListNode(1))))))))
+                )
+        );
+    }
 
-        ListNode operand2 = new ListNode(5);
-        operand2.next = new ListNode(6);
-        operand2.next.next = new ListNode(4);
+    @MethodSource("parameters")
+    @ParameterizedTest
+    public void testAddTwoNumbers(ListNode l1, ListNode l2, ListNode expected) {
+        // Given
+        AddTwoNumbers solution = new AddTwoNumbers();
 
-        // when
-        ListNode result = new AddTwoNumbers().addTwoNumbers(operand1, operand2);
-        System.out.println(operand1);
-        System.out.println(operand2);
-        System.out.println(result);
+        // When
+        ListNode result = solution.addTwoNumbers(l1, l2);
 
-        // then
-        Assertions.assertThat(result).isNotNull();
-        Assertions.assertThat(result.val).isEqualTo(7);
-        Assertions.assertThat(result.next).isNotNull();
-        Assertions.assertThat(result.next.val).isEqualTo(0);
-        Assertions.assertThat(result.next.next).isNotNull();
-        Assertions.assertThat(result.next.next.val).isEqualTo(8);
-
+        // Then
+        Assertions.assertThat(result).isEqualTo(expected);
     }
 }
