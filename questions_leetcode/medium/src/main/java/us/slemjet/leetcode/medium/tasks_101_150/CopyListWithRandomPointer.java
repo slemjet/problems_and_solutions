@@ -1,5 +1,7 @@
 package us.slemjet.leetcode.medium.tasks_101_150;
 
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Objects;
 
 /**
@@ -50,6 +52,52 @@ public class CopyListWithRandomPointer {
         return copyHead;
     }
 
+    /**
+     * Runtime: 41.57%
+     * Memory Usage: 21.75%
+     */
+    public Node copyRandomListMap(Node head) {
+
+        Map<Node, Node> copies = new HashMap<>();
+
+        Node dummyHead = new Node(0);
+        dummyHead.next = head;
+
+        Node current = dummyHead;
+        while (current != null) {
+            Node next = current.next;
+            if (next != null) {
+                Node copyNext = copies.get(next);
+                if (copyNext == null) {
+                    copyNext = new Node(next.val);
+                    if (copyNext.random == null) {
+                        copyNext.random = next.random;
+                        copies.put(next, copyNext);
+                    }
+                }
+                current.next = copyNext;
+            }
+
+            Node random = current.random;
+            if (random != null) {
+                Node copyRandom = copies.get(random);
+                if (copyRandom == null) {
+                    copyRandom = new Node(random.val);
+                    copies.put(random, copyRandom);
+                }
+                current.random = copyRandom;
+            }
+
+            current = current.next;
+            if (next != null) {
+                current.next = next.next;
+                current.random = next.random;
+            }
+        }
+
+        return dummyHead.next;
+    }
+
     public static class Node {
         int val;
         Node next;
@@ -72,6 +120,20 @@ public class CopyListWithRandomPointer {
             this.val = val;
             this.next = null;
             this.random = null;
+        }
+
+        public Node(int val, Node next, Node random) {
+            this.val = val;
+            this.next = next;
+            this.random = random;
+        }
+
+        @Override
+        public String toString() {
+            return "Node{" +
+                    "val=" + val +
+                    ", next=" + next +
+                    '}';
         }
     }
 }

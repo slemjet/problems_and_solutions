@@ -61,4 +61,17 @@ class CopyListWithRandomPointerTest {
         // then
         Assertions.assertThat(result).isEqualTo(expected);
     }
+
+    @ParameterizedTest
+    @MethodSource("parameters")
+    void testCopyRandomListMap(Node head, Node expected) {
+        // given
+        CopyListWithRandomPointer solution = new CopyListWithRandomPointer();
+
+        // when
+        Node result = solution.copyRandomListMap(head);
+
+        // then
+        Assertions.assertThat(result).isEqualTo(expected);
+    }
 }
