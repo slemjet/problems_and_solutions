@@ -31,4 +31,17 @@ class MinimumRemoveToMakeValidParenthesesTest {
         // then
         Assertions.assertThat(result).isIn(expected);
     }
+
+    @ParameterizedTest
+    @MethodSource("parameters")
+    void testMinRemoveToMakeValid2(String s, List<String> expected) {
+        // given
+        MinimumRemoveToMakeValidParentheses solution = new MinimumRemoveToMakeValidParentheses();
+
+        // when
+        String result = solution.minRemoveToMakeValid2(s);
+
+        // then
+        Assertions.assertThat(result).isIn(expected);
+    }
 }

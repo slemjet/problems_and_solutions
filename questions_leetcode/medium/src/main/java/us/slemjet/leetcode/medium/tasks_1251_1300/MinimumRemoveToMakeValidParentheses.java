@@ -8,9 +8,28 @@ import java.util.Stack;
 public class MinimumRemoveToMakeValidParentheses {
 
     /**
-     *
+     * Runtime: 29.15%
+     * Memory Usage: 32.29%
      */
     public String minRemoveToMakeValid(String s) {
+        StringBuilder result = new StringBuilder(s);
+        Stack<Integer> stack = new Stack<>();
+        for (int i = 0; i < result.length(); ++i) {
+            if (result.charAt(i) == '(') stack.add(i);
+            if (result.charAt(i) == ')') {
+                if (!stack.empty()) stack.pop();
+                else result.setCharAt(i, '*');
+            }
+        }
+        while (!stack.empty()) result.setCharAt(stack.pop(), '*');
+        return result.toString().replaceAll("\\*", "");
+    }
+
+    /**
+     * Runtime: 6.99%
+     * Memory Usage: 5.01%
+     */
+    public String minRemoveToMakeValid2(String s) {
 
         Stack<Character> stack = new Stack<>();
         int openedBrackets = 0;
