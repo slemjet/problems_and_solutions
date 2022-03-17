@@ -29,4 +29,17 @@ class ScoreOfParenthesesTest {
         // then
         Assertions.assertThat(result).isEqualTo(expected);
     }
+
+    @ParameterizedTest
+    @MethodSource("parameters")
+    void testValidateStackSequencesStack(String s, int expected) {
+        // given
+        ScoreOfParentheses solution = new ScoreOfParentheses();
+
+        // when
+        int result = solution.scoreOfParenthesesStack(s);
+
+        // then
+        Assertions.assertThat(result).isEqualTo(expected);
+    }
 }
