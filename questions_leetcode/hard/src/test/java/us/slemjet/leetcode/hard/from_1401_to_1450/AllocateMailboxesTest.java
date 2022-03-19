@@ -1,9 +1,10 @@
-package us.slemjet.leetcode.hard.from_1401_to_1450.tasks;
+package us.slemjet.leetcode.hard.from_1401_to_1450;
 
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
+import us.slemjet.leetcode.hard.from_1401_to_1450.AllocateMailboxes;
 
 import java.util.stream.Stream;
 
