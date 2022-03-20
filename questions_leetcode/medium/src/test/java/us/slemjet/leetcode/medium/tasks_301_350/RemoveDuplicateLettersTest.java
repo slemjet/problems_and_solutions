@@ -30,17 +30,4 @@ class RemoveDuplicateLettersTest {
         // then
         Assertions.assertThat(result).isEqualTo(expected);
     }
-
-    @ParameterizedTest
-    @MethodSource("parameters")
-    void testRemoveDuplicateLetters2(String s, String expected) {
-        // given
-        RemoveDuplicateLetters solution = new RemoveDuplicateLetters();
-
-        // when
-        String result = solution.removeDuplicateLetters2(s);
-
-        // then
-        Assertions.assertThat(result).isEqualTo(expected);
-    }
 }
