@@ -34,4 +34,30 @@ class TwoCitySchedulingTest {
         // then
         Assertions.assertThat(result).isEqualTo(expected);
     }
+
+    @ParameterizedTest
+    @MethodSource("parameters")
+    void testTwoCitySchedCostBottomUp(int[][] costs, int expected) {
+        // given
+        TwoCityScheduling solution = new TwoCityScheduling();
+
+        // when
+        int result = solution.twoCitySchedCostBottomUp(costs);
+
+        // then
+        Assertions.assertThat(result).isEqualTo(expected);
+    }
+
+    @ParameterizedTest
+    @MethodSource("parameters")
+    void testTwoCitySchedCostTopToBottom(int[][] costs, int expected) {
+        // given
+        TwoCityScheduling solution = new TwoCityScheduling();
+
+        // when
+        int result = solution.twoCitySchedCostTopToBottom(costs);
+
+        // then
+        Assertions.assertThat(result).isEqualTo(expected);
+    }
 }
