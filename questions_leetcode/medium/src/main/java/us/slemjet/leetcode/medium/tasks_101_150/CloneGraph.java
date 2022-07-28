@@ -1,4 +1,4 @@
-package us.slemjet.leetcode.medium.tasks_101_150.tasks;
+package us.slemjet.leetcode.medium.tasks_101_150;
 
 import java.util.ArrayList;
 import java.util.List;
