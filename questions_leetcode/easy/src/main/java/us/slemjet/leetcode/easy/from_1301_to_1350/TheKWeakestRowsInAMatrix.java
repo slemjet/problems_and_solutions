@@ -1,4 +1,4 @@
-package us.slemjet.leetcode.easy.from_1301_to_1350.tasks;
+package us.slemjet.leetcode.easy.from_1301_to_1350;
 
 import java.util.Arrays;
 import java.util.Comparator;
