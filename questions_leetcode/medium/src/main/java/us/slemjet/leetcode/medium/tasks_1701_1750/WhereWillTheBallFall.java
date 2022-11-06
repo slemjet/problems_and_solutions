@@ -8,6 +8,8 @@ import java.util.Arrays;
 public class WhereWillTheBallFall {
 
     /**
+     * Simulation
+     *
      * Runtime: 73.23%
      * Memory Usage: 88.14%
      *
