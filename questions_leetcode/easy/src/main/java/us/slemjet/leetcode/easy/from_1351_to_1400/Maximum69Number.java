@@ -1,4 +1,4 @@
-package us.slemjet.leetcode.easy.from_1351_to_1400.tasks;
+package us.slemjet.leetcode.easy.from_1351_to_1400;
 
 import java.util.ArrayList;
 import java.util.List;
