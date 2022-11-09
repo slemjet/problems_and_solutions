@@ -13,6 +13,7 @@ public class OnlineStockSpan {
      */
     public static class StockSpanner {
 
+        // Monotonic stack - keeps stock in non-decreasing order
         Stack<int[]> stocks = new Stack<>();
 
         public StockSpanner() {
