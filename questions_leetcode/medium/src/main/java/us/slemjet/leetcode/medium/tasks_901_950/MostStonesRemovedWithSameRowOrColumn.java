@@ -45,10 +45,14 @@ public class MostStonesRemovedWithSameRowOrColumn {
     }
 
     /**
+     * Use Union find - groups linked items
+     *
+     *
      * Runtime: 78.42%
      * Memory Usage: 93.46%
      */
     public int removeStonesUnionFind(int[][] stones) {
+        // Groups in union find
         int[] unions = new int[1000];
 
         for (int i = 0; i < stones.length; i++) {
@@ -70,6 +74,7 @@ public class MostStonesRemovedWithSameRowOrColumn {
             if (unions[i] == i) count++;
         }
 
+        // Result = total - groups (last item in the group cannot be removed)
         return stones.length - count;
     }
 
