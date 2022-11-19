@@ -1,0 +1,43 @@
+587. Erect the Fence
+
+You are given an array trees where trees[i] = [xi, yi] represents the location of a tree in the garden.
+
+You are asked to fence the entire garden using the minimum length of rope as it is expensive. The garden is well fenced only if all the trees are enclosed.
+
+Return the coordinates of trees that are exactly located on the fence perimeter.
+
+
+Example 1:
+  6 _|
+  5 _|
+  4 _|     x
+  3 _|        x
+  2 _|     x     x
+  1 _|  x
+     |_____x____________
+     |  |  |  |  |  |  |
+     0  1  2  3  4  5  6
+
+Input: points = [[1,1],[2,2],[2,0],[2,4],[3,3],[4,2]]
+Output: [[1,1],[2,0],[3,3],[2,4],[4,2]]
+
+Example 2:
+  6 _|
+  5 _|
+  4 _|
+  3 _|
+  2 _|  x   x     x
+  1 _|
+     |__________________
+     |  |  |  |  |  |  |
+     0  1  2  3  4  5  6
+Input: points = [[1,2],[2,2],[4,2]]
+Output: [[4,2],[2,2],[1,2]]
+
+
+Constraints:
+
+1 <= points.length <= 3000
+points[i].length == 2
+0 <= xi, yi <= 100
+All the given points are unique.
