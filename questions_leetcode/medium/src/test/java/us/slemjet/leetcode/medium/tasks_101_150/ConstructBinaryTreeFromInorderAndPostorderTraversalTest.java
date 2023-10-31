@@ -34,7 +34,7 @@ class ConstructBinaryTreeFromInorderAndPostorderTraversalTest {
 
     @ParameterizedTest
     @MethodSource("parameters")
-    void testZigzagLevelOrder(int[] preorder, int[] inorder, TreeNode expected) {
+    void testBuildTree(int[] preorder, int[] inorder, TreeNode expected) {
         // given
         ConstructBinaryTreeFromInorderAndPostorderTraversal solution = new ConstructBinaryTreeFromInorderAndPostorderTraversal();
 
