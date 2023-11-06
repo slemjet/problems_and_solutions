@@ -1,4 +1,4 @@
-package us.slemjet.leetcode.medium.tasks_1351_1400.tasks;
+package us.slemjet.leetcode.medium.tasks_1351_1400;
 
 /**
  * 1361. Validate Binary Tree Nodes
