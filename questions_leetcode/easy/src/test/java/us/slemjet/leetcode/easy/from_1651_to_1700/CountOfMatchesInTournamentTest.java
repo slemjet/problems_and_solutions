@@ -4,11 +4,8 @@ import org.assertj.core.api.Assertions;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
-import us.slemjet.leetcode.easy.from_1251_to_1300.MinimumTimeVisitingAllPoints;
 
 import java.util.stream.Stream;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 class CountOfMatchesInTournamentTest {
 
@@ -27,6 +24,19 @@ class CountOfMatchesInTournamentTest {
 
         // when
         int result = solution.numberOfMatches(n);
+
+        // then
+        Assertions.assertThat(result).isEqualTo(expected);
+    }
+
+    @ParameterizedTest
+    @MethodSource("parameters")
+    void testSolutionLogic(int n, int expected) {
+        // given
+        CountOfMatchesInTournament solution = new CountOfMatchesInTournament();
+
+        // when
+        int result = solution.numberOfMatchesLogic(n);
 
         // then
         Assertions.assertThat(result).isEqualTo(expected);

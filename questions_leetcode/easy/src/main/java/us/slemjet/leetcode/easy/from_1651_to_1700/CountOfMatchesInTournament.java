@@ -23,4 +23,15 @@ public class CountOfMatchesInTournament {
 
         return result;
     }
+
+    /**
+     * Time: O(n) -> 100.00%
+     * Space: O(1) -> 31.59%
+     */
+    public int numberOfMatchesLogic(int n) {
+
+        // Each team plays and loses one match except winner
+
+        return n - 1;
+    }
 }
