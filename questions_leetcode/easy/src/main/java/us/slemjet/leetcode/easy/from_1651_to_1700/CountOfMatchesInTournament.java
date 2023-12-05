@@ -1,0 +1,26 @@
+package us.slemjet.leetcode.easy.from_1651_to_1700;
+
+/**
+ * 1688. Count of Matches in Tournament
+ */
+public class CountOfMatchesInTournament {
+
+    /**
+     * Time: O(n) -> 100.00%
+     * Space: O(1) -> 31.59%
+     */
+    public int numberOfMatches(int n) {
+
+        int result = 0;
+
+        while (n > 1) {
+
+            int extra = n % 2;
+
+            n = n >> 1;
+            result += n + extra;
+        }
+
+        return result;
+    }
+}
