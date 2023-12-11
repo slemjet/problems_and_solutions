@@ -1,4 +1,4 @@
-package us.slemjet.leetcode.easy.from_1901_to_1950.tasks;
+package us.slemjet.leetcode.easy.from_1901_to_1950;
 
 /**
  * 1903. Largest Odd Number in String
