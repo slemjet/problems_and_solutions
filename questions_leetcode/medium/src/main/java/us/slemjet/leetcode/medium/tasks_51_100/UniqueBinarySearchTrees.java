@@ -32,11 +32,4 @@ public class UniqueBinarySearchTrees {
 
         return dp[n];
     }
-
-    private int factorial(Integer integer, int[] memo) {
-        if (integer <= 1) return 1;
-        if (memo[integer] != 0) return memo[integer];
-        else return integer * factorial(integer - 1, memo);
-    }
-
 }
