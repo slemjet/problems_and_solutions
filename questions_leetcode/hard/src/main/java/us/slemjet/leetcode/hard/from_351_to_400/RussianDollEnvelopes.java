@@ -42,20 +42,20 @@ public class RussianDollEnvelopes {
      */
     public int lengthOfLIS(int[] nums) {
 
-        int[] tails = new int[nums.length]; // Smallest last value of all the sequences of this size
+        int[] dp = new int[nums.length]; // Smallest last value of all the sequences of this size
         int size = 0;
 
         // Search for sequence ending with > this value - they will be in increasing order so use binary search
         // Ex: for [10, 9, 2, 5, 3, 7, 101, 18] -> resulting array: [2, 3, 7, 18]
         for (int num : nums) {
-            int idx = Arrays.binarySearch(tails, 0, size, num);
+            int idx = Arrays.binarySearch(dp, 0, size, num);
             if (idx < 0) {
                 idx = -idx - 1; // No direct match - need to convert
             }
             if (idx == size) {
                 size++; // Added new value to the biggest existing sequence - we need to extend the range that we check
             }
-            tails[idx] = num; // Set new largest value of the sequence
+            dp[idx] = num; // Set new largest value of the sequence
         }
 
         return size;
