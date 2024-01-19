@@ -42,4 +42,17 @@ class MinimumFallingPathSumTest {
         // then
         Assertions.assertThat(result).isEqualTo(expected);
     }
+
+    @ParameterizedTest
+    @MethodSource("parameters")
+    void testMinFallingPathSum3(int[][] matrix, int expected) {
+        // given
+        MinimumFallingPathSum solution = new MinimumFallingPathSum();
+
+        // when
+        int result = solution.minFallingPathSum3(matrix);
+
+        // then
+        Assertions.assertThat(result).isEqualTo(expected);
+    }
 }
