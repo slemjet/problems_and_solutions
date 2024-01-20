@@ -51,6 +51,8 @@ public class SumOfSubarrayMinimums {
 
     /**
      * Use Monotonic stack + DP combination
+     * Time: -> 75.62%
+     * Space: -> 14.99%
      *
      */
     public int sumSubarrayMinsDp(int[] arr) {
