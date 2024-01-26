@@ -9,8 +9,8 @@ public class PartitionEqualSubsetSum {
 
     /**
      * Top-Down Approach - Recursion + memo
-     * Time:  O(n*m)    ->  87.19%
-     * Space: O(n*m)   ->  30.37%
+     * Time:  O(n*m)    ->  96.05%
+     * Space: O(n*m)    ->  41.26%
      */
     public boolean canPartitionMemo(int[] nums) {
 
