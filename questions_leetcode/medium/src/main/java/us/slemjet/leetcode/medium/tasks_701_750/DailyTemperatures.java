@@ -23,6 +23,7 @@ public class DailyTemperatures {
             int nextTemperature = temperatures[i];
 
             while (!nonIncreasingTemps.isEmpty() && nonIncreasingTemps.peek()[0] < nextTemperature) {
+                // Remove from stack until we reach bigger value
                 int[] lowerTemperature = nonIncreasingTemps.pop();
                 result[lowerTemperature[1]] = i - lowerTemperature[1];
             }
