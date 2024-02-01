@@ -1,4 +1,4 @@
-package us.slemjet.leetcode.medium.tasks_2851_2900.tasks;
+package us.slemjet.leetcode.medium.tasks_2851_2900;
 
 import java.util.HashMap;
 import java.util.Map;

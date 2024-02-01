@@ -4,6 +4,7 @@ import org.assertj.core.api.Assertions;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
+import us.slemjet.leetcode.medium.tasks_2851_2900.MinimumNumberOfOperationsToMakeArrayEmpty;
 
 import java.util.stream.Stream;
 
