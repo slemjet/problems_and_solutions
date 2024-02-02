@@ -9,42 +9,38 @@ import java.util.List;
 public class SequentialDigits {
 
     /**
+     * Precompute all possible variants and add ones that pass the criteria
      *
+     * Time:    ->  100.00%
+     * Space:   ->  6.81%
      */
     public List<Integer> sequentialDigits(int low, int high) {
 
         List<Integer> result = new ArrayList<>();
 
-        int value = 1;
-        int add = 1;
-        int cnt = 1;
-        while (value < low / 10) {
-            value = value * 10 + ++cnt;
-            add = add * 10 + 1;
+        String nums = "123456789";
+
+        // Precompute all possible variants
+        List<Integer> candidates = new ArrayList<>();
+        for (int size = 2; size <= nums.length(); size++) {
+            for (int idx = 0; idx + size <= nums.length(); idx++) {
+                candidates.add(Integer.parseInt(nums.substring(idx, idx + size)));
+            }
         }
 
-        cnt = 1;
-        while (value <= high) {
-            if (low <= value) result.add(value);
-            value += add;
-            cnt++;
-            if (cnt == 10) {
-                add = add * 10 + 1;
-                int tmp = value;
-                cnt = 1;
-                value = 1;
-                while (tmp > 0){
-                    value = value * 10 + ++cnt;
-                    tmp /= 10;
-                }
-                cnt = 1;
+        // Add ones that pass the criteria
+        for (int candidate : candidates) {
+            if (candidate >= low && candidate <= high) {
+                result.add(candidate);
             }
         }
 
         return result;
     }
 
+
     /**
+     * Use sliding window on full sequence of digits
      * Runtime: 40.98%
      * Memory Usage: 45.90%
      */
@@ -82,4 +78,53 @@ public class SequentialDigits {
 
         return result;
     }
+
+    /**
+     * Time: 100.00%
+     * Space: 42.41%
+     */
+    public List<Integer> sequentialDigits3(int low, int high) {
+
+        List<Integer> result = new ArrayList<>();
+
+        String nums = "123456789";
+
+        // Find starting num
+        int size = String.valueOf(low).length();
+        int idx = 0;
+        int num = Integer.parseInt(nums.substring(idx, idx + size));
+
+        while (num < low && idx + size < nums.length()) {
+            if (idx + size < nums.length()) {
+                idx++;
+            } else {
+                idx = 0;
+                size++;
+            }
+            num = Integer.parseInt(nums.substring(idx, idx + size));
+        }
+
+        while (size <= nums.length()) {
+            // Check all sequences
+            int currNum = 0;
+            while (idx + size <= nums.length()) {
+                currNum = Integer.parseInt(nums.substring(idx, idx + size));
+                if (currNum >= low && currNum <= high) {
+                    result.add(currNum);
+                    idx++;
+                } else {
+                    break;
+                }
+            }
+            if (idx == 0 && currNum > high) {
+                break; // No need to continue - all other values will be larger
+            }
+            size++; // Try with bigger size
+            idx = 0;// From min sequence
+        }
+
+        return result;
+    }
+
+
 }
