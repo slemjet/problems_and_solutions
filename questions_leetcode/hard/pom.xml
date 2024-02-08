@@ -11,4 +11,12 @@
     <modelVersion>4.0.0</modelVersion>
     <artifactId>hard</artifactId>
 
+    <dependencies>
+        <dependency>
+            <groupId>algorithmic_tasks</groupId>
+            <artifactId>common</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+    </dependencies>
+
 </project>

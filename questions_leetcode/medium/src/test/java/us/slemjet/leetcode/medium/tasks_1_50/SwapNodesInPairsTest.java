@@ -4,18 +4,16 @@ import org.assertj.core.api.Assertions;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
-import us.slemjet.leetcode.hard.lists.ListNode;
+import us.slemjet.leetcode.common.ListNode;
 
 import java.util.stream.Stream;
-
-import static us.slemjet.leetcode.hard.lists.ListNode.of;
 
 class SwapNodesInPairsTest {
 
     private static Stream<Arguments> parameters() {
         return Stream.of(
-                Arguments.of(of(1, 2, 3, 4), of(2, 1, 4, 3)),
-                Arguments.of(of(1, 2, 3, 4, 5), of(2, 1, 4, 3, 5))
+                Arguments.of(ListNode.of(1, 2, 3, 4), ListNode.of(2, 1, 4, 3)),
+                Arguments.of(ListNode.of(1, 2, 3, 4, 5), ListNode.of(2, 1, 4, 3, 5))
         );
     }
 

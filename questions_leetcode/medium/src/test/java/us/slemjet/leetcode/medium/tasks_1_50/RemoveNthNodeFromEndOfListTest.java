@@ -2,7 +2,7 @@ package us.slemjet.leetcode.medium.tasks_1_50;
 
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
-import us.slemjet.leetcode.hard.lists.ListNode;
+import us.slemjet.leetcode.common.ListNode;
 
 class RemoveNthNodeFromEndOfListTest {
 

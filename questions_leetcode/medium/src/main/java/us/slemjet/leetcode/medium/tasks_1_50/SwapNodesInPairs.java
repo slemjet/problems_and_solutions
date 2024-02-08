@@ -1,6 +1,7 @@
 package us.slemjet.leetcode.medium.tasks_1_50;
 
-import us.slemjet.leetcode.hard.lists.ListNode;
+
+import us.slemjet.leetcode.common.ListNode;
 
 /**
  * 24. Swap Nodes in Pairs
