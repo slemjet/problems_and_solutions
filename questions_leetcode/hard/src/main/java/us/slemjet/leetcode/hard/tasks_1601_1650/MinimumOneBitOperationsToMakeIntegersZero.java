@@ -15,6 +15,7 @@ public class MinimumOneBitOperationsToMakeIntegersZero {
         }
 
         char[] bits = Integer.toBinaryString(n).toCharArray();
+        // Generate number of operations, needed to change every bit
         int[] dp = new int[bits.length];
         for (int i = dp.length - 1; i >= 0; i--) {
             if (i == dp.length - 1) {
@@ -25,7 +26,8 @@ public class MinimumOneBitOperationsToMakeIntegersZero {
         }
 
         int result = dp[0];
-
+        // We need to remove operation for every bit except for largest one
+        // If there are more than one other bit than two '-' give '+'
         int flag = -1;
         for (int i = 1; i < bits.length; i++) {
             if (bits[i] == '1') {
