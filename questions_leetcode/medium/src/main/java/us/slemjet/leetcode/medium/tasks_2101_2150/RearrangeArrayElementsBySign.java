@@ -1,4 +1,4 @@
-package us.slemjet.leetcode.medium.tasks_2101_2150.tasks;
+package us.slemjet.leetcode.medium.tasks_2101_2150;
 
 /**
  * 2149. Rearrange Array Elements by Sign
