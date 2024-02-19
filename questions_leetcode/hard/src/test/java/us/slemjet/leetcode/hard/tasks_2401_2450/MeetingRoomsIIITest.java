@@ -1,9 +1,10 @@
-package us.slemjet.leetcode.hard.tasks_2401_2450.tasks;
+package us.slemjet.leetcode.hard.tasks_2401_2450;
 
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
+import us.slemjet.leetcode.hard.tasks_2401_2450.MeetingRoomsIII;
 
 import java.util.stream.Stream;
 
