@@ -23,12 +23,25 @@ class FindTheTownJudgeTest {
 
     @ParameterizedTest
     @MethodSource("parameters")
-    void findJudge(int N, int[][] trust, int expected) {
+    void findJudge1Array(int N, int[][] trust, int expected) {
         // given
         FindTheTownJudge solution = new FindTheTownJudge();
 
         // when
-        int result = solution.findJudge(N, trust);
+        int result = solution.findJudge1Array(N, trust);
+
+        // then
+        Assertions.assertThat(result).isEqualTo(expected);
+    }
+
+    @ParameterizedTest
+    @MethodSource("parameters")
+    void findJudge2Arrays(int N, int[][] trust, int expected) {
+        // given
+        FindTheTownJudge solution = new FindTheTownJudge();
+
+        // when
+        int result = solution.findJudge2Arrays(N, trust);
 
         // then
         Assertions.assertThat(result).isEqualTo(expected);
