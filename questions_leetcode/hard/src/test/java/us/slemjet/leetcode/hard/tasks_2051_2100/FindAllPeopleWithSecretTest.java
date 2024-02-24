@@ -22,12 +22,38 @@ class FindAllPeopleWithSecretTest {
 
     @ParameterizedTest
     @MethodSource("parameters")
-    void testSolution(int n, int[][] meetings, int firstPerson, List<Integer> expected) {
+    void testSolutionBFS(int n, int[][] meetings, int firstPerson, List<Integer> expected) {
         // given
         FindAllPeopleWithSecret solution = new FindAllPeopleWithSecret();
 
         // when
-        List<Integer> result = solution.findAllPeople(n, meetings, firstPerson);
+        List<Integer> result = solution.findAllPeopleBFS(n, meetings, firstPerson);
+
+        // then
+        Assertions.assertThat(result).isEqualTo(expected);
+    }
+
+    @ParameterizedTest
+    @MethodSource("parameters")
+    void testSolutionDFS(int n, int[][] meetings, int firstPerson, List<Integer> expected) {
+        // given
+        FindAllPeopleWithSecret solution = new FindAllPeopleWithSecret();
+
+        // when
+        List<Integer> result = solution.findAllPeopleDFS(n, meetings, firstPerson);
+
+        // then
+        Assertions.assertThat(result).isEqualTo(expected);
+    }
+
+    @ParameterizedTest
+    @MethodSource("parameters")
+    void testSolutionUnionFind(int n, int[][] meetings, int firstPerson, List<Integer> expected) {
+        // given
+        FindAllPeopleWithSecret solution = new FindAllPeopleWithSecret();
+
+        // when
+        List<Integer> result = solution.findAllPeopleUnionFind(n, meetings, firstPerson);
 
         // then
         Assertions.assertThat(result).isEqualTo(expected);
