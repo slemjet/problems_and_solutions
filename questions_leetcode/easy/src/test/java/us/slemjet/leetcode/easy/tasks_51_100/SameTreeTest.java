@@ -23,7 +23,7 @@ class SameTreeTest {
 
     @ParameterizedTest
     @MethodSource("parameters")
-    void testSolutionBFS(TreeNode p, TreeNode q, boolean expected) {
+    void testSolution(TreeNode p, TreeNode q, boolean expected) {
         // given
         SameTree solution = new SameTree();
 
