@@ -15,6 +15,7 @@
 
     <modules>
         <module>simple-operations</module>
+        <module>katas</module>
         <module>1.iterations</module>
         <module>2.arrays</module>
         <module>3.time-complexity</module>

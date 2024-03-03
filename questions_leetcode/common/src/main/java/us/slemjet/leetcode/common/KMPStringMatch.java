@@ -3,13 +3,13 @@ package us.slemjet.leetcode.common;
 import java.util.ArrayList;
 import java.util.List;
 
-public class StringPatternMatch {
+/**
+ * KMP algorithm
+ * Finds indices at which pattern matches
+ */
+public class KMPStringMatch {
 
-    /**
-     * KMP algorithm
-     * Finds indices at which pattern matches
-     */
-    public static List<Integer> kmp(String str, String pat) {
+    public static List<Integer> findMatches(String str, String pat) {
 
         List<Integer> result = new ArrayList<>();
 
