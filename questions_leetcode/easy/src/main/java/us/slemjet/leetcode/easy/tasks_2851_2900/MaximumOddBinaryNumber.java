@@ -1,4 +1,4 @@
-package us.slemjet.leetcode.easy.tasks_2851_2900.tasks;
+package us.slemjet.leetcode.easy.tasks_2851_2900;
 
 /**
  * 2864. Maximum Odd Binary Number

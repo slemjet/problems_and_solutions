@@ -1,4 +1,4 @@
-package us.slemjet.leetcode.easy.tasks_901_950;
+package us.slemjet.leetcode.medium.tasks_901_950;
 
 import java.util.Arrays;
 

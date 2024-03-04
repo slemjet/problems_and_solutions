@@ -10,6 +10,11 @@ public class ListNode {
         val = x;
     }
 
+    public ListNode(int val, ListNode next) {
+        this.val = val;
+        this.next = next;
+    }
+
     public static ListNode of(int... values) {
         if (values != null && values.length > 0) {
             ListNode result, node;
