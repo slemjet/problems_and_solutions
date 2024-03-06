@@ -1,4 +1,4 @@
-package us.slemjet.leetcode.medium.tasks_2551_2600.tasks;
+package us.slemjet.leetcode.medium.tasks_2551_2600;
 
 /**
  * 2571. Minimum Operations to Reduce an Integer to 0
