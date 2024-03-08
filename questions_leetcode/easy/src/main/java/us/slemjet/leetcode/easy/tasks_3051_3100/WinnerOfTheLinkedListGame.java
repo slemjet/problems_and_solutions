@@ -1,4 +1,4 @@
-package us.slemjet.leetcode.easy.tasks_3051_3100.tasks;
+package us.slemjet.leetcode.easy.tasks_3051_3100;
 
 import us.slemjet.leetcode.common.ListNode;
 
