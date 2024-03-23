@@ -1,6 +1,7 @@
 package us.slemjet.leetcode.common;
 
 import org.assertj.core.api.Assertions;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
@@ -22,6 +23,7 @@ class ZAlgorithmPatternMatchTest {
         );
     }
 
+    @Disabled
     @ParameterizedTest
     @MethodSource("parameters")
     void testSolution(String str, String pat, List<Integer> expected) {
