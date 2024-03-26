@@ -2,12 +2,14 @@ package us.slemjet.leetcode.hard.tasks_1_50;
 
 import java.util.Arrays;
 
+/**
+ * 41. First Missing Positive
+ */
 public class FirstMissingPositive {
 
     /**
      * Runtime: 37.76%
      * Memory Usage: 100.00%
-     *
      */
     public int firstMissingPositive(int[] nums) {
 
@@ -34,10 +36,9 @@ public class FirstMissingPositive {
     /**
      * Runtime: 100.00%
      * Memory 100.00%
-     *
+     * <p>
      * We store elements to their index by value [3, 4, -1, 1] - > [1, 0, 3, 4, 0]
      * then traverse and check missing value
-     *
      */
     public int firstMissingPositiveIndexByValueAndSwap(int[] nums) {
 
@@ -60,5 +61,51 @@ public class FirstMissingPositive {
         nums[idx2] = nums[idx1] ^ nums[idx2];
         nums[idx1] = nums[idx1] ^ nums[idx2];
     }
+
+    /**
+     * Time: O(n)   ->  98.00%
+     * Space:O(1)   ->  83.26%
+     */
+    public int firstMissingPositive3(int[] nums) {
+
+        boolean hasOne = false;
+
+        // We dont need negatives
+        for (int i = 0; i < nums.length; i++) {
+            if (nums[i] < 0) {
+                nums[i] = 0;
+            }
+            if (nums[i] == 1) {
+                hasOne = true;
+            }
+        }
+
+        // Mark included indices by '-' Use special handling for 1
+        for (int i = 0; i < nums.length; i++) {
+            int num = Math.abs(nums[i]);
+            if (num <= nums.length && num > 0) {
+                if (nums[num - 1] > 0) {
+                    nums[num - 1] *= -1;
+                }
+                if (nums[num - 1] == 0) {
+                    nums[num - 1] = -1;
+                }
+            }
+        }
+
+        // Check for first non-negative index
+        for (int i = 0; i < nums.length; i++) {
+            if(nums[i] >= 0){
+                return i + 1;
+            }
+            if(nums[i] < 0 && i == 0 && !hasOne){
+                return 1;
+            }
+        }
+
+        return nums.length + 1;
+
+    }
+
 
 }
