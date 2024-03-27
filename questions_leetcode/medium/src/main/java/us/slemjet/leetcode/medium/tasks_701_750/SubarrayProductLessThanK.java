@@ -11,9 +11,9 @@ public class SubarrayProductLessThanK {
      * Add number of combinations that can be formed with new (rightmost) element
      * + 1 (element itself)
      * + 1 for each other number in the sequence as it can form a new combination with it
-     *
-     * Runtime: 61.16%
-     * Memory Usage: 51.25%
+     * <p>
+     * Time: O(n) 100.00%
+     * Space:O(n): 95.04%
      */
     public int numSubarrayProductLessThanK(int[] nums, int k) {
         int count = 0;
@@ -23,13 +23,15 @@ public class SubarrayProductLessThanK {
         while (end < nums.length) {
             product *= nums[end];
 
-            while (product >= k) { // Product is too big - need to decrease
+            while (product >= k && start < end) { // Product is too big - need to decrease
                 product /= nums[start];
                 start++;
-                if (start == nums.length) return count; // Reached end - return current result
             }
 
-            count += end - start + 1; // We add combinations number: 1 for current number + 1 for each number in the sequence
+            if (product < k) {
+                count += end - start + 1; // We add combinations number: 1 for current number + 1 for each number in the sequence
+            }
+
             end++;
         }
 
