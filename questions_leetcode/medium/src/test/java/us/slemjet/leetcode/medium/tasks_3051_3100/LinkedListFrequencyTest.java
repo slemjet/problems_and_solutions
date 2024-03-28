@@ -1,10 +1,11 @@
-package us.slemjet.leetcode.medium.tasks_3051_3100.tasks;
+package us.slemjet.leetcode.medium.tasks_3051_3100;
 
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 import us.slemjet.leetcode.common.ListNode;
+import us.slemjet.leetcode.medium.tasks_3051_3100.LinkedListFrequency;
 
 import java.util.stream.Stream;
 
