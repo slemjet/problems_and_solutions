@@ -12,11 +12,4 @@
 
     <artifactId>simple-operations</artifactId>
 
-    <dependencies>
-        <dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter-api</artifactId>
-        </dependency>
-    </dependencies>
-
 </project>

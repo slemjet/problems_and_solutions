@@ -14,11 +14,10 @@ class FirstBadVersionTest {
         return Stream.of(
                 Arguments.of(2, 2),
                 Arguments.of(3, 3),
-                Arguments.of(44, 1134903170)
+                Arguments.of(44, 44)
         );
     }
 
-    @Disabled
     @ParameterizedTest
     @MethodSource("parameters")
     void climbStairs(int n, int expected) {
