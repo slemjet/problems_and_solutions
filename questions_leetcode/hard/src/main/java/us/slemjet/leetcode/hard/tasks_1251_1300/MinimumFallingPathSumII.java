@@ -19,7 +19,7 @@ public class MinimumFallingPathSumII {
 
             if (i > 0) {
                 for (int j = 0; j < grid[i].length; j++) {
-                    // Min value to add is either min value if index != or min2
+                    // Min value to add is either min value if index != current index or min2
                     grid[i][j] += (minIdx != j) ? grid[i - 1][minIdx] : grid[i - 1][min2Idx];
                 }
             }
