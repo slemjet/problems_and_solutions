@@ -18,7 +18,7 @@ class FreedomTrailTest {
 
     @ParameterizedTest
     @MethodSource("parameters")
-    void testOuterTreesMonotonousChain(String ring, String key, int expected) {
+    void testSolution(String ring, String key, int expected) {
         // given
         FreedomTrail solution = new FreedomTrail();
 
