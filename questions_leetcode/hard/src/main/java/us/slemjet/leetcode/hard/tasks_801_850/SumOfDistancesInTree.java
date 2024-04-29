@@ -31,7 +31,9 @@ public class SumOfDistancesInTree {
             graph.put(0, new HashSet<>());
         }
 
+        // First - calculate for on node (0)
         dfs(0, -1, count, graph, result);
+        // Calculate for other nodes using tree re-rooting DP
         rerouteDfs(0, -1, count, graph, result);
 
         return result;
