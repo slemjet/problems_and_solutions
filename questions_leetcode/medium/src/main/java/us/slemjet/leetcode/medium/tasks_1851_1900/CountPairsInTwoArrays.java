@@ -8,10 +8,11 @@ import java.util.Arrays;
 public class CountPairsInTwoArrays {
 
     /**
+     * Calculate differences, sort, use binary search to get valid pair
      * Time: O(nlogn)   ->  30.98%
      * Space:O(n)       ->  22.05%
      */
-    public long countPairs(int[] nums1, int[] nums2) {
+    public long countPairsBinary(int[] nums1, int[] nums2) {
 
         long result = 0L;
 
@@ -54,5 +55,42 @@ public class CountPairsInTwoArrays {
             }
         }
         return left;
+    }
+
+
+    /**
+     * Calculate differences, sort, use 2 pointers to get valid pairs
+     * Time: O(nlogn)   ->  93.77%
+     * Space:O(n)       ->  18.52%
+     */
+    public long countPairs2Pointer(int[] nums1, int[] nums2) {
+
+        long result = 0L;
+
+        // nums1[i] + nums1[j] > nums2[i] + nums2[j]
+        // nums1[i] - nums2[i] > nums2[j] - nums1[j] -> diff[i] > -diff[j]
+
+        int[] diff = new int[nums1.length];
+
+        for (int i = 0; i < nums1.length; i++) {
+            diff[i] = nums1[i] - nums2[i];
+        }
+
+        Arrays.sort(diff);
+
+        int left = 0;
+        int right = diff.length - 1;
+
+        while (left < right) {
+            if (diff[left] > -diff[right]) {
+                // Valid pair
+                result += right - left;
+                right--;
+            } else {
+                left++;
+            }
+        }
+
+        return result;
     }
 }

@@ -18,12 +18,25 @@ class CountPairsInTwoArraysTest {
 
     @ParameterizedTest
     @MethodSource("parameters")
-    void testSolution(int[] nums1, int[] nums2, long expected) {
+    void testSolutionBinary(int[] nums1, int[] nums2, long expected) {
         // given
         CountPairsInTwoArrays solution = new CountPairsInTwoArrays();
 
         // when
-        long result = solution.countPairs(nums1, nums2);
+        long result = solution.countPairsBinary(nums1, nums2);
+
+        // then
+        Assertions.assertThat(result).isEqualTo(expected);
+    }
+
+    @ParameterizedTest
+    @MethodSource("parameters")
+    void testSolution2Pointer(int[] nums1, int[] nums2, long expected) {
+        // given
+        CountPairsInTwoArrays solution = new CountPairsInTwoArrays();
+
+        // when
+        long result = solution.countPairs2Pointer(nums1, nums2);
 
         // then
         Assertions.assertThat(result).isEqualTo(expected);
