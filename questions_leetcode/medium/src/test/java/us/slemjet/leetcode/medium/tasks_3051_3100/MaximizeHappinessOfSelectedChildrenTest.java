@@ -1,4 +1,4 @@
-package us.slemjet.leetcode.easy.tasks_501_550;
+package us.slemjet.leetcode.medium.tasks_3051_3100;
 
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -7,23 +7,24 @@ import org.junit.jupiter.params.provider.MethodSource;
 
 import java.util.stream.Stream;
 
-class RelativeRanksTest {
+class MaximizeHappinessOfSelectedChildrenTest {
 
     private static Stream<Arguments> parameters() {
         return Stream.of(
-                Arguments.of(new int[]{5, 4, 3, 2, 1}, new String[]{"Gold Medal", "Silver Medal", "Bronze Medal", "4", "5"}),
-                Arguments.of(new int[]{10, 3, 8, 9, 4}, new String[]{"Gold Medal", "5", "Bronze Medal", "Silver Medal", "4"})
+                Arguments.of(new int[]{1, 2, 3}, 2, 4),
+                Arguments.of(new int[]{1, 1, 1, 1}, 2, 1),
+                Arguments.of(new int[]{2, 3, 4, 5}, 1, 5)
         );
     }
 
     @ParameterizedTest
     @MethodSource("parameters")
-    void testSolution(int[] score, String[] expected) {
+    void testSolution(int[] happiness, int k, long expected) {
         // given
-        RelativeRanks solution = new RelativeRanks();
+        MaximizeHappinessOfSelectedChildren solution = new MaximizeHappinessOfSelectedChildren();
 
         // when
-        String[] result = solution.findRelativeRanks(score);
+        long result = solution.maximumHappinessSum(happiness, k);
 
         // then
         Assertions.assertThat(result).isEqualTo(expected);
