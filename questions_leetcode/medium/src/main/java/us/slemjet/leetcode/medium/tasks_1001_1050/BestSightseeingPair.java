@@ -19,7 +19,7 @@ public class BestSightseeingPair {
 
         for (int j = 1; j < values.length; j++) {
             currSum = values[maxI] + values[j] + maxI - j;
-            result = result > currSum ? result : currSum; // Update new max sum
+            result = Math.max(result, currSum); // Update new max sum
 
             if (values[maxI] + maxI < values[j] + j) { // Check if need to set new max left side
                 maxI = j;
