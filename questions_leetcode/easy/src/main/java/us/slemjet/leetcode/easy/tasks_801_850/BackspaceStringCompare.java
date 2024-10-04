@@ -1,4 +1,4 @@
-package us.slemjet.leetcode.easy.tasks_801_850.tasks;
+package us.slemjet.leetcode.easy.tasks_801_850;
 
 /**
  * 844. Backspace String Compare
