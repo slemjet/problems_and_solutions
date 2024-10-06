@@ -5,6 +5,7 @@ import java.util.TreeSet;
 
 /**
  * 716. Max Stack
+ * tags: Linkedin
  *
  * Time: O(nlogn)   ->  5.20%
  * Space:O(n)       ->  15.73%
