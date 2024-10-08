@@ -1,4 +1,4 @@
-package us.slemjet.leetcode.medium.tasks_1401_1450;
+package us.slemjet.leetcode.medium.tasks_1201_1250;
 
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.params.ParameterizedTest;

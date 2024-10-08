@@ -1,4 +1,4 @@
-package us.slemjet.leetcode.medium.tasks_1401_1450;
+package us.slemjet.leetcode.medium.tasks_1201_1250;
 
 /**
  * 1247. Minimum Swaps to Make Strings Equal
