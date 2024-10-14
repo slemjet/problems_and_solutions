@@ -1,4 +1,4 @@
-package us.slemjet.leetcode.easy.tasks_3201_3250.tasks;
+package us.slemjet.leetcode.easy.tasks_3201_3250;
 
 /**
  * 3216. Lexicographically Smallest String After a Swap
