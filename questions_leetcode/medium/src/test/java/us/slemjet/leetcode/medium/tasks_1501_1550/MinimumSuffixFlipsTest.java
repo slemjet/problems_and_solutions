@@ -13,7 +13,8 @@ class MinimumSuffixFlipsTest {
         return Stream.of(
                 Arguments.of( "10111", 3),
                 Arguments.of( "101", 3),
-                Arguments.of( "00000", 0)
+                Arguments.of( "00000", 0),
+                Arguments.of( "001011101", 5)
         );
     }
 
