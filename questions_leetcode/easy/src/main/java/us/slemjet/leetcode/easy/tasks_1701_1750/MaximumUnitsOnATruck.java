@@ -9,7 +9,7 @@ public class MaximumUnitsOnATruck {
 
     /**
      * Time:    O(nlogn)    ->  94.68%
-     * Space:   O(1)        ->  15.62%
+     * Space:   O(1)        ->  91.81%
      */
     public int maximumUnits(int[][] boxTypes, int truckSize) {
 
@@ -21,6 +21,9 @@ public class MaximumUnitsOnATruck {
             int boxCount = Math.min(truckSize, boxType[0]);
             result += boxType[1] * boxCount;
             truckSize -= boxCount;
+
+            if (truckSize == 0)
+                break;
         }
 
         return result;
