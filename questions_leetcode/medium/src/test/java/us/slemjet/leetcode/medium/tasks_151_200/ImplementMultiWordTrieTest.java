@@ -4,7 +4,7 @@ import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 import us.slemjet.leetcode.medium.tasks_201_250.ImplementTrie;
 
-class ImplementTrieTest {
+class ImplementMultiWordTrieTest {
 
     @Test
     void test() {
